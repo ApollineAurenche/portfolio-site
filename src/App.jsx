@@ -254,7 +254,7 @@ function Hero({ onContact }) {
 
 function About() {
   return (
-    <section id="about" className="py-32 px-6 bg-stone-50">
+    <section id="about" className="py-20 px-6 bg-stone-50">
       <div className="max-w-5xl mx-auto">
         <div className="mb-16">
           <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">What I bring</span>
@@ -373,7 +373,7 @@ function CaseStudyCard({ cs, index }) {
 
 function Work() {
   return (
-    <section id="work" className="py-32 px-6">
+    <section id="work" className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="mb-16">
           <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Case studies</span>
