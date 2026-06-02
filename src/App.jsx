@@ -186,18 +186,38 @@ function Hero() {
   return (
     <section className="min-h-screen flex flex-col justify-center pt-16 px-6">
       <div className="max-w-5xl mx-auto w-full">
-        <div className="mb-6">
-          <span className="inline-block text-xs font-medium tracking-widest text-teal-600 uppercase mb-4">
-            Senior Product Marketing Manager
-          </span>
-          <h1 className="text-5xl md:text-7xl font-bold text-stone-900 leading-tight tracking-tight mb-8">
-            Apolline<br />Aurenche
-          </h1>
-          <p className="text-xl md:text-2xl text-stone-500 font-light max-w-2xl leading-relaxed">
-            I own the entire go-to-market journey — from understanding what customers actually
-            need, through positioning and pricing, to adoption and growth. I move fast in new
-            markets and execute hands-on.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12 mb-6">
+
+          {/* Text */}
+          <div className="flex-1">
+            <span className="inline-block text-xs font-medium tracking-widest text-teal-600 uppercase mb-4">
+              Senior Product Marketing Manager
+            </span>
+            <h1 className="text-5xl md:text-7xl font-bold text-stone-900 leading-tight tracking-tight mb-8">
+              Apolline<br />Aurenche
+            </h1>
+            <p className="text-xl md:text-2xl text-stone-500 font-light max-w-2xl leading-relaxed">
+              I own the entire go-to-market journey — from understanding what customers actually
+              need, through positioning and pricing, to adoption and growth. I move fast in new
+              markets and execute hands-on.
+            </p>
+          </div>
+
+          {/* Photo */}
+          <div className="flex-shrink-0 flex justify-center md:justify-end">
+            <div className="relative">
+              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-stone-100">
+                <img
+                  src="/apolline.jpeg"
+                  alt="Apolline Aurenche"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              {/* Subtle teal accent ring */}
+              <div className="absolute -inset-1.5 rounded-full border-2 border-teal-200 -z-10" />
+            </div>
+          </div>
+
         </div>
 
         <div className="flex flex-wrap gap-3 mt-10 mb-16">
