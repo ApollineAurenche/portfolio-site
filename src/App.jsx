@@ -409,6 +409,7 @@ function Experience() {
     {
       company: 'PayFit',
       description: 'European HR & Payroll SaaS (Series E, unicorn, 20k+ SMB customers)',
+      badge: 'B2B',
       title: 'Senior Global Product Marketing Manager',
       period: '2022 – 2025',
       location: 'Paris',
@@ -416,6 +417,7 @@ function Experience() {
     {
       company: 'Doctolib',
       description: 'European leading digital health platform (Series F, €6B+ valuation, 90M+ patients)',
+      badge: 'B2B2C',
       title: 'Global Campaign Manager',
       period: '2020 – 2022',
       location: 'Paris',
@@ -423,6 +425,7 @@ function Experience() {
     {
       company: 'BlaBlaCar',
       description: 'European #1 long-distance ridesharing marketplace (100M+ members, late-stage scale-up)',
+      badge: 'B2C',
       title: 'Marketing Associate, France & Benelux',
       period: '2019 – 2020',
       location: 'Paris',
@@ -448,7 +451,10 @@ function Experience() {
                   <span className="font-bold text-lg text-stone-900">{r.company}</span>
                   <span className="text-sm font-medium text-stone-500">{r.title}</span>
                 </div>
-                <p className="text-xs text-stone-400">{r.description}</p>
+                <div className="flex items-center gap-2 mt-1">
+                  <p className="text-xs text-stone-400">{r.description}</p>
+                  <span className="flex-shrink-0 text-xs font-medium px-2 py-0.5 rounded-full bg-teal-50 text-teal-600 border border-teal-100">{r.badge}</span>
+                </div>
               </div>
               <div className="flex gap-4 mt-1 md:mt-0 md:ml-8 text-sm text-stone-400 flex-shrink-0">
                 <span>{r.period}</span>
