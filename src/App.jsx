@@ -16,28 +16,28 @@ const differentiators = [
     number: '02',
     title: 'Bridges PMM ↔ Revenue',
     description:
-      "I ensure PMM work builds a competitive moat. I don't let positioning live in a deck - I operationalize it across product, legal, marketing, finance, sales, and CS through a shared language.",
+      "I ensure positioning builds a competitive moat and aligns the entire organization around a shared language (product, sales, CS, finance, legal, marketing).",
     evidence: 'Copilot · Premium Services · Kanoon partnership',
   },
   {
     number: '03',
     title: 'Rapid Market Mastery',
     description:
-      "I have a proven system for fast market entry and deep understanding. Mobility → Healthcare → Payroll. I understand European and North American buyer psychology - French nuance ≠ English pragmatism.",
+      "I've built GTM strategy across different sectors, navigating cultural differences - each time starting from zero domain knowledge. I get up to speed fast, go deep, and adapt to how buyers actually think.",
     evidence: 'BlaBlaCar · Doctolib · PayFit - 3 verticals, 7 years',
   },
   {
     number: '04',
     title: 'Operator + Strategist',
     description:
-      "I combine strategy with hands-on execution. I write positioning docs and build them in-product. I analyze data in SQL/Looker/Amplitude, then operationalize insights into playbooks.",
+      "I combine strategy with hands-on execution. I enjoy picking up new tools and developing new skills, which makes me comfortable across a wide range of stacks (CRM, data, design, AI, market research, project management).",
     evidence: 'HubSpot · Braze · Figma · Amplitude · SQL · AI tools',
   },
   {
     number: '05',
     title: 'Owns the Full Product Lifecycle',
     description:
-      "Discovery → Positioning → Sales Enablement → Launch → Post-Launch. I understand how each phase feeds the next and measure end-to-end outcomes. Not a specialist - a full-stack PMM.",
+      "Discovery → Positioning → Sales Enablement → Launch → Post-Launch. I understand how each phase feeds the next and measure end-to-end outcomes.",
     evidence: 'Copilot · Premium Services · Onboarding redesign',
   },
 ]
@@ -221,7 +221,7 @@ function Hero({ onContact }) {
         </div>
 
         <div className="flex flex-wrap gap-3 mt-10 mb-16">
-          {['SF Bay Area (open to remote)', '7 years experience', 'FR (native) · EN (fluent)'].map((tag) => (
+          {['SF Bay Area · Open to remote worldwide', '7 years experience', 'FR (native) · EN (fluent)'].map((tag) => (
             <span
               key={tag}
               className="px-4 py-2 bg-stone-100 text-stone-600 rounded-full text-sm"
@@ -258,7 +258,7 @@ function About() {
       <div className="max-w-5xl mx-auto">
         <div className="mb-16">
           <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">What I bring</span>
-          <h2 className="text-4xl font-bold text-stone-900 mt-3">How I work</h2>
+          <h2 className="text-4xl font-bold text-stone-900 mt-3">My core strengths</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
