@@ -199,8 +199,7 @@ function About() {
               <h3 className="text-lg font-semibold text-stone-900 mt-3 mb-3 leading-snug group-hover:text-teal-700 transition-colors">
                 {d.title}
               </h3>
-              <p className="text-stone-500 text-sm leading-relaxed mb-4">{d.description}</p>
-              <p className="text-xs text-stone-400 italic border-t border-stone-100 pt-4">{d.evidence}</p>
+              <p className="text-stone-500 text-sm leading-relaxed">{d.description}</p>
             </div>
           ))}
 
