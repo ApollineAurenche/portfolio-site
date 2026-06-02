@@ -395,31 +395,51 @@ function Work() {
 
 function Experience() {
   const roles = [
-    { company: 'PayFit', title: 'Senior Product Marketing Manager', period: '2022 – 2025', location: 'Paris → SF' },
-    { company: 'Doctolib', title: 'Product Marketing Manager', period: '2020 – 2022', location: 'Paris' },
-    { company: 'BlaBlaCar', title: 'Product Marketing Manager', period: '2019 – 2020', location: 'Paris' },
+    {
+      company: 'PayFit',
+      description: 'European HR & Payroll SaaS (Series E, unicorn, 20k+ SMB customers)',
+      title: 'Senior Global Product Marketing Manager',
+      period: '2022 – 2025',
+      location: 'Paris',
+    },
+    {
+      company: 'Doctolib',
+      description: 'European leading digital health platform (Series F, €6B+ valuation, 90M+ patients)',
+      title: 'Global Campaign Manager',
+      period: '2020 – 2022',
+      location: 'Paris',
+    },
+    {
+      company: 'BlaBlaCar',
+      description: 'European #1 long-distance ridesharing marketplace (100M+ members, late-stage scale-up)',
+      title: 'Marketing Associate, France & Benelux',
+      period: '2019 – 2020',
+      location: 'Paris',
+    },
   ]
 
   return (
-    <section className="py-32 px-6 bg-stone-50">
+    <section className="py-16 px-6 bg-stone-50">
       <div className="max-w-5xl mx-auto">
-        <div className="mb-16">
+        <div className="mb-8">
           <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Background</span>
-          <h2 className="text-4xl font-bold text-stone-900 mt-3">Experience</h2>
         </div>
 
-        <div className="space-y-1">
+        <h2 className="text-4xl font-bold text-stone-900 mb-6">Experience</h2>
+        <div>
           {roles.map((r, i) => (
             <div
               key={i}
-              className="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-stone-200 last:border-0 group"
+              className="flex flex-col md:flex-row md:items-start justify-between py-5 border-b border-stone-200 last:border-0"
             >
-              <div>
-                <span className="font-semibold text-stone-900 group-hover:text-teal-600 transition-colors">{r.company}</span>
-                <span className="text-stone-400 mx-3">·</span>
-                <span className="text-stone-600">{r.title}</span>
+              <div className="flex-1">
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                  <span className="font-bold text-lg text-stone-900">{r.company}</span>
+                  <span className="text-sm font-medium text-stone-500">{r.title}</span>
+                </div>
+                <p className="text-xs text-stone-400">{r.description}</p>
               </div>
-              <div className="flex gap-4 mt-1 md:mt-0 text-sm text-stone-400">
+              <div className="flex gap-4 mt-1 md:mt-0 md:ml-8 text-sm text-stone-400 flex-shrink-0">
                 <span>{r.period}</span>
                 <span>{r.location}</span>
               </div>
@@ -427,10 +447,20 @@ function Experience() {
           ))}
         </div>
 
-        <div className="mt-12 pt-12 border-t border-stone-200">
-          <p className="text-stone-400 text-sm">
-            <span className="text-stone-600 font-medium">Education:</span> Neoma Business School - Master in Management, Major in Marketing (2019)
-          </p>
+        <div className="mt-10">
+          <h2 className="text-4xl font-bold text-stone-900 mb-6">Education</h2>
+          <div className="flex flex-col md:flex-row md:items-start justify-between py-5 border-t border-stone-200">
+            <div className="flex-1">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <span className="font-bold text-lg text-stone-900">Neoma Business School</span>
+                <span className="text-sm font-medium text-stone-500">Master in Management, Major in Marketing</span>
+              </div>
+            </div>
+            <div className="flex gap-4 mt-1 md:mt-0 md:ml-8 text-sm text-stone-400 flex-shrink-0">
+              <span>2015 – 2019</span>
+              <span>Reims</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
