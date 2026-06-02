@@ -16,15 +16,15 @@ const differentiators = [
     number: '02',
     title: 'Bridges PMM ↔ Revenue',
     description:
-      "I ensure PMM work builds a competitive moat. I don't let positioning live in a deck — I operationalize it across product, legal, marketing, finance, sales, and CS through a shared language.",
+      "I ensure PMM work builds a competitive moat. I don't let positioning live in a deck - I operationalize it across product, legal, marketing, finance, sales, and CS through a shared language.",
     evidence: 'Copilot · Premium Services · Kanoon partnership',
   },
   {
     number: '03',
     title: 'Rapid Market Mastery',
     description:
-      "I have a proven system for fast market entry and deep understanding. Mobility → Healthcare → Payroll. I understand European and North American buyer psychology — French nuance ≠ English pragmatism.",
-    evidence: 'BlaBlaCar · Doctolib · PayFit — 3 verticals, 7 years',
+      "I have a proven system for fast market entry and deep understanding. Mobility → Healthcare → Payroll. I understand European and North American buyer psychology - French nuance ≠ English pragmatism.",
+    evidence: 'BlaBlaCar · Doctolib · PayFit - 3 verticals, 7 years',
   },
   {
     number: '04',
@@ -37,7 +37,7 @@ const differentiators = [
     number: '05',
     title: 'Owns the Full Product Lifecycle',
     description:
-      "Discovery → Positioning → Sales Enablement → Launch → Post-Launch. I understand how each phase feeds the next and measure end-to-end outcomes. Not a specialist — a full-stack PMM.",
+      "Discovery → Positioning → Sales Enablement → Launch → Post-Launch. I understand how each phase feeds the next and measure end-to-end outcomes. Not a specialist - a full-stack PMM.",
     evidence: 'Copilot · Premium Services · Onboarding redesign',
   },
 ]
@@ -51,10 +51,10 @@ const caseStudies = [
     title: 'Copilot Launch',
     subtitle: 'From 0 to 80% adoption across 3 markets',
     problem:
-      'Admins lacked time and needed instant answers 24/7. The CSM team could not handle volume — service overload was growing.',
+      'Admins lacked time and needed instant answers 24/7. The CSM team could not handle volume - service overload was growing.',
     insight:
-      "We were first to market with a payroll-specific AI (not generic ChatGPT). Innovation is a key purchase driver for Starter companies. Admins want fast, reliable answers — without waiting.",
-    positioning: '"Your AI personal assistant — always available, always aware of your specificities."',
+      "We were first to market with a payroll-specific AI (not generic ChatGPT). Innovation is a key purchase driver for Starter companies. Admins want fast, reliable answers - without waiting.",
+    positioning: '"Your AI personal assistant - always available, always aware of your specificities."',
     outcomes: [
       { metric: '80%', label: 'Adoption post-launch (3 markets, 3 months)' },
       { metric: '23%', label: 'CS ticket deflection rate' },
@@ -83,7 +83,7 @@ const caseStudies = [
     ],
     artifact: 'Sales & Retention Playbook',
     artifactDetail:
-      'Full playbook covering: trigger criteria, positioning language, pitch scripts, objection handling, and a closing framework — built with and tested by sales teams from day one.',
+      'Full playbook covering: trigger criteria, positioning language, pitch scripts, objection handling, and a closing framework - built with and tested by sales teams from day one.',
   },
   {
     id: 'onboarding',
@@ -94,7 +94,7 @@ const caseStudies = [
     problem:
       'Time-to-value was too long; activation was bottlenecked in onboarding; CS margin was unsustainable (too much human time per client at scale).',
     insight:
-      'The onboarding phase is stressful — customers want to spend as little time as possible on it and need a reliable integration. Competitors do everything manually for the client, creating long, expensive, error-prone onboardings. Opportunity to build a real competitive advantage.',
+      'The onboarding phase is stressful - customers want to spend as little time as possible on it and need a reliable integration. Competitors do everything manually for the client, creating long, expensive, error-prone onboardings. Opportunity to build a real competitive advantage.',
     positioning: '"Getting started with payroll has never been this simple."',
     outcomes: [
       { metric: '~2h', label: 'Time-to-value for Starter clients (was 15 days)' },
@@ -134,7 +134,7 @@ function Nav({ onContact }) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-stone-100">
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-semibold text-stone-900 tracking-tight hover:text-teal-600 transition-colors">AA</Link>
+        <Link to="/" className="font-semibold text-stone-900 tracking-tight hover:text-teal-600 transition-colors"></Link>
         <div className="flex items-center gap-8 text-sm text-stone-500">
           <a href="#about" className="hover:text-stone-900 transition-colors">About</a>
 
@@ -197,7 +197,7 @@ function Hero({ onContact }) {
               Apolline<br />Aurenche
             </h1>
             <p className="text-xl md:text-2xl text-stone-500 font-light max-w-2xl leading-relaxed">
-              I own the entire go-to-market journey — from understanding what customers actually
+              I own the entire go-to-market journey - from understanding what customers actually
               need, through positioning and pricing, to adoption and growth. I move fast in new
               markets and execute hands-on.
             </p>
@@ -221,7 +221,7 @@ function Hero({ onContact }) {
         </div>
 
         <div className="flex flex-wrap gap-3 mt-10 mb-16">
-          {['San Francisco, CA', '7 years experience', 'FR · EN', 'AI-powered workflows'].map((tag) => (
+          {['SF Bay Area (open to remote)', '7 years experience', 'FR (native) · EN (fluent)'].map((tag) => (
             <span
               key={tag}
               className="px-4 py-2 bg-stone-100 text-stone-600 rounded-full text-sm"
@@ -238,12 +238,14 @@ function Hero({ onContact }) {
           >
             See my work
           </a>
-          <button
-            onClick={onContact}
+          <a
+            href="https://www.linkedin.com/in/apolline-aurenche"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-stone-500 hover:text-stone-900 transition-colors text-sm underline underline-offset-4"
           >
-            Get in touch
-          </button>
+            LinkedIn ↗
+          </a>
         </div>
       </div>
     </section>
@@ -256,7 +258,7 @@ function About() {
       <div className="max-w-5xl mx-auto">
         <div className="mb-16">
           <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">What I bring</span>
-          <h2 className="text-4xl font-bold text-stone-900 mt-3">5 things that make me different</h2>
+          <h2 className="text-4xl font-bold text-stone-900 mt-3">How I work</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -284,7 +286,7 @@ function CaseStudyCard({ cs, index }) {
 
   return (
     <div className="border border-stone-200 rounded-2xl overflow-hidden hover:border-teal-200 transition-all duration-300">
-      {/* Card header — always visible */}
+      {/* Card header - always visible */}
       <button
         onClick={() => setOpen(!open)}
         className="w-full text-left p-8 md:p-10"
@@ -309,7 +311,7 @@ function CaseStudyCard({ cs, index }) {
           </div>
         </div>
 
-        {/* Outcomes — always visible */}
+        {/* Outcomes - always visible */}
         <div className="flex flex-wrap gap-4 mt-6">
           {cs.outcomes.map((o) => (
             <div key={o.metric} className="text-left">
@@ -377,7 +379,7 @@ function Work() {
           <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Case studies</span>
           <h2 className="text-4xl font-bold text-stone-900 mt-3">Selected work</h2>
           <p className="text-stone-400 mt-3 max-w-xl">
-            Three projects across AI launch, monetization, and lifecycle — each showing a different dimension of full-stack PMM work.
+            Three projects across AI launch, monetization, and lifecycle - each showing a different dimension of full-stack PMM work.
           </p>
         </div>
 
@@ -427,7 +429,7 @@ function Experience() {
 
         <div className="mt-12 pt-12 border-t border-stone-200">
           <p className="text-stone-400 text-sm">
-            <span className="text-stone-600 font-medium">Education:</span> Neoma Business School — Master in Management, Major in Marketing (2019)
+            <span className="text-stone-600 font-medium">Education:</span> Neoma Business School - Master in Management, Major in Marketing (2019)
           </p>
         </div>
       </div>
@@ -440,8 +442,7 @@ function Footer({ onContact }) {
     <footer className="py-20 px-6 border-t border-stone-100">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         <div>
-          <h3 className="text-2xl font-bold text-stone-900 mb-2">Let's work together.</h3>
-          <p className="text-stone-400 text-sm">Open to Sr PMM / PMM Associate roles — SF Bay Area or remote.</p>
+          <h3 className="text-2xl font-bold text-stone-900">Let's work together.</h3>
         </div>
         <div className="flex flex-col gap-3 text-sm">
           <button
