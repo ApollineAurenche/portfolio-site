@@ -196,11 +196,17 @@ function Hero({ onContact }) {
             <h1 className="text-5xl md:text-7xl font-bold text-stone-900 leading-tight tracking-tight mb-8">
               Apolline<br />Aurenche
             </h1>
-            <p className="text-xl md:text-2xl text-stone-500 font-light max-w-2xl leading-relaxed">
-              I own the entire go-to-market journey - from understanding what customers actually
-              need, through positioning and pricing, to adoption and growth. I move fast in new
-              markets and execute hands-on.
-            </p>
+            <div className="max-w-2xl space-y-4">
+              <p className="text-xl md:text-2xl text-stone-900 font-medium leading-relaxed">
+                Glad you're here.
+              </p>
+              <p className="text-lg md:text-xl text-stone-500 font-light leading-relaxed">
+                This portfolio reflects 7 years of PMM work - and how I think about building products people actually adopt.
+              </p>
+              <p className="text-lg md:text-xl text-stone-500 font-light leading-relaxed">
+                I own the entire go-to-market journey: from understanding what customers actually need, through positioning, pricing and lifecycle, to adoption and growth. I move fast in new markets and execute hands-on.
+              </p>
+            </div>
           </div>
 
           {/* Photo */}
@@ -221,7 +227,12 @@ function Hero({ onContact }) {
         </div>
 
         <div className="flex flex-wrap gap-3 mt-10 mb-16">
-          {['SF Bay Area · Open to remote worldwide', '7 years experience', 'FR (native) · EN (fluent)'].map((tag) => (
+          {[
+            'SF Bay Area',
+            'Remote worldwide',
+            'Available July 2026',
+            'FR (native) · EN (fluent)',
+          ].map((tag) => (
             <span
               key={tag}
               className="px-4 py-2 bg-stone-100 text-stone-600 rounded-full text-sm"
@@ -491,7 +502,8 @@ function Footer({ onContact }) {
           </a>
         </div>
       </div>
-      <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-stone-100">
+      <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-stone-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+        <p className="text-sm text-stone-400">Designed and built by Apolline Aurenche using Claude, GitHub & Vercel.</p>
         <p className="text-xs text-stone-300">© 2025 Apolline Aurenche</p>
       </div>
     </footer>
