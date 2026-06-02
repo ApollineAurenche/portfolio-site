@@ -117,7 +117,7 @@ const caseStudyLinks = [
   // { label: 'Onboarding & Lifecycle', route: '/work/onboarding', tag: 'PLG · Lifecycle' },
 ]
 
-function Nav() {
+function Nav({ onContact }) {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const dropdownRef = useRef(null)
 
@@ -170,19 +170,19 @@ function Nav() {
             )}
           </div>
 
-          <a
-            href="mailto:apollineaurenche@gmail.com"
+          <button
+            onClick={onContact}
             className="bg-stone-900 text-white px-4 py-2 rounded-full hover:bg-stone-700 transition-colors"
           >
             Get in touch
-          </a>
+          </button>
         </div>
       </div>
     </nav>
   )
 }
 
-function Hero() {
+function Hero({ onContact }) {
   return (
     <section className="min-h-screen flex flex-col justify-center pt-16 px-6">
       <div className="max-w-5xl mx-auto w-full">
@@ -238,14 +238,12 @@ function Hero() {
           >
             See my work
           </a>
-          <a
-            href="https://www.linkedin.com/in/apolline-aurenche"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={onContact}
             className="text-stone-500 hover:text-stone-900 transition-colors text-sm underline underline-offset-4"
           >
-            LinkedIn ↗
-          </a>
+            Get in touch
+          </button>
         </div>
       </div>
     </section>
@@ -437,7 +435,7 @@ function Experience() {
   )
 }
 
-function Footer() {
+function Footer({ onContact }) {
   return (
     <footer className="py-20 px-6 border-t border-stone-100">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
@@ -445,18 +443,18 @@ function Footer() {
           <h3 className="text-2xl font-bold text-stone-900 mb-2">Let's work together.</h3>
           <p className="text-stone-400 text-sm">Open to Sr PMM / PMM Associate roles — SF Bay Area or remote.</p>
         </div>
-        <div className="flex flex-col gap-2 text-sm">
-          <a
-            href="mailto:apollineaurenche@gmail.com"
-            className="text-teal-600 hover:text-teal-700 transition-colors font-medium"
+        <div className="flex flex-col gap-3 text-sm">
+          <button
+            onClick={onContact}
+            className="bg-teal-600 text-white px-6 py-3 rounded-full font-medium hover:bg-teal-700 transition-colors text-left"
           >
-            apollineaurenche@gmail.com →
-          </a>
+            Get in touch →
+          </button>
           <a
             href="https://www.linkedin.com/in/apolline-aurenche"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-stone-400 hover:text-stone-600 transition-colors"
+            className="text-stone-400 hover:text-stone-600 transition-colors text-center"
           >
             LinkedIn ↗
           </a>
@@ -469,17 +467,115 @@ function Footer() {
   )
 }
 
+// ─── CONTACT MODAL ───────────────────────────────────────────────────────────
+
+function ContactModal({ onClose }) {
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setStatus('sending')
+    const data = new FormData(e.target)
+    const res = await fetch('https://formspree.io/f/xkoedbne', {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' },
+    })
+    setStatus(res.ok ? 'success' : 'error')
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8 relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-stone-400 hover:text-stone-700 transition-colors"
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {status === 'success' ? (
+          <div className="text-center py-8">
+            <div className="text-4xl mb-4">✉️</div>
+            <h3 className="text-xl font-bold text-stone-900 mb-2">Message sent!</h3>
+            <p className="text-stone-400 text-sm">I'll get back to you shortly.</p>
+          </div>
+        ) : (
+          <>
+            <h3 className="text-xl font-bold text-stone-900 mb-1">Get in touch</h3>
+            <p className="text-stone-400 text-sm mb-6">I'll get back to you within 48h.</p>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="block text-xs font-medium text-stone-500 uppercase tracking-wide mb-1.5">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-stone-500 uppercase tracking-wide mb-1.5">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="your@email.com"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium text-stone-500 uppercase tracking-wide mb-1.5">Reason for reaching out</label>
+                <textarea
+                  name="message"
+                  required
+                  rows={4}
+                  placeholder="Tell me briefly why you're getting in touch..."
+                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition resize-none"
+                />
+              </div>
+              {status === 'error' && (
+                <p className="text-red-500 text-xs">Something went wrong. Try again or email me directly.</p>
+              )}
+              <button
+                type="submit"
+                disabled={status === 'sending'}
+                className="w-full bg-teal-600 text-white py-3 rounded-xl font-medium text-sm hover:bg-teal-700 transition-colors disabled:opacity-60"
+              >
+                {status === 'sending' ? 'Sending...' : 'Send message'}
+              </button>
+            </form>
+          </>
+        )}
+      </div>
+    </div>
+  )
+}
+
 // ─── HOME ────────────────────────────────────────────────────────────────────
 
 function Home() {
+  const [contactOpen, setContactOpen] = useState(false)
   return (
     <div className="bg-white text-stone-900 min-h-screen">
-      <Nav />
-      <Hero />
+      <Nav onContact={() => setContactOpen(true)} />
+      <Hero onContact={() => setContactOpen(true)} />
       <About />
       <Work />
       <Experience />
-      <Footer />
+      <Footer onContact={() => setContactOpen(true)} />
+      {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
     </div>
   )
 }
