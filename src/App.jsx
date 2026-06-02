@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom'
 import CopilotPage from './pages/CopilotPage.jsx'
+import SNCFPage from './pages/SNCFPage.jsx'
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -106,12 +107,36 @@ const caseStudies = [
     artifactDetail:
       'End-to-end journey mapping across 3 segments (Starter, VSB/SB, Mid-market), identifying friction using quantitative + qualitative triangulation. Before/after across Signature → Setup → First Payroll.',
   },
+  {
+    id: 'sncf',
+    route: '/work/sncf',
+    tag: 'Partnership · Product Integration · B2C',
+    company: 'BlaBlaCar',
+    title: 'SNCF × BlaBlaCar Partnership',
+    subtitle: '+15pts conversion rate in 2 months',
+    whyThisProject:
+      'SNCF is France\'s #1 mobility operator - 5M+ daily users, dominant rail infrastructure, and the reference point for any long-distance travel decision. Landing and growing a partnership with them was a credibility signal as much as a distribution win. This became BlaBlaCar\'s #1 passenger acquisition channel within months. It\'s also one of the projects I\'m most proud of - I still use both platforms today and still see this integration live.',
+    problem:
+      'BlaBlaCar needed to grow its passenger base while reducing CAC. Both partners wanted to validate a multimodality thesis: could rail and ridesharing be complementary rather than competing? The partnership was a chance to test it - and build brand presence at scale on a high-traffic platform.',
+    insight:
+      'SNCF users with no train availability are high-intent travelers - they need to move, not just browse. The opportunity: intercept them at the right moment with a relevant carpool offer, and optimize integration criteria (visibility, matching radius, relevance) to convert without degrading their experience.',
+    positioning: '"The right journey, the right moment, the right mode of transport."',
+    outcomes: [
+      { metric: '+15pts', label: 'Conversion rate (visitor → booking) in 5 months' },
+      { metric: '#1', label: 'BlaBlaCar\'s top passenger acquisition partner by volume' },
+      { metric: '3', label: 'Multimodal integration projects shipped' },
+    ],
+    artifact: 'Product Integration Framework',
+    artifactDetail:
+      '3-phase integration framework: optimized an existing 3-placement train flow (radius, triggers, matching criteria) → negotiated a dedicated Bus & Carpool tab with full visibility → shipped end-to-end multimodal journeys (Train + Carpool, Car + Train, and combinations). Each phase unlocked the next.',
+  },
 ]
 
 // ─── COMPONENTS ──────────────────────────────────────────────────────────────
 
 const caseStudyLinks = [
   { label: 'PayFit Copilot', route: '/work/copilot', tag: 'GTM · AI · 3 Markets' },
+  { label: 'SNCF × BlaBlaCar', route: '/work/sncf', tag: 'Partnership · Product Integration' },
   // Add more as pages are built:
   // { label: 'Premium Services', route: '/work/premium-services', tag: 'Monetization · Pricing' },
   // { label: 'Onboarding & Lifecycle', route: '/work/onboarding', tag: 'PLG · Lifecycle' },
@@ -336,7 +361,13 @@ function CaseStudyCard({ cs, index }) {
       {/* Expanded detail */}
       {open && (
         <div className="px-8 md:px-10 pb-10 border-t border-stone-100">
-          <div className="grid md:grid-cols-2 gap-8 pt-8">
+          {cs.whyThisProject && (
+            <div className="pt-8 pb-6 border-b border-stone-100 mb-6">
+              <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Why this project</h4>
+              <p className="text-stone-600 text-sm leading-relaxed italic">{cs.whyThisProject}</p>
+            </div>
+          )}
+          <div className="grid md:grid-cols-2 gap-8 pt-2">
             <div className="space-y-6">
               <div>
                 <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Business Problem</h4>
@@ -390,7 +421,7 @@ function Work() {
           <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Case studies</span>
           <h2 className="text-4xl font-bold text-stone-900 mt-3">Selected work</h2>
           <p className="text-stone-400 mt-3 max-w-xl">
-            Three projects across AI launch, monetization, and lifecycle - each showing a different dimension of full-stack PMM work.
+            Four projects across AI launch, monetization, lifecycle, and partnerships - each showing a different dimension of full-stack PMM work.
           </p>
         </div>
 
@@ -637,6 +668,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work/copilot" element={<CopilotPage />} />
+        <Route path="/work/sncf" element={<SNCFPage />} />
       </Routes>
     </BrowserRouter>
   )
