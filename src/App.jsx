@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { BrowserRouter, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom'
 import CopilotPage from './pages/CopilotPage.jsx'
 import SNCFPage from './pages/SNCFPage.jsx'
+import NewsletterPage from './pages/NewsletterPage.jsx'
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -89,6 +90,7 @@ const caseStudies = [
   },
   {
     id: 'newsletter',
+    route: '/work/newsletter',
     tag: ['Content Strategy', 'Customer Marketing', 'Product Adoption'],
     company: 'PayFit',
     title: 'Product Newsletter Redesign',
@@ -123,6 +125,7 @@ const caseStudies = [
 const caseStudyLinks = [
   { label: 'PayFit Copilot', route: '/work/copilot', tag: 'GTM · AI · 3 Markets' },
   { label: 'SNCF × BlaBlaCar', route: '/work/sncf', tag: 'Partnership · Product Integration' },
+  { label: 'Product Newsletter', route: '/work/newsletter', tag: 'Content Strategy · Customer Marketing' },
   // Add more as pages are built:
   // { label: 'Premium Services', route: '/work/premium-services', tag: 'Monetization · Pricing' },
   // { label: 'Onboarding & Lifecycle', route: '/work/onboarding', tag: 'PLG · Lifecycle' },
@@ -806,6 +809,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/work/copilot" element={<CopilotPage />} />
         <Route path="/work/sncf" element={<SNCFPage />} />
+        <Route path="/work/newsletter" element={<NewsletterPage />} />
       </Routes>
     </BrowserRouter>
   )
