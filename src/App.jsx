@@ -174,7 +174,7 @@ function Nav({ onContact }) {
                     onClick={() => setDropdownOpen(false)}
                   >
                     <span className="text-stone-900 font-medium text-sm">{cs.label}</span>
-                    <span className="text-stone-400 text-xs mt-0.5">{cs.tag.join(' · ')}</span>
+                    <span className="text-stone-400 text-xs mt-0.5">{cs.tag}</span>
                   </Link>
                 ))}
               </div>
