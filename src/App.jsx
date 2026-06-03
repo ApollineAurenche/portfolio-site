@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom'
 import CopilotPage from './pages/CopilotPage.jsx'
 import SNCFPage from './pages/SNCFPage.jsx'
 
@@ -51,20 +51,11 @@ const caseStudies = [
     company: 'PayFit',
     title: 'Copilot Launch',
     subtitle: 'From 0 to 80% adoption across 3 markets',
-    problem:
-      'Admins lacked time and needed instant answers 24/7. The CSM team could not handle volume - service overload was growing.',
-    insight:
-      "We were first to market with a payroll-specific AI (not generic ChatGPT). Innovation is a key purchase driver for Starter companies. Admins want fast, reliable answers - without waiting.",
-    positioning: '"Your AI personal assistant - always available, always aware of your specificities."',
     outcomes: [
       { metric: '80%', label: 'Adoption post-launch (3 markets, 3 months)' },
       { metric: '23%', label: 'CS ticket deflection rate' },
       { metric: '82%', label: 'Users report accomplishing tasks more easily' },
-      { metric: '72%', label: 'Users report daily time savings' },
     ],
-    artifact: 'GTM Launch Plan',
-    artifactDetail:
-      'Phased 3-market rollout: Beta (France, new customers) → Full France launch → Global scale. Each phase iterated on messaging, in-app guidance, and sales enablement in real time.',
   },
   {
     id: 'premium',
@@ -72,19 +63,11 @@ const caseStudies = [
     company: 'PayFit',
     title: 'Premium Services',
     subtitle: '€0 → €1.1M ARR in 6 months',
-    problem:
-      'New prospects with complex needs hesitated to sign. Existing customers needed proactive payroll guidance and were at churn risk.',
-    insight:
-      'Customers and prospects are willing to pay for expert support. Opening a new monetization stream with zero margin degradation drives both sales velocity (higher close rate) and retention (lower churn). Month-to-month flexibility is a differentiator.',
-    positioning: '"Expert support, tailored to your needs."',
     outcomes: [
       { metric: '€1.1M', label: 'ARR generated in 6 months from zero' },
       { metric: '+12%', label: 'Closing rate on targeted deals' },
       { metric: '2 tiers', label: 'Month-to-month, no commitment pricing model' },
     ],
-    artifact: 'Sales & Retention Playbook',
-    artifactDetail:
-      'Full playbook covering: trigger criteria, positioning language, pitch scripts, objection handling, and a closing framework - built with and tested by sales teams from day one.',
   },
   {
     id: 'onboarding',
@@ -92,20 +75,11 @@ const caseStudies = [
     company: 'PayFit',
     title: 'Onboarding & Lifecycle Redesign',
     subtitle: 'Time-to-value from 15 days to 2 hours',
-    problem:
-      'Time-to-value was too long; activation was bottlenecked in onboarding; CS margin was unsustainable (too much human time per client at scale).',
-    insight:
-      'The onboarding phase is stressful - customers want to spend as little time as possible on it and need a reliable integration. Competitors do everything manually for the client, creating long, expensive, error-prone onboardings. Opportunity to build a real competitive advantage.',
-    positioning: '"Getting started with payroll has never been this simple."',
     outcomes: [
       { metric: '~2h', label: 'Time-to-value for Starter clients (was 15 days)' },
       { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
-      { metric: '-57%', label: 'Onboarding-related errors' },
       { metric: '+1.5pt', label: 'Customer satisfaction score' },
     ],
-    artifact: 'Customer Journey Map',
-    artifactDetail:
-      'End-to-end journey mapping across 3 segments (Starter, VSB/SB, Mid-market), identifying friction using quantitative + qualitative triangulation. Before/after across Signature → Setup → First Payroll.',
   },
   {
     id: 'sncf',
@@ -113,22 +87,14 @@ const caseStudies = [
     tag: 'Partnership · Product Integration · B2C',
     company: 'BlaBlaCar',
     title: 'SNCF × BlaBlaCar Partnership',
-    subtitle: '+15pts conversion rate in 2 months',
+    subtitle: 'BlaBlaCar\'s #1 passenger acquisition channel',
     whyThisProject:
-      'SNCF is France\'s #1 mobility operator - 5M+ daily users, dominant rail infrastructure, and the reference point for any long-distance travel decision. Landing and growing a partnership with them was a credibility signal as much as a distribution win. This became BlaBlaCar\'s #1 passenger acquisition channel within months. It\'s also one of the projects I\'m most proud of - I still use both platforms today and still see this integration live.',
-    problem:
-      'BlaBlaCar needed to grow its passenger base while reducing CAC. Both partners wanted to validate a multimodality thesis: could rail and ridesharing be complementary rather than competing? The partnership was a chance to test it - and build brand presence at scale on a high-traffic platform.',
-    insight:
-      'SNCF users with no train availability are high-intent travelers - they need to move, not just browse. The opportunity: intercept them at the right moment with a relevant carpool offer, and optimize integration criteria (visibility, matching radius, relevance) to convert without degrading their experience.',
-    positioning: '"The right journey, the right moment, the right mode of transport."',
+      'SNCF is France\'s #1 mobility operator - 5M+ daily users and the reference point for any long-distance travel decision. Scaling this partnership meant turning a basic integration into a systematic acquisition channel. One of the projects I\'m most proud of - I still use both platforms and still see this integration live, 6 years after shipping it.',
     outcomes: [
       { metric: '+15pts', label: 'Conversion rate (visitor → booking) in 5 months' },
       { metric: '#1', label: 'BlaBlaCar\'s top passenger acquisition partner by volume' },
-      { metric: '3', label: 'Multimodal integration projects shipped' },
+      { metric: '10%+', label: 'Of BlaBlaCar Bus sales driven through the partnership' },
     ],
-    artifact: 'Product Integration Framework',
-    artifactDetail:
-      '3-phase integration framework: optimized an existing 3-placement train flow (radius, triggers, matching criteria) → negotiated a dedicated Bus & Carpool tab with full visibility → shipped end-to-end multimodal journeys (Train + Carpool, Car + Train, and combinations). Each phase unlocked the next.',
   },
 ]
 
@@ -223,7 +189,7 @@ function Hero({ onContact }) {
             </h1>
             <div className="max-w-2xl space-y-4">
               <p className="text-xl md:text-2xl text-stone-900 font-medium leading-relaxed">
-                Glad you're here.
+                Glad you're here!
               </p>
               <p className="text-lg md:text-xl text-stone-500 font-light leading-relaxed">
                 This portfolio reflects 7 years of PMM work - and how I think about building products people actually adopt.
@@ -367,46 +333,70 @@ function CaseStudyCard({ cs, index }) {
               <p className="text-stone-600 text-sm leading-relaxed italic">{cs.whyThisProject}</p>
             </div>
           )}
-          <div className="grid md:grid-cols-2 gap-8 pt-2">
-            <div className="space-y-6">
-              <div>
-                <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Business Problem</h4>
-                <p className="text-stone-600 text-sm leading-relaxed">{cs.problem}</p>
-              </div>
-              <div>
-                <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Strategic Insight</h4>
-                <p className="text-stone-600 text-sm leading-relaxed">{cs.insight}</p>
-              </div>
-              <div>
-                <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Positioning</h4>
-                <p className="text-stone-900 text-sm font-medium italic">{cs.positioning}</p>
-              </div>
-            </div>
-            <div className="bg-stone-50 rounded-xl p-6 flex flex-col justify-between">
-              <div>
-                <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">
-                  Artifact · {cs.artifact}
-                </h4>
-                <p className="text-stone-600 text-sm leading-relaxed">{cs.artifactDetail}</p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-stone-200">
-                {cs.route ? (
-                  <Link
-                    to={cs.route}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700 transition-colors"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    View full case study
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                ) : (
-                  <span className="text-xs text-stone-400">Full artifact available on request</span>
+          {(cs.problem || cs.insight || cs.positioning || cs.artifact) && (
+            <div className="grid md:grid-cols-2 gap-8 pt-2">
+              <div className="space-y-6">
+                {cs.problem && (
+                  <div>
+                    <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Business Problem</h4>
+                    <p className="text-stone-600 text-sm leading-relaxed">{cs.problem}</p>
+                  </div>
+                )}
+                {cs.insight && (
+                  <div>
+                    <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Strategic Insight</h4>
+                    <p className="text-stone-600 text-sm leading-relaxed">{cs.insight}</p>
+                  </div>
+                )}
+                {cs.positioning && (
+                  <div>
+                    <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Positioning</h4>
+                    <p className="text-stone-900 text-sm font-medium italic">{cs.positioning}</p>
+                  </div>
                 )}
               </div>
+              {cs.artifact && (
+                <div className="bg-stone-50 rounded-xl p-6 flex flex-col justify-between">
+                  <div>
+                    <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">
+                      Artifact · {cs.artifact}
+                    </h4>
+                    <p className="text-stone-600 text-sm leading-relaxed">{cs.artifactDetail}</p>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-stone-200">
+                    {cs.route ? (
+                      <Link
+                        to={cs.route}
+                        className="inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700 transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        View full case study
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    ) : (
+                      <span className="text-xs text-stone-400">Full artifact available on request</span>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
+          )}
+          {!cs.problem && !cs.artifact && cs.route && (
+            <div className="pt-4">
+              <Link
+                to={cs.route}
+                className="inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700 transition-colors"
+                onClick={(e) => e.stopPropagation()}
+              >
+                View full case study
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -662,9 +652,16 @@ function Home() {
 
 // ─── APP ─────────────────────────────────────────────────────────────────────
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
+
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/work/copilot" element={<CopilotPage />} />
