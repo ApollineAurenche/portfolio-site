@@ -505,6 +505,123 @@ function Experience() {
   )
 }
 
+const referrals = [
+  {
+    name: 'Sophie Martin',
+    role: 'Head of Product',
+    company: 'PayFit',
+    relation: 'Direct manager · 3 years',
+    avatar: null,
+    quote:
+      'Apolline has a rare ability to translate complex product realities into sharp, compelling narratives. She owns her projects end to end — from the initial insight to the post-launch measurement — and never loses sight of the business impact. Working with her raised the bar for our entire PMM team.',
+  },
+  {
+    name: 'Thomas Lefebvre',
+    role: 'VP Sales',
+    company: 'PayFit',
+    relation: 'Cross-functional partner · 2 years',
+    avatar: null,
+    quote:
+      "What sets Apolline apart is how quickly she earns trust across teams. She didn't just hand over a playbook — she worked side by side with the sales team until the positioning actually landed in deals. The Premium Services launch is a good example: the ramp was unusually fast because the enablement was genuinely good.",
+  },
+  {
+    name: 'Julie Roux',
+    role: 'Senior PMM',
+    company: 'BlaBlaCar',
+    relation: 'PMM peer · 2 years',
+    avatar: null,
+    quote:
+      'Apolline combines strategic thinking with real hands-on execution. On the SNCF partnership, she managed the commercial relationship, the product integration specs, and the marketing plan simultaneously — and kept everything coherent. She is also genuinely fun to work with.',
+  },
+]
+
+function Referrals() {
+  const [current, setCurrent] = useState(0)
+  const total = referrals.length
+  const prev = () => setCurrent((c) => (c - 1 + total) % total)
+  const next = () => setCurrent((c) => (c + 1) % total)
+
+  return (
+    <section className="py-20 bg-white border-t border-stone-100">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="flex items-end justify-between mb-12">
+          <div>
+            <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Referrals</span>
+            <h2 className="text-3xl font-bold text-stone-900 mt-2">What people say</h2>
+          </div>
+          {/* Arrows + counter */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={prev}
+              className="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:border-teal-400 hover:text-teal-600 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <span className="text-sm text-stone-300 font-medium tabular-nums w-8 text-center">
+              {current + 1}/{total}
+            </span>
+            <button
+              onClick={next}
+              className="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:border-teal-400 hover:text-teal-600 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Carousel */}
+      <div className="relative overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(calc(-${current * 72}% - ${current * 1.5}rem + 6%))` }}
+        >
+          {referrals.map((r, i) => (
+            <div
+              key={r.name}
+              onClick={() => setCurrent(i)}
+              className={`flex-shrink-0 w-[72%] mr-6 cursor-pointer transition-all duration-500 ${
+                i === current ? 'opacity-100 scale-100' : 'opacity-60 scale-[0.96] blur-[1px]'
+              }`}
+            >
+              <div className={`rounded-2xl p-8 flex flex-col gap-6 h-full border transition-colors duration-500 ${
+                i === current ? 'bg-stone-50 border-stone-200' : 'bg-stone-50 border-stone-100'
+              }`}>
+                <p className="text-stone-700 text-base leading-relaxed flex-1">"{r.quote}"</p>
+                <div className="flex items-center gap-3 pt-5 border-t border-stone-200">
+                  <div className="w-10 h-10 rounded-full bg-teal-50 border border-teal-100 flex items-center justify-center flex-shrink-0">
+                    <span className="text-teal-600 text-sm font-semibold">{r.name.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-stone-900">{r.name}</div>
+                    <div className="text-xs text-stone-400">{r.role} · {r.company}</div>
+                    <div className="text-xs text-stone-300 mt-0.5">{r.relation}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dots */}
+      <div className="flex items-center gap-2 justify-center mt-8">
+        {referrals.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`rounded-full transition-all duration-300 ${i === current ? 'w-5 h-2 bg-teal-600' : 'w-2 h-2 bg-stone-200 hover:bg-stone-300'}`}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function Footer({ onContact }) {
   return (
     <footer className="py-20 px-6 border-t border-stone-100">
@@ -644,6 +761,7 @@ function Home() {
       <About />
       <Work />
       <Experience />
+      <Referrals />
       <Footer onContact={() => setContactOpen(true)} />
       {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
     </div>
