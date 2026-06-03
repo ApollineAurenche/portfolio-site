@@ -9,46 +9,89 @@ const outcomes = [
 
 const phases = [
   {
-    phase: 'Phase 1 — Beta',
+    phase: 'Beta',
     market: 'France',
-    target: 'New customers (onboarding cohort)',
-    duration: 'Month 1 · Weeks 1–4',
-    strategy:
-      'Validate product and GTM elements with a low-risk segment. Test Copilot with new customers — no change management complexity. Iterate on messaging, in-app guidance, and sales enablement in real time.',
+    target: 'New customers only',
+    duration: 'Month 1',
     goal: 'Validate',
+    strategy: 'Test with a low-risk segment — new customers only, no change management complexity. Iterate on messaging, in-app guidance, and sales enablement in real time.',
   },
   {
-    phase: 'Phase 2 — France Launch',
+    phase: 'France Launch',
     market: 'France',
     target: 'All customers',
-    duration: 'Month 2 · Weeks 4–8',
-    strategy:
-      'Phased rollout to the full base. Evaluate how users and the support team respond to AI-powered support and the new support flow. Minimize risks and costs through real-time adaptations.',
+    duration: 'Month 2',
     goal: 'Scale FR',
+    strategy: 'Progressive batch rollout to the full French base - gradually increasing the percentage of users exposed to manage product load and monitor reactions in real time. First time existing customers encountered the feature, so change management was key: clear in-app guidance, proactive communication, and close support team alignment.',
   },
   {
-    phase: 'Phase 3 — Global Scale',
-    market: 'US, UK, other markets',
+    phase: 'Global Scale',
+    market: 'UK, Spain',
     target: 'All customers',
-    duration: 'Months 3–6 · Weeks 8+',
-    strategy:
-      'Apply learnings from France. Test localization: legal guidance, language nuance. Scale with confidence across geographies.',
+    duration: 'Month 3',
     goal: 'Scale Global',
+    strategy: 'Progressive batch rollout per market — applying France learnings, localizing messaging and legal guidance, and managing change for existing customers discovering AI for the first time.',
   },
 ]
 
 const valueProps = [
+  { label: 'Always available', detail: 'Instant answers 24/7 — no waiting for support' },
+  { label: 'Always accurate', detail: 'Built on your data + local payroll laws (EU certified)' },
+  { label: 'Saves time', detail: 'Users accomplish tasks 2× faster (backed by data)' },
+]
+
+const gtmPlan = [
   {
-    label: 'Always available',
-    detail: 'Instant answers 24/7 — no waiting for support',
+    phase: 'Pre-launch',
+    color: 'bg-green-50 text-green-700 border-green-100',
+    dot: 'bg-green-400',
+    items: [
+      { tactic: 'Strategic Readiness', deliverable: 'Positioning / messaging', responsible: 'PMM' },
+      { tactic: 'Strategic Readiness', deliverable: 'Pricing / packaging', responsible: 'PMM' },
+      { tactic: 'Strategic Readiness', deliverable: 'Feature naming / branding', responsible: 'Brand' },
+      { tactic: 'Strategic Readiness', deliverable: 'GTM kick-off meeting', responsible: 'PMM' },
+      { tactic: 'Assets Creation', deliverable: 'Product visual design', responsible: 'Design' },
+      { tactic: 'Assets Creation', deliverable: 'Content creation / update', responsible: 'Content' },
+      { tactic: 'Enablement', deliverable: 'Sales materials', responsible: 'PMM + Sales' },
+      { tactic: 'Enablement', deliverable: 'Sales & CS training', responsible: 'PMM' },
+    ],
   },
   {
-    label: 'Always accurate',
-    detail: 'Built on your data + local payroll laws (EU certified)',
+    phase: 'Launch - Beta / RP',
+    color: 'bg-purple-50 text-purple-700 border-purple-100',
+    dot: 'bg-purple-400',
+    items: [
+      { tactic: 'Customer Communication', deliverable: 'Help Center article', responsible: 'PMM + PM' },
+      { tactic: 'Customer Communication', deliverable: 'In-app message', responsible: 'PMM + PM' },
+      { tactic: 'Internal Communication', deliverable: 'Internal launch announcement', responsible: 'PMM' },
+    ],
   },
   {
-    label: 'Saves time',
-    detail: 'Users accomplish tasks 2× faster (backed by data)',
+    phase: 'Launch - GA',
+    color: 'bg-blue-50 text-blue-700 border-blue-100',
+    dot: 'bg-blue-400',
+    items: [
+      { tactic: 'Customer Communication', deliverable: 'Product newsletter', responsible: 'PMM' },
+      { tactic: 'Customer Communication', deliverable: 'Customer announcement', responsible: 'PMM' },
+      { tactic: 'Awareness', deliverable: 'Website update', responsible: 'PMM' },
+      { tactic: 'Awareness', deliverable: 'Social media / influencers', responsible: 'Social' },
+      { tactic: 'Awareness', deliverable: 'PR & agency', responsible: 'PR Com & Events' },
+      { tactic: 'Awareness', deliverable: 'Live event / webinar', responsible: 'PR Com & Events' },
+      { tactic: 'Lead Generation', deliverable: 'Paid ads', responsible: 'Growth' },
+      { tactic: 'Lead Generation', deliverable: 'Nurturing email', responsible: 'Growth' },
+    ],
+  },
+  {
+    phase: 'Post-Launch',
+    color: 'bg-stone-100 text-stone-600 border-stone-200',
+    dot: 'bg-stone-400',
+    items: [
+      { tactic: 'Awareness', deliverable: 'KeyNote', responsible: 'PMM' },
+      { tactic: 'Analysis', deliverable: 'Lookback session', responsible: 'PMM' },
+      { tactic: 'Analysis', deliverable: 'Campaign performance dashboard', responsible: 'Campaign Mktg' },
+      { tactic: 'Analysis', deliverable: 'Product performance dashboard', responsible: 'PM' },
+      { tactic: 'Internal Communication', deliverable: 'Internal performance announcement', responsible: 'PMM + PM' },
+    ],
   },
 ]
 
@@ -86,10 +129,9 @@ export default function CopilotPage() {
             PayFit Copilot Launch
           </h1>
           <p className="text-xl text-stone-500 font-light max-w-2xl leading-relaxed">
-            Launching PayFit's first AI assistant — from zero to 80% adoption across 3 markets in 3 months.
+            Launching PayFit's first AI assistant to 80% adoption across 3 markets in 3 months.
           </p>
 
-          {/* Outcome pills */}
           <div className="flex flex-wrap gap-6 mt-10">
             {outcomes.map((o) => (
               <div key={o.metric}>
@@ -102,7 +144,7 @@ export default function CopilotPage() {
       </section>
 
       {/* Context */}
-      <section className="py-20 px-6">
+      <section className="pt-20 pb-12 px-6">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
           <div>
             <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Business Problem</h2>
@@ -117,7 +159,6 @@ export default function CopilotPage() {
               </li>
             </ul>
           </div>
-
           <div>
             <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Strategic Insights</h2>
             <ul className="space-y-3">
@@ -127,43 +168,63 @@ export default function CopilotPage() {
               </li>
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                We were first to market with a payroll-specific AI (not generic ChatGPT) at that time — a real differentiation window.
+                First to market with a payroll-specific AI (not generic ChatGPT) — a real differentiation window.
               </li>
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Innovation (AI) is a key purchase driver mainly for Starter companies — ICP alignment mattered.
+                AI innovation is a key purchase driver for Starter companies — ICP alignment mattered.
               </li>
             </ul>
           </div>
         </div>
       </section>
 
+      {/* My Role */}
+      <section className="pt-8 pb-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">My Role</h2>
+          <ul className="space-y-2 text-sm text-stone-600">
+            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Research & insights — user interviews, customer surveys, and persona work to ground the strategy in real needs</li>
+            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Positioning & messaging built from scratch — defined how Copilot fit PayFit's broader vision and what it meant for admins day-to-day</li>
+            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Sales & CS enablement — built training materials and ensured every customer-facing team could articulate the value in their own language</li>
+            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Cross-functional coordination — partnered with Product, Engineering, Legal, and Design to pressure-test messaging and align on launch storytelling</li>
+            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Launch & localization — adapted messaging for each market, coordinated go-live across 3 countries, and ran post-launch optimization loops</li>
+          </ul>
+        </div>
+      </section>
+
       {/* Positioning */}
       <section className="py-16 px-6 bg-stone-50">
         <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6 items-start">
-            <div>
-              <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Target Personas</h2>
-              <ul className="space-y-2 text-sm text-stone-600">
-                <li className="flex gap-2"><span className="text-teal-500">·</span> CEOs & HR managers — Starter companies (priority)</li>
-                <li className="flex gap-2"><span className="text-teal-500">·</span> DRH & HR ops teams — Mid-market</li>
-              </ul>
-            </div>
-            <div className="md:col-span-2">
-              <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Positioning</h2>
-              <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6">
-                "Your AI personal assistant — always available, always aware of your specificities."
-              </blockquote>
-            </div>
+          <div className="mb-10">
+            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Positioning</h2>
+            <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6 max-w-2xl">
+              "Your AI personal assistant — always available, always aware of your specificities."
+            </blockquote>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-4 mt-12">
+          <div className="grid md:grid-cols-3 gap-4">
             {valueProps.map((v) => (
               <div key={v.label} className="bg-white rounded-xl p-6 border border-stone-100">
                 <div className="text-sm font-semibold text-stone-900 mb-2">{v.label}</div>
                 <p className="text-sm text-stone-500 leading-relaxed">{v.detail}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Customer quote */}
+      <section className="py-12 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="max-w-lg bg-stone-50 rounded-2xl p-8 relative">
+            <span className="text-5xl text-teal-200 font-serif leading-none absolute top-4 left-6 select-none">"</span>
+            <p className="text-stone-700 text-base leading-relaxed italic pt-4">
+              PayFit Copilot is fantastic. I hardly contact support anymore. Being able to use it anytime is incredibly convenient.
+            </p>
+            <div className="mt-4 pt-4 border-t border-stone-200">
+              <span className="text-sm font-semibold text-stone-900">Mélissa</span>
+              <span className="text-sm text-stone-400 ml-2">Cloud-Fi</span>
+            </div>
           </div>
         </div>
       </section>
@@ -175,67 +236,79 @@ export default function CopilotPage() {
             <span className="text-xs font-bold tracking-widest text-teal-600 uppercase">Artifact</span>
             <h2 className="text-3xl font-bold text-stone-900 mt-2">GTM Launch Plan</h2>
             <p className="text-stone-400 text-sm mt-2 max-w-xl">
-              3-phase phased rollout designed to validate GTM elements before scaling — minimizing risk while maximizing speed to market.
+              3-phase rollout — validate before scaling, iterate in real time, localize for each market.
             </p>
           </div>
 
-          {/* Phase timeline */}
-          <div className="space-y-4">
+          {/* Phase timeline — horizontal cards with arrows */}
+          <div className="flex flex-col md:flex-row items-stretch gap-0 mb-12">
             {phases.map((p, i) => (
-              <div
-                key={p.phase}
-                className="border border-stone-200 rounded-2xl p-8 hover:border-teal-200 transition-colors"
-              >
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  {/* Phase label */}
-                  <div className="flex-shrink-0 w-32">
-                    <div className="text-xs font-bold text-teal-600 tracking-widest uppercase mb-1">Phase {i + 1}</div>
-                    <div className="inline-block text-xs bg-teal-50 text-teal-700 px-3 py-1 rounded-full font-medium">
-                      {p.goal}
-                    </div>
+              <div key={p.phase} className="flex flex-col md:flex-row items-stretch flex-1">
+                <div className="flex-1 border border-stone-200 rounded-2xl p-6 hover:border-teal-200 transition-colors">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-bold text-teal-600 tracking-widest uppercase">Phase {i + 1}</span>
+                    <span className="text-xs bg-teal-50 text-teal-700 px-3 py-1 rounded-full font-medium">{p.goal}</span>
                   </div>
-
-                  {/* Content */}
-                  <div className="flex-1">
-                    <div className="flex flex-wrap gap-4 mb-3">
-                      <span className="font-semibold text-stone-900">{p.phase}</span>
-                      <span className="text-stone-400 text-sm">{p.duration}</span>
-                    </div>
-                    <div className="flex flex-wrap gap-3 mb-3">
-                      <span className="text-xs bg-stone-100 text-stone-600 px-3 py-1 rounded-full">Market: {p.market}</span>
-                      <span className="text-xs bg-stone-100 text-stone-600 px-3 py-1 rounded-full">Target: {p.target}</span>
-                    </div>
-                    <p className="text-stone-500 text-sm leading-relaxed">{p.strategy}</p>
+                  <div className="font-semibold text-stone-900 text-sm mb-1">{p.phase}</div>
+                  <div className="text-xs text-stone-400 mb-3">{p.duration}</div>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="text-xs bg-stone-100 text-stone-500 px-2 py-0.5 rounded-full">{p.market}</span>
+                    <span className="text-xs bg-stone-100 text-stone-500 px-2 py-0.5 rounded-full">{p.target}</span>
                   </div>
+                  <p className="text-xs text-stone-500 leading-relaxed">{p.strategy}</p>
                 </div>
+                {i < phases.length - 1 && (
+                  <div className="hidden md:flex items-center px-2 text-stone-300">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                )}
               </div>
             ))}
           </div>
 
-          {/* GTM elements iterated */}
-          <div className="mt-12 bg-stone-50 rounded-2xl p-8">
-            <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-6">
-              GTM Elements Iterated Across Phases
+          {/* GTM Plan table */}
+          <div className="bg-stone-50 rounded-2xl p-8">
+            <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">
+              Platinum Tiering — GTM Plan
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                { title: 'Messaging', items: ['Positioning statement', 'Value prop by persona', 'Feature naming', 'Localization by market'] },
-                { title: 'In-app guidance', items: ['Onboarding flow copy', 'Tooltips & empty states', 'AI response framing', 'Error messaging'] },
-                { title: 'Sales enablement', items: ['Discovery guide', 'Objection handling', 'Demo script', 'Competitive battlecard'] },
-              ].map((col) => (
-                <div key={col.title}>
-                  <div className="text-sm font-semibold text-stone-700 mb-3">{col.title}</div>
-                  <ul className="space-y-2">
+            <p className="text-stone-500 text-sm leading-relaxed mb-6">
+              As our highest launch tier, Platinum meant a full-scale marketing effort - every channel activated, from pre-launch enablement to post-launch analysis, with 6+ teams involved across Brand, Content, Sales, Growth, PR, and Product.
+            </p>
+            <div className="grid md:grid-cols-4 gap-6">
+              {gtmPlan.map((col) => (
+                <div key={col.phase}>
+                  <div className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full border mb-4 ${col.color}`}>
+                    <span className={`w-1.5 h-1.5 rounded-full ${col.dot}`} />
+                    {col.phase}
+                  </div>
+                  <ul className="space-y-3">
                     {col.items.map((item) => (
-                      <li key={item} className="flex gap-2 text-sm text-stone-500">
-                        <span className="text-teal-400 mt-0.5 flex-shrink-0">·</span>
-                        {item}
+                      <li key={item.deliverable} className="group">
+                        <div className="text-xs font-medium text-stone-800">{item.deliverable}</div>
+                        <div className="flex items-center gap-1.5 mt-0.5">
+                          <span className="text-xs text-stone-400">{item.tactic}</span>
+                        </div>
+                        <div className="text-xs text-teal-600 mt-0.5">{item.responsible}</div>
                       </li>
                     ))}
                   </ul>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Insight */}
+      <section className="py-12 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="border-l-4 border-teal-500 bg-teal-50 rounded-r-2xl px-8 py-6 flex flex-col md:flex-row md:items-start gap-4">
+            <span className="text-xs font-bold tracking-widest text-teal-600 uppercase whitespace-nowrap pt-0.5 min-w-[100px]">Key Insight</span>
+            <p className="text-stone-700 text-sm leading-relaxed">
+              The biggest unlock was anchoring the narrative on business outcomes — faster answers, fewer support tickets, time saved — rather than AI capabilities or technical specs. And deliberately avoiding any framing around team replacement: Copilot was positioned as an additional lever, not a substitute for the CS team. That framing built trust internally and with customers.
+            </p>
           </div>
         </div>
       </section>
