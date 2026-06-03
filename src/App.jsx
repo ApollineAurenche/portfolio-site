@@ -47,22 +47,26 @@ const caseStudies = [
   {
     id: 'copilot',
     route: '/work/copilot',
-    tag: 'GTM Strategy · AI Product · 3 Markets',
+    tag: ['GTM Strategy', 'AI Product', '3 Markets'],
     company: 'PayFit',
     title: 'Copilot Launch',
     subtitle: 'From 0 to 80% adoption across 3 markets',
+    whyThisProject:
+      'PayFit shipped its first AI agent in 2024, ahead of the market. I joined from day one — defining the initial positioning and launch plan, then iterating on every element as the product evolved. The core challenge: building trust around AI at a time when it was less mainstream and users were less familiar with it.',
     outcomes: [
-      { metric: '80%', label: 'Adoption post-launch (3 markets, 3 months)' },
-      { metric: '23%', label: 'CS ticket deflection rate' },
+      { metric: '80%', label: 'Adoption post-launch\n(3 markets)' },
+      { metric: '23%', label: 'CS ticket deflection post-launch' },
       { metric: '82%', label: 'Users report accomplishing tasks more easily' },
     ],
   },
   {
     id: 'premium',
-    tag: 'Monetization · Pricing · Sales Enablement',
+    tag: ['Monetization', 'Pricing', 'Sales Enablement'],
     company: 'PayFit',
     title: 'Premium Services',
     subtitle: '€0 → €1.1M ARR in 6 months',
+    whyThisProject:
+      'A fast, iterative project in a small team — building a new revenue stream from zero. Identifying the opportunity, defining every element from scratch (name, pricing, packaging, positioning), testing with a small group of sales and CS, and shipping full enablement.',
     outcomes: [
       { metric: '€1.1M', label: 'ARR generated in 6 months from zero' },
       { metric: '+12%', label: 'Closing rate on targeted deals' },
@@ -71,10 +75,12 @@ const caseStudies = [
   },
   {
     id: 'onboarding',
-    tag: 'PLG · Lifecycle · Customer Journey',
+    tag: ['PLG', 'Lifecycle', 'Customer Journey'],
     company: 'PayFit',
     title: 'Onboarding & Lifecycle Redesign',
     subtitle: 'Time-to-value from 15 days to 2 hours',
+    whyThisProject:
+      '3 years as dedicated PMM for PayFit\'s PLG transformation, from the first journey mapping session to the final metrics. Few projects are this cross-functional: impacting so many internal teams while shaping the very first experience and impression a customer has with the product.',
     outcomes: [
       { metric: '~2h', label: 'Time-to-value for Starter clients (was 15 days)' },
       { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
@@ -82,9 +88,23 @@ const caseStudies = [
     ],
   },
   {
+    id: 'newsletter',
+    tag: ['Content Strategy', 'Customer Marketing', 'Product Adoption'],
+    company: 'PayFit',
+    title: 'Product Newsletter Redesign',
+    subtitle: '×2 open rate · +20% click-through rate',
+    whyThisProject:
+      'Optimizing our customer marketing strategy to make the product newsletter a real engagement lever for product adoption. Working closely with the marketing team, we rebuilt it from scratch — and I became the face of PayFit\'s product communication, presenting new features directly to customers through video.',
+    outcomes: [
+      { metric: '×2', label: 'Open rate after full redesign' },
+      { metric: '+20%', label: 'Click-through rate improvement' },
+      { metric: '20k+', label: 'Customers reached every send' },
+    ],
+  },
+  {
     id: 'sncf',
     route: '/work/sncf',
-    tag: 'Partnership · Product Integration · B2C',
+    tag: ['Partnership', 'Product Integration', 'B2C'],
     company: 'BlaBlaCar',
     title: 'SNCF × BlaBlaCar Partnership',
     subtitle: 'BlaBlaCar\'s #1 passenger acquisition channel',
@@ -154,7 +174,7 @@ function Nav({ onContact }) {
                     onClick={() => setDropdownOpen(false)}
                   >
                     <span className="text-stone-900 font-medium text-sm">{cs.label}</span>
-                    <span className="text-stone-400 text-xs mt-0.5">{cs.tag}</span>
+                    <span className="text-stone-400 text-xs mt-0.5">{cs.tag.join(' · ')}</span>
                   </Link>
                 ))}
               </div>
@@ -297,7 +317,9 @@ function CaseStudyCard({ cs, index }) {
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-xs font-bold text-teal-600 tracking-widest">0{index + 1}</span>
-              <span className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">{cs.tag}</span>
+              {cs.tag.map((t) => (
+                <span key={t} className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">{t}</span>
+              ))}
             </div>
             <h3 className="text-2xl font-bold text-stone-900 mb-1">{cs.title}</h3>
             <p className="text-stone-400 text-sm">{cs.company}</p>
@@ -318,7 +340,7 @@ function CaseStudyCard({ cs, index }) {
           {cs.outcomes.map((o) => (
             <div key={o.metric} className="text-left">
               <div className="text-2xl font-bold text-teal-600">{o.metric}</div>
-              <div className="text-xs text-stone-400 max-w-[140px] leading-tight">{o.label}</div>
+              <div className="text-xs text-stone-400 max-w-[140px] leading-tight whitespace-pre-line">{o.label}</div>
             </div>
           ))}
         </div>
@@ -411,7 +433,7 @@ function Work() {
           <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Case studies</span>
           <h2 className="text-4xl font-bold text-stone-900 mt-3">Selected work</h2>
           <p className="text-stone-400 mt-3 max-w-xl">
-            Four projects across AI launch, monetization, lifecycle, and partnerships - each showing a different dimension of full-stack PMM work.
+            Five projects across AI launch, monetization, lifecycle, customer communication, and partnerships - each showing a different dimension of full-stack PMM work.
           </p>
         </div>
 
