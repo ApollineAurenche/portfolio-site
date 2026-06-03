@@ -196,6 +196,18 @@ export default function SNCFPage() {
         </div>
       </section>
 
+      {/* Key Insight */}
+      <section className="py-12 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="border-l-4 border-teal-500 bg-teal-50 rounded-r-2xl px-8 py-6 flex flex-col md:flex-row md:items-start gap-4">
+            <span className="text-xs font-bold tracking-widest text-teal-600 uppercase whitespace-nowrap pt-0.5 min-w-[100px]">Key Insight</span>
+            <p className="text-stone-700 text-sm leading-relaxed">
+              The effort you put into growing a partnership post-launch matters as much as building it - joint marketing, shared roadmap, continuous optimization. And the data proves it here: Phase 1 performance unlocked Phase 2. It turned a basic placement into BlaBlaCar's top acquisition channel, and SNCF from a distributor into a genuine ally.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Footer nav */}
       <section className="py-16 px-6 border-t border-stone-100">
         <div className="max-w-5xl mx-auto flex items-center justify-between">

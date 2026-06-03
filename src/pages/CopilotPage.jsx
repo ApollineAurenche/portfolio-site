@@ -14,7 +14,7 @@ const phases = [
     target: 'New customers only',
     duration: 'Month 1',
     goal: 'Validate',
-    strategy: 'Test with a low-risk segment — new customers only, no change management complexity. Iterate on messaging, in-app guidance, and sales enablement in real time.',
+    strategy: 'Test with a low-risk segment - new customers only, no change management complexity. Iterate on messaging, in-app guidance, and sales enablement in real time.',
   },
   {
     phase: 'France Launch',
@@ -30,12 +30,12 @@ const phases = [
     target: 'All customers',
     duration: 'Month 3',
     goal: 'Scale Global',
-    strategy: 'Progressive batch rollout per market — applying France learnings, localizing messaging and legal guidance, and managing change for existing customers discovering AI for the first time.',
+    strategy: 'Progressive batch rollout per market - applying France learnings, localizing messaging and legal guidance, and managing change for existing customers discovering AI for the first time.',
   },
 ]
 
 const valueProps = [
-  { label: 'Always available', detail: 'Instant answers 24/7 — no waiting for support' },
+  { label: 'Always available', detail: 'Instant answers 24/7 - no waiting for support' },
   { label: 'Always accurate', detail: 'Built on your data + local payroll laws (EU certified)' },
   { label: 'Saves time', detail: 'Users accomplish tasks 2× faster (backed by data)' },
 ]
@@ -151,11 +151,11 @@ export default function CopilotPage() {
             <ul className="space-y-3">
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Admins lack time and need instant answers 24/7 — the product wasn't meeting that expectation.
+                Admins lack time and need instant answers 24/7 - the product wasn't meeting that expectation.
               </li>
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                CSM team couldn't handle the volume of support requests at scale — service overload was growing.
+                CSM team couldn't handle the volume of support requests at scale - service overload was growing.
               </li>
             </ul>
           </div>
@@ -164,15 +164,15 @@ export default function CopilotPage() {
             <ul className="space-y-3">
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Admins want fast, reliable answers without waiting — speed and trust are the core jobs.
+                Admins want fast, reliable answers without waiting - speed and trust are the core jobs.
               </li>
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                First to market with a payroll-specific AI (not generic ChatGPT) — a real differentiation window.
+                First to market with a payroll-specific AI (not generic ChatGPT) - a real differentiation window.
               </li>
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                AI innovation is a key purchase driver for Starter companies — ICP alignment mattered.
+                AI innovation is a key purchase driver for Starter companies - ICP alignment mattered.
               </li>
             </ul>
           </div>
@@ -184,11 +184,11 @@ export default function CopilotPage() {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">My Role</h2>
           <ul className="space-y-2 text-sm text-stone-600">
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Research & insights — user interviews, customer surveys, and persona work to ground the strategy in real needs</li>
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Positioning & messaging built from scratch — defined how Copilot fit PayFit's broader vision and what it meant for admins day-to-day</li>
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Sales & CS enablement — built training materials and ensured every customer-facing team could articulate the value in their own language</li>
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Cross-functional coordination — partnered with Product, Engineering, Legal, and Design to pressure-test messaging and align on launch storytelling</li>
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Launch & localization — adapted messaging for each market, coordinated go-live across 3 countries, and ran post-launch optimization loops</li>
+            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Research & insights - user interviews, customer surveys, and persona work to ground the strategy in real needs</li>
+            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Positioning & messaging built from scratch - defined how Copilot fit PayFit's broader vision and what it meant for admins day-to-day</li>
+            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Sales & CS enablement - built training materials and ensured every customer-facing team could articulate the value in their own language</li>
+            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Cross-functional coordination - partnered with Product, Engineering, Legal, and Design to pressure-test messaging and align on launch storytelling</li>
+            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Launch & localization - adapted messaging for each market, coordinated go-live across 3 countries, and ran post-launch optimization loops</li>
           </ul>
         </div>
       </section>
@@ -199,7 +199,7 @@ export default function CopilotPage() {
           <div className="mb-10">
             <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Positioning</h2>
             <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6 max-w-2xl">
-              "Your AI personal assistant — always available, always aware of your specificities."
+              "Your AI personal assistant - always available, always aware of your specificities."
             </blockquote>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
@@ -229,18 +229,18 @@ export default function CopilotPage() {
         </div>
       </section>
 
-      {/* Artifact — GTM Launch Plan */}
+      {/* Artifact - GTM Launch Plan */}
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-bold tracking-widest text-teal-600 uppercase">Artifact</span>
             <h2 className="text-3xl font-bold text-stone-900 mt-2">GTM Launch Plan</h2>
             <p className="text-stone-400 text-sm mt-2 max-w-xl">
-              3-phase rollout — validate before scaling, iterate in real time, localize for each market.
+              3-phase rollout - validate before scaling, iterate in real time, localize for each market.
             </p>
           </div>
 
-          {/* Phase timeline — horizontal cards with arrows */}
+          {/* Phase timeline - horizontal cards with arrows */}
           <div className="flex flex-col md:flex-row items-stretch gap-0 mb-12">
             {phases.map((p, i) => (
               <div key={p.phase} className="flex flex-col md:flex-row items-stretch flex-1">
@@ -271,7 +271,7 @@ export default function CopilotPage() {
           {/* GTM Plan table */}
           <div className="bg-stone-50 rounded-2xl p-8">
             <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">
-              Platinum Tiering — GTM Plan
+              Platinum Tiering - GTM Plan
             </h3>
             <p className="text-stone-500 text-sm leading-relaxed mb-6">
               As our highest launch tier, Platinum meant a full-scale marketing effort - every channel activated, from pre-launch enablement to post-launch analysis, with 6+ teams involved across Brand, Content, Sales, Growth, PR, and Product.
@@ -307,7 +307,7 @@ export default function CopilotPage() {
           <div className="border-l-4 border-teal-500 bg-teal-50 rounded-r-2xl px-8 py-6 flex flex-col md:flex-row md:items-start gap-4">
             <span className="text-xs font-bold tracking-widest text-teal-600 uppercase whitespace-nowrap pt-0.5 min-w-[100px]">Key Insight</span>
             <p className="text-stone-700 text-sm leading-relaxed">
-              The biggest unlock was anchoring the narrative on business outcomes — faster answers, fewer support tickets, time saved — rather than AI capabilities or technical specs. And deliberately avoiding any framing around team replacement: Copilot was positioned as an additional lever, not a substitute for the CS team. That framing built trust internally and with customers.
+              The biggest unlock was anchoring the narrative on business outcomes - faster answers, fewer support tickets, time saved - rather than AI capabilities or technical specs. And deliberately avoiding any framing around team replacement: Copilot was positioned as an additional lever, not a substitute for the CS team. That framing built trust internally and with customers.
             </p>
           </div>
         </div>

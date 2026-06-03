@@ -52,7 +52,7 @@ const caseStudies = [
     title: 'Copilot Launch',
     subtitle: 'From 0 to 80% adoption across 3 markets',
     whyThisProject:
-      'PayFit shipped its first AI agent in 2024, ahead of the market. I joined from day one — defining the initial positioning and launch plan, then iterating on every element as the product evolved. The core challenge: building trust around AI at a time when it was less mainstream and users were less familiar with it.',
+      'PayFit shipped its first AI agent in 2024, ahead of the market. I joined from day one - defining the initial positioning and launch plan, then iterating on every element as the product evolved. The core challenge: building trust around AI at a time when it was less mainstream and users were less familiar with it.',
     outcomes: [
       { metric: '80%', label: 'Adoption post-launch\n(3 markets)' },
       { metric: '23%', label: 'CS ticket deflection post-launch' },
@@ -66,7 +66,7 @@ const caseStudies = [
     title: 'Premium Services',
     subtitle: '€0 → €1.1M ARR in 6 months',
     whyThisProject:
-      'A fast, iterative project in a small team — building a new revenue stream from zero. Identifying the opportunity, defining every element from scratch (name, pricing, packaging, positioning), testing with a small group of sales and CS, and shipping full enablement.',
+      'A fast, iterative project in a small team - building a new revenue stream from zero. Identifying the opportunity, defining every element from scratch (name, pricing, packaging, positioning), testing with a small group of sales and CS, and shipping full enablement.',
     outcomes: [
       { metric: '€1.1M', label: 'ARR generated in 6 months from zero' },
       { metric: '+12%', label: 'Closing rate on targeted deals' },
@@ -94,7 +94,7 @@ const caseStudies = [
     title: 'Product Newsletter Redesign',
     subtitle: '×2 open rate · +20% click-through rate',
     whyThisProject:
-      'Optimizing our customer marketing strategy to make the product newsletter a real engagement lever for product adoption. Working closely with the marketing team, we rebuilt it from scratch — and I became the face of PayFit\'s product communication, presenting new features directly to customers through video.',
+      'Optimizing our customer marketing strategy to make the product newsletter a real engagement lever for product adoption. Working closely with the marketing team, we rebuilt it from scratch - and I became the face of PayFit\'s product communication, presenting new features directly to customers through video.',
     outcomes: [
       { metric: '×2', label: 'Open rate after full redesign' },
       { metric: '+20%', label: 'Click-through rate improvement' },
@@ -535,7 +535,7 @@ const referrals = [
     relation: 'Direct manager · 3 years',
     avatar: null,
     quote:
-      'Apolline has a rare ability to translate complex product realities into sharp, compelling narratives. She owns her projects end to end — from the initial insight to the post-launch measurement — and never loses sight of the business impact. Working with her raised the bar for our entire PMM team.',
+      'Apolline has a rare ability to translate complex product realities into sharp, compelling narratives. She owns her projects end to end - from the initial insight to the post-launch measurement - and never loses sight of the business impact. Working with her raised the bar for our entire PMM team.',
   },
   {
     name: 'Thomas Lefebvre',
@@ -544,7 +544,7 @@ const referrals = [
     relation: 'Cross-functional partner · 2 years',
     avatar: null,
     quote:
-      "What sets Apolline apart is how quickly she earns trust across teams. She didn't just hand over a playbook — she worked side by side with the sales team until the positioning actually landed in deals. The Premium Services launch is a good example: the ramp was unusually fast because the enablement was genuinely good.",
+      "What sets Apolline apart is how quickly she earns trust across teams. She didn't just hand over a playbook - she worked side by side with the sales team until the positioning actually landed in deals. The Premium Services launch is a good example: the ramp was unusually fast because the enablement was genuinely good.",
   },
   {
     name: 'Julie Roux',
@@ -553,7 +553,7 @@ const referrals = [
     relation: 'PMM peer · 2 years',
     avatar: null,
     quote:
-      'Apolline combines strategic thinking with real hands-on execution. On the SNCF partnership, she managed the commercial relationship, the product integration specs, and the marketing plan simultaneously — and kept everything coherent. She is also genuinely fun to work with.',
+      'Apolline combines strategic thinking with real hands-on execution. On the SNCF partnership, she managed the commercial relationship, the product integration specs, and the marketing plan simultaneously - and kept everything coherent. She is also genuinely fun to work with.',
   },
 ]
 
