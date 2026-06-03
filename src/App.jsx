@@ -124,8 +124,8 @@ const caseStudies = [
 
 const caseStudyLinks = [
   { label: 'PayFit Copilot', route: '/work/copilot', tag: 'GTM · AI · 3 Markets' },
-  { label: 'SNCF × BlaBlaCar', route: '/work/sncf', tag: 'Partnership · Product Integration' },
   { label: 'Product Newsletter', route: '/work/newsletter', tag: 'Content Strategy · Customer Marketing' },
+  { label: 'SNCF × BlaBlaCar', route: '/work/sncf', tag: 'Partnership · Product Integration' },
   // Add more as pages are built:
   // { label: 'Premium Services', route: '/work/premium-services', tag: 'Monetization · Pricing' },
   // { label: 'Onboarding & Lifecycle', route: '/work/onboarding', tag: 'PLG · Lifecycle' },
