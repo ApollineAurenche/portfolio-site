@@ -98,7 +98,7 @@ const caseStudies = [
     outcomes: [
       { metric: '×2', label: 'Open rate after full redesign' },
       { metric: '+20%', label: 'Click-through rate improvement' },
-      { metric: '20k+', label: 'Customers reached every send' },
+      { metric: '15k+', label: 'Customers reached every send' },
     ],
   },
   {
