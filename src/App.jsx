@@ -3,44 +3,49 @@ import { BrowserRouter, Routes, Route, Link, useNavigate, useLocation } from 're
 import CopilotPage from './pages/CopilotPage.jsx'
 import SNCFPage from './pages/SNCFPage.jsx'
 import NewsletterPage from './pages/NewsletterPage.jsx'
+import PreviewPage from './pages/PreviewPage.jsx'
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
-const differentiators = [
+const skills = [
   {
     number: '01',
-    title: 'Translates Complexity Into Clarity',
-    description:
-      'I find the insights that unlock simplicity and create market traction. Complex product (AI, healthcare, payroll) → Customer problem → Clear narrative → Market traction.',
-    evidence: '80% Copilot adoption · €1.1M ARR · 60% month-1 acquisition',
+    title: 'Translate complexity',
+    description: 'I find the insight that unlocks simplicity. Complex product, customer problem, clear narrative, measurable traction - that\'s the chain I build every time.',
+    how: ['Customer research', 'Competitive intel', 'Journey mapping', 'Outcome-driven narratives', 'Message testing'],
   },
   {
     number: '02',
-    title: 'Bridges PMM ↔ Revenue',
-    description:
-      "I ensure positioning builds a competitive moat and aligns the entire organization around a shared language (product, sales, CS, finance, legal, marketing).",
-    evidence: 'Copilot · Premium Services · Kanoon partnership',
+    title: 'Build from scratch',
+    description: 'I thrive in 0-to-1 situations - positioning, pricing, and GTM built from nothing. I move fast, test early, and adapt priorities in real time rather than waiting for perfect conditions.',
+    how: ['Segmentation', 'Willingness-to-pay research', 'Value-based pricing', 'A/B testing', 'Beta launch'],
   },
   {
     number: '03',
-    title: 'Rapid Market Mastery',
-    description:
-      "I've built GTM strategy across different sectors, navigating cultural differences - each time starting from zero domain knowledge. I get up to speed fast, go deep, and adapt to how buyers actually think.",
-    evidence: 'BlaBlaCar · Doctolib · PayFit - 3 verticals, 7 years',
+    title: 'Scale what works',
+    description: 'Once something clicks, I zoom out - turning one-off wins into repeatable systems that others can pick up, adapt, and run with across teams and markets.',
+    how: ['Playbooks & templates', 'Post-mortem & assessment', 'Feedback loops', 'Team enablement', 'Adoption tracking'],
   },
   {
     number: '04',
-    title: 'Operator + Strategist',
-    description:
-      "I combine strategy with hands-on execution. I enjoy picking up new tools and developing new skills, which makes me comfortable across a wide range of stacks (CRM, data, design, AI, market research, project management).",
-    evidence: 'HubSpot · Braze · Figma · Amplitude · SQL · AI tools',
+    title: 'Own it end-to-end',
+    description: 'From the first customer interview to post-launch performance loops - I understand how each phase feeds the next and partner across product, sales, CS, legal, and marketing.',
+    how: ['Research', 'Strategy', 'Enablement', 'Launch', 'Post-launch'],
+  },
+]
+
+const drives = [
+  {
+    label: 'Being the connective tissue',
+    detail: 'I enjoy bridge work - creating shared language, alignment, and momentum across teams (CS, sales, marketing, legal, product) that would otherwise work in parallel.',
   },
   {
-    number: '05',
-    title: 'Owns the Full Product Lifecycle',
-    description:
-      "Discovery → Positioning → Sales Enablement → Launch → Post-Launch. I understand how each phase feeds the next and measure end-to-end outcomes.",
-    evidence: 'Copilot · Premium Services · Onboarding redesign',
+    label: 'Operating as strategist & executor',
+    detail: 'Thinking through a P&L one day, editing a product video the next, I need both. And I enjoy testing new tools or approaches - I\'m most productive when I\'m learning by doing.',
+  },
+  {
+    label: 'Ownership in fast-moving environments',
+    detail: 'Agile teams, short feedback loops, real autonomy, visibility - that\'s where I move fastest and do my best work.',
   },
 ]
 
@@ -61,24 +66,11 @@ const caseStudies = [
     ],
   },
   {
-    id: 'premium',
-    tag: ['Monetization', 'Pricing', 'Sales Enablement'],
-    company: 'PayFit',
-    title: 'Premium Services',
-    subtitle: '€0 → €1.1M ARR in 6 months',
-    whyThisProject:
-      'A fast, iterative project in a small team - building a new revenue stream from zero. Identifying the opportunity, defining every element from scratch (name, pricing, packaging, positioning), testing with a small group of sales and CS, and shipping full enablement.',
-    outcomes: [
-      { metric: '€1.1M', label: 'ARR generated in 6 months from zero' },
-      { metric: '+12%', label: 'Closing rate on targeted deals' },
-      { metric: '2 tiers', label: 'Month-to-month, no commitment pricing model' },
-    ],
-  },
-  {
     id: 'onboarding',
     tag: ['PLG', 'Lifecycle', 'Customer Journey'],
     company: 'PayFit',
     title: 'Onboarding & Lifecycle Redesign',
+    comingSoon: true,
     subtitle: 'Time-to-value from 15 days to 2 hours',
     whyThisProject:
       '3 years as dedicated PMM for PayFit\'s PLG transformation, from the first journey mapping session to the final metrics. Few projects are this cross-functional: impacting so many internal teams while shaping the very first experience and impression a customer has with the product.',
@@ -148,7 +140,7 @@ function Nav({ onContact }) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-stone-100">
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-semibold text-stone-900 tracking-tight hover:text-teal-600 transition-colors"></Link>
+        <span className="text-base font-bold text-stone-900 tracking-tight">Apolline Aurenche - Portfolio</span>
         <div className="flex items-center gap-8 text-sm text-stone-500">
           <a href="#about" className="hover:text-stone-900 transition-colors">About</a>
 
@@ -203,22 +195,23 @@ function Hero({ onContact }) {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12 mb-6">
 
           {/* Text */}
-          <div className="flex-1">
-            <span className="inline-block text-xs font-medium tracking-widest text-teal-600 uppercase mb-4">
+          <div className="flex-1 max-w-2xl">
+            <span className="inline-block text-xs font-bold tracking-widest text-teal-600 uppercase mb-5">
               Senior Product Marketing Manager
             </span>
-            <h1 className="text-5xl md:text-7xl font-bold text-stone-900 leading-tight tracking-tight mb-8">
-              Apolline<br />Aurenche
+            <h1 className="text-4xl md:text-5xl font-bold leading-snug tracking-tight mb-6">
+              <span className="text-stone-900">I turn products into stories</span><br />
+              <span className="text-teal-600">and stories into traction.</span>
             </h1>
-            <div className="max-w-2xl space-y-4">
-              <p className="text-xl md:text-2xl text-stone-900 font-medium leading-relaxed">
-                Glad you're here!
+            <div className="max-w-xl space-y-3 mb-10">
+              <p className="text-lg text-stone-800 font-medium leading-relaxed">
+                7 years, 3 unicorns, 3 sectors - always the same obsession: connect the magic of a product with what people actually need.
               </p>
-              <p className="text-lg md:text-xl text-stone-500 font-light leading-relaxed">
-                This portfolio reflects 7 years of PMM work - and how I think about building products people actually adopt.
+              <p className="text-sm text-stone-500 leading-relaxed">
+                I listen to customers, turn that into a shared language internally, and build the launches, narratives, and content that make adoption happen - across teams, markets, and business models.
               </p>
-              <p className="text-lg md:text-xl text-stone-500 font-light leading-relaxed">
-                I own the entire go-to-market journey: from understanding what customers actually need, through positioning, pricing and lifecycle, to adoption and growth. I move fast in new markets and execute hands-on.
+              <p className="text-sm text-teal-700 font-medium">
+                80% AI product adoption | +15pts conversion on a top partnership | time-to-value cut from 15 days to 2 hours for an onboarding path. Explore the projects below.
               </p>
             </div>
           </div>
@@ -240,19 +233,14 @@ function Hero({ onContact }) {
 
         </div>
 
-        <div className="flex flex-wrap gap-3 mt-10 mb-16">
+        <div className="flex flex-wrap gap-3 mt-2 mb-8">
           {[
             'SF Bay Area',
             'Remote worldwide',
             'Available July 2026',
             'FR (native) · EN (fluent)',
           ].map((tag) => (
-            <span
-              key={tag}
-              className="px-4 py-2 bg-stone-100 text-stone-600 rounded-full text-sm"
-            >
-              {tag}
-            </span>
+            <span key={tag} className="px-4 py-2 bg-stone-100 text-stone-600 rounded-full text-sm">{tag}</span>
           ))}
         </div>
 
@@ -281,29 +269,41 @@ function About() {
   return (
     <section id="about" className="py-20 px-6 bg-stone-50">
       <div className="max-w-5xl mx-auto">
-        <div className="mb-16">
-          <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">What I bring</span>
-          <h2 className="text-4xl font-bold text-stone-900 mt-3">My core strengths</h2>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {differentiators.map((d) => (
-            <div
-              key={d.number}
-              className="bg-white rounded-2xl p-8 border border-stone-100 hover:border-teal-200 hover:shadow-md transition-all duration-300 group"
-            >
-              <span className="text-xs font-bold text-teal-600 tracking-widest">{d.number}</span>
-              <h3 className="text-lg font-semibold text-stone-900 mt-3 mb-3 leading-snug group-hover:text-teal-700 transition-colors">
-                {d.title}
-              </h3>
-              <p className="text-stone-500 text-sm leading-relaxed mb-4">{d.description}</p>
-              <div className="mt-auto pt-4 border-t border-stone-100">
-                <p className="text-xs text-stone-400">{d.evidence}</p>
+        {/* How I work */}
+        <div className="mb-12">
+          <span className="text-xs font-bold tracking-widest text-teal-600 uppercase">What I bring</span>
+          <h2 className="text-3xl font-bold text-stone-900 mt-3">How I work</h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
+          {skills.map((d) => (
+            <div key={d.number} className="bg-white rounded-2xl p-6 border border-stone-100 hover:border-teal-200 hover:shadow-md transition-all duration-300 flex flex-col">
+              <span className="text-xs font-bold text-teal-600 tracking-widest mb-3">{d.number}</span>
+              <h3 className="text-base font-semibold text-stone-900 mb-3 leading-snug">{d.title}</h3>
+              <p className="text-sm text-stone-500 leading-relaxed mb-4">{d.description}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {d.how.map((h) => (
+                  <span key={h} className="text-xs text-stone-500 bg-stone-100 px-2 py-0.5 rounded-full">{h}</span>
+                ))}
               </div>
             </div>
           ))}
-
         </div>
+
+        {/* What drives me */}
+        <div className="mb-10">
+          <span className="text-xs font-bold tracking-widest text-teal-600 uppercase">What drives me</span>
+          <h2 className="text-3xl font-bold text-stone-900 mt-3">What I'm looking for</h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {drives.map((d) => (
+            <div key={d.label} className="border-l-4 border-teal-500 pl-6">
+              <h3 className="text-base font-semibold text-stone-900 mb-2">{d.label}</h3>
+              <p className="text-sm text-stone-500 leading-relaxed">{d.detail}</p>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   )
@@ -327,7 +327,12 @@ function CaseStudyCard({ cs, index }) {
                 <span key={t} className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">{t}</span>
               ))}
             </div>
-            <h3 className="text-2xl font-bold text-stone-900 mb-1">{cs.title}</h3>
+            <div className="flex items-center gap-3 mb-1">
+              <h3 className="text-2xl font-bold text-stone-900">{cs.title}</h3>
+              {cs.comingSoon && (
+                <span className="text-xs text-stone-400 bg-stone-100 px-2.5 py-1 rounded-full flex-shrink-0">Under construction</span>
+              )}
+            </div>
             <p className="text-stone-400 text-sm">{cs.company}</p>
           </div>
           <div className="flex-shrink-0 mt-1">
@@ -404,7 +409,7 @@ function CaseStudyCard({ cs, index }) {
                         </svg>
                       </Link>
                     ) : (
-                      <span className="text-xs text-stone-400">Full artifact available on request</span>
+                      <span className="text-xs text-stone-400 italic">Case study to come</span>
                     )}
                   </div>
                 </div>
@@ -439,7 +444,7 @@ function Work() {
           <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Case studies</span>
           <h2 className="text-4xl font-bold text-stone-900 mt-3">Selected work</h2>
           <p className="text-stone-400 mt-3 max-w-xl">
-            Five projects across AI launch, monetization, lifecycle, customer communication, and partnerships - each showing a different dimension of full-stack PMM work.
+            Four projects across AI launch, lifecycle, customer communication, and partnerships - each showing a different dimension of full-stack PMM work.
           </p>
         </div>
 
@@ -813,6 +818,7 @@ export default function App() {
         <Route path="/work/copilot" element={<CopilotPage />} />
         <Route path="/work/sncf" element={<SNCFPage />} />
         <Route path="/work/newsletter" element={<NewsletterPage />} />
+        <Route path="/preview" element={<PreviewPage />} />
       </Routes>
     </BrowserRouter>
   )
