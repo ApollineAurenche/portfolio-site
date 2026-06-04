@@ -296,7 +296,10 @@ function About() {
               <h3 className="text-lg font-semibold text-stone-900 mt-3 mb-3 leading-snug group-hover:text-teal-700 transition-colors">
                 {d.title}
               </h3>
-              <p className="text-stone-500 text-sm leading-relaxed">{d.description}</p>
+              <p className="text-stone-500 text-sm leading-relaxed mb-4">{d.description}</p>
+              <div className="mt-auto pt-4 border-t border-stone-100">
+                <p className="text-xs text-stone-400">{d.evidence}</p>
+              </div>
             </div>
           ))}
 
@@ -454,7 +457,7 @@ function Experience() {
   const roles = [
     {
       company: 'PayFit',
-      description: 'European HR & Payroll SaaS (Series E, unicorn, 20k+ SMB customers)',
+      description: 'European HR & Payroll SaaS · Series E unicorn · 20k+ SMB customers',
       badge: 'B2B',
       title: 'Senior Global Product Marketing Manager',
       period: '2022 – 2025',
@@ -462,7 +465,7 @@ function Experience() {
     },
     {
       company: 'Doctolib',
-      description: 'European leading digital health platform (Series F, €6B+ valuation, 90M+ patients)',
+      description: 'European leading digital health platform · Series F · €6B+ valuation · 90M+ patients',
       badge: 'B2B2C',
       title: 'Global Campaign Manager',
       period: '2020 – 2022',
@@ -470,7 +473,7 @@ function Experience() {
     },
     {
       company: 'BlaBlaCar',
-      description: 'European #1 long-distance ridesharing marketplace (100M+ members, late-stage scale-up)',
+      description: 'European #1 long-distance ridesharing marketplace · 100M+ members · Late-stage scale-up',
       badge: 'B2C',
       title: 'Marketing Associate, France & Benelux',
       period: '2019 – 2020',
@@ -490,19 +493,19 @@ function Experience() {
           {roles.map((r, i) => (
             <div
               key={i}
-              className="flex flex-col md:flex-row md:items-start justify-between py-5 border-b border-stone-200 last:border-0"
+              className="flex flex-col md:flex-row md:items-start justify-between py-6 border-b border-stone-200 last:border-0"
             >
               <div className="flex-1">
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
                   <span className="font-bold text-lg text-stone-900">{r.company}</span>
-                  <span className="text-sm font-medium text-stone-500">{r.title}</span>
+                  <span className="text-sm font-semibold text-teal-600">{r.title}</span>
                 </div>
-                <div className="flex items-center gap-2 mt-1">
+                <div className="flex items-center gap-2 mt-1 mb-3">
                   <p className="text-xs text-stone-400">{r.description}</p>
                   <span className="flex-shrink-0 text-xs font-medium px-2 py-0.5 rounded-full bg-teal-50 text-teal-600 border border-teal-100">{r.badge}</span>
                 </div>
               </div>
-              <div className="flex gap-4 mt-1 md:mt-0 md:ml-8 text-sm text-stone-400 flex-shrink-0">
+              <div className="flex gap-4 mt-2 md:mt-0 md:ml-8 text-sm text-stone-400 flex-shrink-0">
                 <span>{r.period}</span>
                 <span>{r.location}</span>
               </div>
@@ -785,8 +788,8 @@ function Home() {
       <Hero onContact={() => setContactOpen(true)} />
       <About />
       <Work />
-      <Experience />
       <Referrals />
+      <Experience />
       <Footer onContact={() => setContactOpen(true)} />
       {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
     </div>
