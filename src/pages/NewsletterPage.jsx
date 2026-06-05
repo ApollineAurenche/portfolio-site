@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
 const outcomes = [
-  { metric: '×2', label: 'Open rate after full redesign' },
-  { metric: '+20%', label: 'Click-through rate improvement' },
+  { metric: '+20%', label: 'Open rate after full redesign' },
+  { metric: '+8%', label: 'Click-through rate improvement' },
   { metric: '15k+', label: 'Customers reached every send' },
 ]
 
@@ -48,12 +48,12 @@ function NewsletterTemplate() {
       {/* Email client top bar */}
       <div className="bg-stone-100 px-5 py-3 border-b border-stone-200">
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-xs text-stone-400 font-medium">De :</span>
+          <span className="text-xs text-stone-400 font-medium">From:</span>
           <span className="text-xs text-stone-600">Apolline @ PayFit &lt;product@payfit.com&gt;</span>
         </div>
         <div className="flex items-start gap-2">
-          <span className="text-xs text-stone-400 font-medium shrink-0">Objet :</span>
-          <span className="text-xs font-semibold text-stone-800">Nouveautés PayFit · Congés posés en 1 clic, nouveau tableau de bord RH, exports automatisés</span>
+          <span className="text-xs text-stone-400 font-medium shrink-0">Subject:</span>
+          <span className="text-xs font-semibold text-stone-800">PayFit updates · Time-off in 1 click, new HR dashboard, automated exports</span>
         </div>
       </div>
 
@@ -62,28 +62,28 @@ function NewsletterTemplate() {
         {/* Header */}
         <div className="flex items-center justify-between mb-5">
           <span className="font-bold text-stone-900 text-base tracking-tight">PayFit</span>
-          <span className="text-xs text-stone-400">Juin 2024</span>
+          <span className="text-xs text-stone-400">June 2024</span>
         </div>
 
         {/* Banner - 3 feature previews */}
         <div className="grid grid-cols-3 gap-2 mb-6 rounded-xl overflow-hidden">
           <div className="bg-teal-50 border border-teal-100 rounded-lg p-3 text-center">
             <div className="text-lg mb-1">🗓️</div>
-            <div className="text-xs font-semibold text-teal-800 leading-snug">Congés en 1 clic</div>
+            <div className="text-xs font-semibold text-teal-800 leading-snug">Time-off in 1 click</div>
           </div>
           <div className="bg-violet-50 border border-violet-100 rounded-lg p-3 text-center">
             <div className="text-lg mb-1">📊</div>
-            <div className="text-xs font-semibold text-violet-800 leading-snug">Nouveau dashboard RH</div>
+            <div className="text-xs font-semibold text-violet-800 leading-snug">New HR dashboard</div>
           </div>
           <div className="bg-amber-50 border border-amber-100 rounded-lg p-3 text-center">
             <div className="text-lg mb-1">⚡</div>
-            <div className="text-xs font-semibold text-amber-800 leading-snug">Exports automatisés</div>
+            <div className="text-xs font-semibold text-amber-800 leading-snug">Automated exports</div>
           </div>
         </div>
 
         {/* Hook */}
         <p className="text-sm text-stone-600 leading-relaxed mb-5 pb-5 border-b border-stone-100">
-          Ce mois-ci, on s'est concentré sur ce qui vous fait perdre du temps au quotidien. Trois nouveautés pour vous aider à gérer les congés plus vite, piloter vos équipes avec plus de clarté, et automatiser les tâches répétitives.
+          This month, we focused on what eats up your time every day. Three updates to help you manage time-off faster, get clearer visibility on your teams, and automate the repetitive end-of-month tasks.
         </p>
 
         {/* Video */}
@@ -96,36 +96,36 @@ function NewsletterTemplate() {
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
-              <span className="text-xs text-stone-500 font-medium">Regarder le récap - 2 min</span>
+              <span className="text-xs text-stone-500 font-medium">Watch the recap - 2 min</span>
             </div>
           </div>
         </div>
 
         {/* Major updates */}
         <div className="mb-5">
-          <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Les 3 innovations majeures</div>
+          <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">3 major updates</div>
           <div className="space-y-4">
             {[
               {
                 emoji: '🗓️',
-                title: 'Congés posés en 1 clic',
-                problem: 'Poser des congés prenait trop d\'étapes - les salariés abandonnaient en cours de route.',
-                solution: 'Un nouveau flow en 1 clic depuis le planning, avec validation manager en temps réel.',
-                cta: 'Tester maintenant',
+                title: 'Time-off in 1 click',
+                problem: 'Submitting time-off took too many steps - employees were dropping off halfway through.',
+                solution: 'A new 1-click flow directly from the schedule, with real-time manager approval.',
+                cta: 'Try it now',
               },
               {
                 emoji: '📊',
-                title: 'Nouveau tableau de bord RH',
-                problem: 'Difficile d\'avoir une vue globale de ses équipes sans exporter des données manuellement.',
-                solution: 'Un dashboard centralisé avec effectifs, absences et alertes - tout en temps réel.',
-                cta: 'Voir mon dashboard',
+                title: 'New HR dashboard',
+                problem: 'Getting a clear overview of your team meant exporting data manually every time.',
+                solution: 'A centralized dashboard with headcount, absences, and alerts - all in real time.',
+                cta: 'See my dashboard',
               },
               {
                 emoji: '⚡',
-                title: 'Exports automatisés',
-                problem: 'Les exports manuels en fin de mois représentent plusieurs heures de travail répétitif.',
-                solution: 'Planifiez vos exports une fois, ils partent automatiquement à la date choisie.',
-                cta: 'Configurer mes exports',
+                title: 'Automated exports',
+                problem: 'Manual end-of-month exports were taking hours of repetitive work.',
+                solution: 'Set up your exports once - they run automatically on the date you choose.',
+                cta: 'Set up my exports',
               },
             ].map((item) => (
               <div key={item.title} className="border border-stone-100 rounded-xl p-4">
@@ -134,10 +134,10 @@ function NewsletterTemplate() {
                   <span className="text-sm font-semibold text-stone-900">{item.title}</span>
                 </div>
                 <p className="text-xs text-stone-400 leading-relaxed mb-1">
-                  <span className="font-medium text-stone-500">Avant :</span> {item.problem}
+                  <span className="font-medium text-stone-500">Before:</span> {item.problem}
                 </p>
                 <p className="text-xs text-stone-600 leading-relaxed mb-3">
-                  <span className="font-medium">Maintenant :</span> {item.solution}
+                  <span className="font-medium">Now:</span> {item.solution}
                 </p>
                 <span className="inline-block text-xs bg-teal-600 text-white px-3 py-1.5 rounded-full font-medium">
                   {item.cta} →
@@ -149,17 +149,17 @@ function NewsletterTemplate() {
 
         {/* Minor updates */}
         <div>
-          <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">À ne pas manquer</div>
+          <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Don't miss</div>
           <div className="grid grid-cols-2 gap-3">
             <div className="bg-stone-50 rounded-xl p-4 border border-stone-100">
               <div className="text-sm mb-1.5">💡</div>
-              <div className="text-xs font-semibold text-stone-800 mb-1">Conseil du mois</div>
-              <p className="text-xs text-stone-500 leading-relaxed">Saviez-vous que vous pouvez dupliquer un contrat en 2 clics ? Pratique pour les CDD récurrents.</p>
+              <div className="text-xs font-semibold text-stone-800 mb-1">Tip of the month</div>
+              <p className="text-xs text-stone-500 leading-relaxed">Did you know you can duplicate a contract in 2 clicks? Handy for recurring fixed-term contracts.</p>
             </div>
             <div className="bg-stone-50 rounded-xl p-4 border border-stone-100">
               <div className="text-sm mb-1.5">🎤</div>
-              <div className="text-xs font-semibold text-stone-800 mb-1">Webinar - 18 juin</div>
-              <p className="text-xs text-stone-500 leading-relaxed">Maîtrisez les nouvelles règles de modulation du temps de travail. Inscription gratuite.</p>
+              <div className="text-xs font-semibold text-stone-800 mb-1">Webinar - June 18</div>
+              <p className="text-xs text-stone-500 leading-relaxed">Master the new working time modulation rules. Free registration.</p>
             </div>
           </div>
         </div>

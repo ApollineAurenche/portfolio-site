@@ -86,12 +86,12 @@ const caseStudies = [
     tag: ['Content Strategy', 'Customer Marketing', 'Product Adoption'],
     company: 'PayFit',
     title: 'Product Newsletter Redesign',
-    subtitle: '×2 open rate · +20% click-through rate',
+    subtitle: '+20% open rate · +8% click-through rate',
     whyThisProject:
       'Optimizing our customer marketing strategy to make the product newsletter a real engagement lever for product adoption. Working closely with the marketing team, we rebuilt it from scratch - and I became the face of PayFit\'s product communication, presenting new features directly to customers through video.',
     outcomes: [
-      { metric: '×2', label: 'Open rate after full redesign' },
-      { metric: '+20%', label: 'Click-through rate improvement' },
+      { metric: '+20%', label: 'Open rate after full redesign' },
+      { metric: '+8%', label: 'Click-through rate improvement' },
       { metric: '15k+', label: 'Customers reached every send' },
     ],
   },
