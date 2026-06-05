@@ -35,7 +35,7 @@ const phases = [
 ]
 
 const valueProps = [
-  { label: 'Always available', detail: 'Instant answers 24/7 - no waiting for support' },
+  { label: 'Always available', detail: 'Instant answers 24/7, directly in-app. Copilot responds or routes to CS on the same tab with a pre-filled ticket.' },
   { label: 'Always accurate', detail: 'Built on your data + local payroll laws (EU certified)' },
   { label: 'Saves time', detail: 'Users accomplish tasks 2× faster (backed by data)' },
 ]
@@ -149,11 +149,11 @@ export default function CopilotPage() {
             <ul className="space-y-3">
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Admins lack time and need instant answers 24/7 - the product wasn't meeting that expectation.
+                Getting support was painful - multiple clicks, redirected outside the app to a help center, a form to fill, then back in to check the response. CS was only available Mon-Fri 9-5.
               </li>
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                CSM team couldn't handle the volume of support requests at scale - service overload was growing.
+                CSM team couldn't handle volume at scale - service overload was growing and the experience was inconsistent.
               </li>
             </ul>
           </div>
@@ -195,18 +195,62 @@ export default function CopilotPage() {
       <section className="py-16 px-6 bg-stone-50">
         <div className="max-w-5xl mx-auto">
           <div className="mb-10">
-            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Positioning</h2>
+            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Positioning & Messaging</h2>
             <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6 max-w-2xl">
               "Your AI personal assistant - always available, always aware of your specificities."
             </blockquote>
           </div>
-          <div className="grid md:grid-cols-3 gap-4">
+
+          {/* Value props */}
+          <div className="grid md:grid-cols-3 gap-4 mb-12">
             {valueProps.map((v) => (
               <div key={v.label} className="bg-white rounded-xl p-6 border border-stone-100">
                 <div className="text-sm font-semibold text-stone-900 mb-2">{v.label}</div>
                 <p className="text-sm text-stone-500 leading-relaxed">{v.detail}</p>
               </div>
             ))}
+          </div>
+
+          {/* Messaging choices */}
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Narrative choices</h3>
+              <ul className="space-y-3">
+                <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
+                  <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                  <span><span className="font-medium text-stone-800">Outcomes, not features.</span> Every message led with what admins gained (time saved, instant answers), reinforced with concrete figures and use cases - not what the AI could technically do.</span>
+                </li>
+                <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
+                  <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                  <span><span className="font-medium text-stone-800">Partner, not replacement.</span> Deliberately avoided any phrasing that might imply Copilot replaces humans - it's an additional tool to enhance the support experience, not a substitute for the CS team.</span>
+                </li>
+                <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
+                  <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                  <span><span className="font-medium text-stone-800">Trust through specificity.</span> "Payroll-specific AI" vs. generic ChatGPT - the EU certification and local law compliance were core message pillars, not footnotes.</span>
+                </li>
+                <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
+                  <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                  <span><span className="font-medium text-stone-800">Ecosystem thinking.</span> Copilot wasn't positioned in isolation - it lived inside the broader support experience, product narrative, and sales conversation. This launch was an opportunity to reframe the entire help experience as one unified story, making it easier for customers to see the full value.</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Audience-specific angles</h3>
+              <ul className="space-y-3">
+                <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
+                  <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                  <span><span className="font-medium text-stone-800">Admins:</span> instant answers 24/7 without waiting for CS - time saved on recurring payroll questions.</span>
+                </li>
+                <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
+                  <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                  <span><span className="font-medium text-stone-800">Sales:</span> AI innovation as a concrete differentiator in competitive deals - particularly strong as a purchase driver for Starter companies.</span>
+                </li>
+                <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
+                  <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                  <span><span className="font-medium text-stone-800">CS team:</span> a tool that deflects volume, not headcount - frees them for higher-value interactions.</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -305,7 +349,7 @@ export default function CopilotPage() {
           <div className="border-l-4 border-teal-500 bg-teal-50 rounded-r-2xl px-8 py-6 flex flex-col md:flex-row md:items-start gap-4">
             <span className="text-xs font-bold tracking-widest text-teal-600 uppercase whitespace-nowrap pt-0.5 min-w-[100px]">Key Insight</span>
             <p className="text-stone-700 text-sm leading-relaxed">
-              The biggest unlock was anchoring the narrative on business outcomes - faster answers, fewer support tickets, time saved - rather than AI capabilities or technical specs. And deliberately avoiding any framing around team replacement: Copilot was positioned as an additional lever, not a substitute for the CS team. That framing built trust internally and with customers.
+              Messaging is never a one-time deliverable. The narrative evolved alongside the product - each new capability, each round of user surveys, each piece of field feedback shaped the next iteration. We didn't guess what resonated: we asked, collected verbatims, gathered figures, and documented use cases to keep messaging concrete and impactful well beyond launch.
             </p>
           </div>
         </div>
