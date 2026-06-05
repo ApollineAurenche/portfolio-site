@@ -796,7 +796,6 @@ function Home() {
       <Hero onContact={() => setContactOpen(true)} />
       <About />
       <Work />
-      <Referrals />
       <Experience />
       <Footer onContact={() => setContactOpen(true)} />
       {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
