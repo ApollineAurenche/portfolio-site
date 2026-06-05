@@ -4,6 +4,7 @@ import CopilotPage from './pages/CopilotPage.jsx'
 import SNCFPage from './pages/SNCFPage.jsx'
 import NewsletterPage from './pages/NewsletterPage.jsx'
 import PreviewPage from './pages/PreviewPage.jsx'
+import OnboardingPage from './pages/OnboardingPage.jsx'
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -67,13 +68,14 @@ const caseStudies = [
   },
   {
     id: 'onboarding',
+    route: '/work/onboarding',
     tag: ['PLG', 'Lifecycle', 'Customer Journey'],
     company: 'PayFit',
     title: 'Onboarding & Lifecycle Redesign',
-    comingSoon: true,
+    comingSoon: false,
     subtitle: 'Time-to-value from 15 days to 2 hours',
     whyThisProject:
-      '3 years as dedicated PMM for PayFit\'s PLG transformation, from the first journey mapping session to the final metrics. Few projects are this cross-functional: impacting so many internal teams while shaping the very first experience and impression a customer has with the product.',
+      'Three years of simultaneous product, pricing, and service changes - and one job: turn it all into a single story that customers, sales teams, and CS could understand and tell consistently. One of the most cross-functional projects I\'ve owned, from the first journey mapping session to the final enablement rollout.',
     outcomes: [
       { metric: '~2h', label: 'Time-to-value for Starter clients (was 15 days)' },
       { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
@@ -116,6 +118,7 @@ const caseStudies = [
 
 const caseStudyLinks = [
   { label: 'PayFit Copilot', route: '/work/copilot', tag: 'GTM · AI · 3 Markets' },
+  { label: 'Onboarding & Lifecycle', route: '/work/onboarding', tag: 'PLG · Lifecycle · Customer Journey' },
   { label: 'Product Newsletter', route: '/work/newsletter', tag: 'Content Strategy · Customer Marketing' },
   { label: 'SNCF × BlaBlaCar', route: '/work/sncf', tag: 'Partnership · Product Integration' },
   // Add more as pages are built:
@@ -818,6 +821,7 @@ export default function App() {
         <Route path="/work/copilot" element={<CopilotPage />} />
         <Route path="/work/sncf" element={<SNCFPage />} />
         <Route path="/work/newsletter" element={<NewsletterPage />} />
+        <Route path="/work/onboarding" element={<OnboardingPage />} />
         <Route path="/preview" element={<PreviewPage />} />
       </Routes>
     </BrowserRouter>
