@@ -59,7 +59,7 @@ const caseStudies = [
     title: 'Copilot Launch',
     subtitle: 'From 0 to 80% adoption across 3 markets',
     whyThisProject:
-      'PayFit shipped its first AI agent in 2024, ahead of the market. I joined from day one - defining the initial positioning and launch plan, then iterating on every element as the product evolved. The core challenge: building trust around AI at a time when it was less mainstream and users were less familiar with it.',
+      'PayFit shipped its first AI agent in 2024, ahead of the market. I joined from day one - building positioning and messaging from scratch across 3 countries, then iterating as the product evolved. The core challenge: building trust around AI at a time when it was less mainstream and users were less familiar with it.',
     outcomes: [
       { metric: '80%', label: 'Adoption post-launch\n(3 markets)' },
       { metric: '23%', label: 'CS ticket deflection post-launch' },
@@ -71,11 +71,11 @@ const caseStudies = [
     route: '/work/onboarding',
     tag: ['PLG', 'Lifecycle', 'Customer Journey'],
     company: 'PayFit',
-    title: 'Onboarding & Lifecycle Redesign',
+    title: 'Onboarding Redesign',
     comingSoon: false,
     subtitle: 'Time-to-value from 15 days to 2 hours',
     whyThisProject:
-      'Three years of simultaneous product, pricing, and service changes - and one job: turn it all into a single story that customers, sales teams, and CS could understand and tell consistently. One of the most cross-functional projects I\'ve owned, from the first journey mapping session to the final enablement rollout.',
+      'Three years of progressive changes (product, pricing, services, lifecycle) to reconcile around a single story that customers, Sales, and CS trust and tell the same way. One of the most cross-functional projects I\'ve owned, and demanding in terms of internal change management.',
     outcomes: [
       { metric: '~2h', label: 'Time-to-value for Starter clients (was 15 days)' },
       { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
@@ -90,7 +90,7 @@ const caseStudies = [
     title: 'Product Newsletter Redesign',
     subtitle: '+20% open rate · +8% click-through rate',
     whyThisProject:
-      'Optimizing our customer marketing strategy to make the product newsletter a real engagement lever for product adoption. Working closely with the marketing team, we rebuilt it from scratch - and I became the face of PayFit\'s product communication, presenting new features directly to customers through video.',
+      'Most product newsletters are feature lists nobody reads. This one became a real adoption lever - working closely with the marketing team, we rebuilt it from scratch with a new editorial angle, a new format, and a new face: mine, presenting product updates directly to customers through video every send.',
     outcomes: [
       { metric: '+20%', label: 'Open rate after full redesign' },
       { metric: '+8%', label: 'Click-through rate improvement' },
@@ -105,7 +105,7 @@ const caseStudies = [
     title: 'SNCF × BlaBlaCar Partnership',
     subtitle: 'BlaBlaCar\'s #1 passenger acquisition channel',
     whyThisProject:
-      'SNCF is France\'s #1 mobility operator - 5M+ daily users and the reference point for any long-distance travel decision. Scaling this partnership meant turning a basic integration into a systematic acquisition channel. One of the projects I\'m most proud of - I still use both platforms and still see this integration live, 6 years after shipping it.',
+      'SNCF is France\'s #1 mobility operator. Scaling this partnership meant turning a basic integration into BlaBlaCar\'s top acquisition channel - through commercial negotiation, joint marketing planning, and product integration work with product teams. One of the projects I\'m most proud of - I still see it live today, 6 years later, every time I book a trip.',
     outcomes: [
       { metric: '+15pts', label: 'Conversion rate (visitor → booking) in 5 months' },
       { metric: '#1', label: 'BlaBlaCar\'s top passenger acquisition partner by volume' },
