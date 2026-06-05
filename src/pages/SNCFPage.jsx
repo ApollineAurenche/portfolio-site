@@ -11,14 +11,14 @@ const phases = [
     goal: 'Optimize',
     duration: 'Months 1-3',
     title: 'Integration Optimization',
-    strategy: 'A basic integration already existed: 3 carpool placements in the train flow, triggered only when no train was available. We redesigned the logic and matching criteria - expanded radius (5% → 15%), removed auto-acceptance requirement, injected top carpool cities into search, and broadened triggers beyond the no-train scenario.',
+    strategy: 'A basic integration already existed: 3 carpool placements in the bus flow, triggered only when no train was available. We redesigned the logic and matching criteria - expanded radius (5% → 15%), removed auto-acceptance requirement, injected top carpool cities into search, and broadened triggers beyond the no-train scenario.',
     actions: ['Matching criteria redesign', 'CVR as north star metric', 'Trigger logic broadened', 'Placement performance analysis'],
   },
   {
     goal: 'Scale',
     duration: 'Months 4-6',
     title: 'Dedicated Tab',
-    strategy: 'Strong Phase 1 performance unlocked a commercial negotiation. Result: a dedicated Bus & Carpool tab within SNCF search - surfacing all relevant offers at the same level as train results, regardless of train availability.',
+    strategy: 'Strong Phase 1 performance unlocked a commercial negotiation. Result: a dedicated "Bus or Carpool" tab within SNCF search - surfacing all relevant carpool offers at the same level as bus results, regardless of train availability.',
     actions: ['Commercial negotiation with SNCF', 'Tab positioning & UX specs', 'Offer ranking definition', 'Launch performance tracking'],
   },
   {
@@ -167,11 +167,88 @@ export default function SNCFPage() {
             ))}
           </div>
 
+          {/* Before / After schema */}
+          <div className="mt-12 mb-12">
+            <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-1">Integration - Differences Phase 1 to 2</h3>
+            <p className="text-xs text-stone-400 italic mb-6">Simulated example — illustrative content</p>
+            <div className="flex flex-col md:flex-row gap-6">
+              {/* BEFORE */}
+              <div className="flex-1 bg-white rounded-2xl border border-stone-200 overflow-hidden">
+                <div className="px-4 py-3 border-b border-stone-100">
+                  <span className="text-xs font-bold text-stone-400 uppercase tracking-widest">Phase 1 — Before</span>
+                </div>
+                <div className="flex border-b border-stone-100">
+                  <div className="flex-1 py-2.5 text-center text-xs text-stone-400 font-medium">🚆 Train</div>
+                  <div className="flex-1 py-2.5 text-center text-xs text-stone-700 font-semibold border-b-2 border-stone-700">🚌 Bus</div>
+                </div>
+                <div className="p-4 space-y-2">
+                  {[['05:15 → 08:15','Bus · Eurolines · 3h','14€'],['06:30 → 09:30','Bus · Ouibus · 3h','19€']].map(([t,s,p]) => (
+                    <div key={t} className="bg-stone-50 rounded-lg px-3 py-2.5 flex justify-between items-center">
+                      <div><div className="text-xs font-semibold text-stone-800">{t}</div><div className="text-xs text-stone-400">{s}</div></div>
+                      <div className="text-xs font-bold text-stone-800">{p}</div>
+                    </div>
+                  ))}
+                  <div className="text-xs text-stone-400 font-semibold pt-1">Carpool rides (BlaBlaCar)</div>
+                  <div className="grid grid-cols-3 gap-1.5">
+                    {[['17:00→20:00','17€'],['00:30→03:00','18€'],['13:50→16:50','21€']].map(([t,p]) => (
+                      <div key={t} className="bg-teal-50 border border-teal-100 rounded-lg p-2 text-center">
+                        <div className="text-xs font-semibold text-teal-700">{t}</div>
+                        <div className="text-xs font-bold text-stone-800 mt-1">{p}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="bg-stone-50 rounded-lg px-3 py-2.5 flex justify-between items-center">
+                    <div><div className="text-xs font-semibold text-stone-800">07:15 → 10:05</div><div className="text-xs text-stone-400">Bus · Ouibus · 2h50</div></div>
+                    <div className="text-xs font-bold text-stone-800">15€</div>
+                  </div>
+                </div>
+                <div className="px-4 pb-4">
+                  <div className="bg-amber-50 rounded-lg px-3 py-2 text-xs text-amber-700 font-medium">⚠️ Carpool buried between bus results - limited visibility, max 3 options, non-optimised selection</div>
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="hidden md:flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center text-white text-sm font-bold">→</div>
+              </div>
+
+              {/* AFTER */}
+              <div className="flex-1 bg-white rounded-2xl border border-stone-200 overflow-hidden">
+                <div className="px-4 py-3 border-b border-stone-100">
+                  <span className="text-xs font-bold text-teal-600 uppercase tracking-widest">Phase 2 — After</span>
+                </div>
+                <div className="flex border-b border-stone-100">
+                  <div className="flex-1 py-2.5 text-center text-xs text-stone-400 font-medium">🚆 Train</div>
+                  <div className="flex-1 py-2.5 text-center text-xs text-teal-700 font-semibold border-b-2 border-teal-500">🚌 Bus or Carpool</div>
+                </div>
+                <div className="p-4 space-y-2">
+                  {[
+                    ["19:30 → 22:00","BlaBlaCar · 2h31 · Direct","19,49€", true],
+                    ["19:35 → 22:50","BlaBlaBus · 3h15 · Direct","34,99€", false],
+                    ["19:50 → 22:20","BlaBlaCar · 2h29 · Direct","20,79€", true],
+                    ["20:00 → 22:20","BlaBlaCar · 2h17 · Direct","16,89€", true],
+                  ].map(([t,s,p,isCarpool]) => (
+                    <div key={t} className={`rounded-lg px-3 py-2.5 flex justify-between items-center border ${isCarpool ? 'bg-teal-50 border-teal-100' : 'bg-stone-50 border-stone-100'}`}>
+                      <div>
+                        <div className="text-xs font-semibold text-stone-800">{t}</div>
+                        <div className={`text-xs ${isCarpool ? 'text-teal-600' : 'text-stone-400'}`}>{s}</div>
+                      </div>
+                      <div className="text-xs font-bold text-stone-800">{p}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="px-4 pb-4">
+                  <div className="bg-teal-50 rounded-lg px-3 py-2 text-xs text-teal-700 font-medium">✓ Dedicated tab with buses - all available carpool offers highlighted, same level as train</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Marketing Plan */}
-          <div className="mt-12 bg-stone-50 rounded-2xl p-8">
+          <div className="mt-4 bg-stone-50 rounded-2xl p-8">
             <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Marketing Plan</h3>
             <p className="text-stone-500 text-sm leading-relaxed mb-6">
-              An annual budget was negotiated with SNCF. Planning was done upfront - defining the moments to cover, the routes to prioritize, and the content to push - then implementation and performance tracking were run jointly with SNCF teams.
+              In parallel, an annual budget was negotiated with SNCF to maintain a consistent presence on their platform throughout the year. Planning was done upfront - defining the moments to cover, the routes to prioritize, and the content to push - then implementation and performance tracking were run jointly with SNCF teams.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {[
