@@ -11,13 +11,13 @@ const skills = [
   {
     number: '01',
     title: 'Translate complexity',
-    description: 'I find the insight that unlocks simplicity. Complex product, customer problem, clear narrative, measurable traction - that\'s the chain I build every time.',
+    description: 'I find the insight that unlocks simplicity and create internal alignment around that. Complex product - customer problem - clear narrative - measurable traction.',
     how: ['Customer research', 'Competitive intel', 'Journey mapping', 'Outcome-driven narratives', 'Message testing'],
   },
   {
     number: '02',
     title: 'Build from scratch',
-    description: 'I thrive in 0-to-1 situations - positioning, pricing, and GTM built from nothing. I move fast, test early, and adapt priorities in real time rather than waiting for perfect conditions.',
+    description: 'I thrive in 0-to-1 situations. I move fast, test early to sharpen strategy with market feedback, and adapt priorities in real time rather than waiting for perfect conditions.',
     how: ['Segmentation', 'Willingness-to-pay research', 'Value-based pricing', 'A/B testing', 'Beta launch'],
   },
   {
@@ -580,7 +580,7 @@ function Referrals() {
         <div className="flex items-end justify-between mb-12">
           <div>
             <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Referrals</span>
-            <h2 className="text-3xl font-bold text-stone-900 mt-2">What people say</h2>
+            <h2 className="text-3xl font-bold text-stone-900 mt-2">From the people I build with</h2>
           </div>
           {/* Arrows + counter */}
           <div className="flex items-center gap-3">
