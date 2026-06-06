@@ -62,7 +62,7 @@ export default function SNCFPage() {
             SNCF × BlaBlaCar
           </h1>
           <p className="text-xl text-stone-500 font-light max-w-2xl leading-relaxed">
-            Scaling SNCF partnership - from a basic integration to BlaBlaCar's top passenger acquisition channel.
+            Scaling SNCF partnership - from a basic integration to BlaBlaCar's top passenger acquisition partner.
           </p>
 
           {/* Outcome pills */}
@@ -85,7 +85,7 @@ export default function SNCFPage() {
             <ul className="space-y-3">
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Grow the passenger base and reduce CAC by scaling a high-potential existing integration - turning SNCF into a systematic acquisition channel.
+                Grow the passenger base and reduce CAC by scaling a high-potential existing integration - turning SNCF into our top passenger acquisition partner.
               </li>
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
@@ -145,7 +145,7 @@ export default function SNCFPage() {
           {/* Unified phase + actions table */}
           <div className="grid md:grid-cols-3 gap-4">
             {phases.map((p, i) => (
-              <div key={p.title} className="border border-stone-200 rounded-2xl p-6 hover:border-teal-200 transition-colors">
+              <div key={p.title} className="border border-stone-200 rounded-2xl p-6 hover:border-teal-200 transition-colors flex flex-col">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-bold text-teal-600 tracking-widest uppercase">Phase {i + 1}</span>
                   <span className="text-xs bg-teal-50 text-teal-700 px-3 py-1 rounded-full font-medium">{p.goal}</span>
@@ -154,7 +154,7 @@ export default function SNCFPage() {
                   <div className="font-semibold text-stone-900 text-sm">{p.title}</div>
                   <div className="text-xs text-stone-400 mb-3">{p.duration}</div>
                 </div>
-                <p className="text-stone-500 text-xs leading-relaxed mb-4 pb-4 border-b border-stone-100">{p.strategy}</p>
+                <p className="text-stone-500 text-xs leading-relaxed flex-1 mb-4 pb-4 border-b border-stone-100">{p.strategy}</p>
                 <ul className="space-y-1.5">
                   {p.actions.map((a) => (
                     <li key={a} className="flex gap-2 text-xs text-stone-500">
@@ -277,7 +277,7 @@ export default function SNCFPage() {
           <div className="border-l-4 border-teal-500 bg-teal-50 rounded-r-2xl px-8 py-6 flex flex-col md:flex-row md:items-start gap-4">
             <span className="text-xs font-bold tracking-widest text-teal-600 uppercase whitespace-nowrap pt-0.5 min-w-[100px]">Key Insight</span>
             <p className="text-stone-700 text-sm leading-relaxed">
-              The effort you put into growing a partnership post-launch matters as much as building it - joint marketing, shared roadmap, continuous optimization. And the data proves it here: Phase 1 performance unlocked Phase 2. It turned a basic placement into BlaBlaCar's top acquisition channel, and SNCF from a distributor into a genuine ally.
+              The effort you put into growing a partnership post-launch matters as much as building it - joint marketing, shared roadmap, continuous optimization. And the data proves it here: Phase 1 performance unlocked Phase 2. It turned a basic placement into BlaBlaCar's top passenger acquisition partner, and SNCF from a distributor into a genuine ally.
             </p>
           </div>
         </div>

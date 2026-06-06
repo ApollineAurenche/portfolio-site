@@ -105,7 +105,7 @@ const caseStudies = [
     title: 'SNCF × BlaBlaCar Partnership',
     subtitle: 'BlaBlaCar\'s #1 passenger acquisition channel',
     whyThisProject:
-      'SNCF is France\'s #1 mobility operator. Scaling this partnership meant turning a basic integration into BlaBlaCar\'s top acquisition channel - through commercial negotiation, joint marketing planning, and product integration work with product teams. One of the projects I\'m most proud of - I still see it live today, 6 years later, every time I book a trip.',
+      'SNCF is France\'s #1 mobility operator. We scaled the partnership step by step until SNCF became BlaBlaCar\'s top passenger acquisition partner. One of the projects I\'m most proud of - I still see it live today, 6 years later, every time I book a trip.',
     outcomes: [
       { metric: '+15pts', label: 'Conversion rate (visitor → booking) in 5 months' },
       { metric: '#1', label: 'BlaBlaCar\'s top passenger acquisition partner by volume' },
