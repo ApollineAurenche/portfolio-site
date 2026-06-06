@@ -352,7 +352,7 @@ export default function NewsletterPage() {
           <div className="border-l-4 border-teal-500 bg-teal-50 rounded-r-2xl px-8 py-6 flex flex-col md:flex-row md:items-start gap-4">
             <span className="text-xs font-bold tracking-widest text-teal-600 uppercase whitespace-nowrap pt-0.5 min-w-[100px]">Key Insight</span>
             <p className="text-stone-700 text-sm leading-relaxed">
-              Having the PMM own the voice of the product newsletter makes strategic sense: they hold the global view of the product, its users, and the market. It ensures every send communicates the exact value of the solution - features translated into clear benefits for each persona - while staying aligned with growth objectives. Execution without that strategic lens risks becoming noise.
+              Having the PMM own the voice of the product newsletter makes strategic sense: we hold the global view of the product, its users, and the market. It ensures every send communicates the exact value of the solution - features translated into clear benefits for each persona - while staying aligned with growth objectives. Execution without that strategic lens risks becoming noise.
             </p>
           </div>
         </div>

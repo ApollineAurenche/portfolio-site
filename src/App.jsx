@@ -90,7 +90,7 @@ const caseStudies = [
     title: 'Product Newsletter Redesign',
     subtitle: '+20% open rate · +8% click-through rate',
     whyThisProject:
-      'Most product newsletters are feature lists nobody reads. This one became a real adoption lever - working closely with the marketing team, we rebuilt it from scratch with a new editorial angle, a new format, and a new face: mine, presenting product updates directly to customers through video every send.',
+      'Most product newsletters are feature lists nobody reads. Working closely with the marketing team, we rebuilt this one from scratch - new editorial angle, new format, and a new face: mine, presenting product updates directly to customers through video every send. +20% open rate and +8% CTR later, customers were actually reading.',
     outcomes: [
       { metric: '+20%', label: 'Open rate after full redesign' },
       { metric: '+8%', label: 'Click-through rate improvement' },
