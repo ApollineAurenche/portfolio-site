@@ -170,12 +170,12 @@ export default function SNCFPage() {
           {/* Before / After schema */}
           <div className="mt-12 mb-12">
             <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-1">Integration - Differences Phase 1 to 2</h3>
-            <p className="text-xs text-stone-400 italic mb-6">Simulated example — illustrative content</p>
+            <p className="text-xs text-stone-400 italic mb-6">Simulated example - illustrative content</p>
             <div className="flex flex-col md:flex-row gap-6">
               {/* BEFORE */}
               <div className="flex-1 bg-white rounded-2xl border border-stone-200 overflow-hidden">
                 <div className="px-4 py-3 border-b border-stone-100">
-                  <span className="text-xs font-bold text-stone-400 uppercase tracking-widest">Phase 1 — Before</span>
+                  <span className="text-xs font-bold text-stone-400 uppercase tracking-widest">Phase 1 - Before</span>
                 </div>
                 <div className="flex border-b border-stone-100">
                   <div className="flex-1 py-2.5 text-center text-xs text-stone-400 font-medium">🚆 Train</div>
@@ -215,7 +215,7 @@ export default function SNCFPage() {
               {/* AFTER */}
               <div className="flex-1 bg-white rounded-2xl border border-stone-200 overflow-hidden">
                 <div className="px-4 py-3 border-b border-stone-100">
-                  <span className="text-xs font-bold text-teal-600 uppercase tracking-widest">Phase 2 — After</span>
+                  <span className="text-xs font-bold text-teal-600 uppercase tracking-widest">Phase 2 - After</span>
                 </div>
                 <div className="flex border-b border-stone-100">
                   <div className="flex-1 py-2.5 text-center text-xs text-stone-400 font-medium">🚆 Train</div>
