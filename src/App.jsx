@@ -70,7 +70,7 @@ const caseStudies = [
   {
     id: 'onboarding',
     route: '/work/onboarding',
-    tag: ['Positioning', 'Sales Enablement', 'Pricing Redesign'],
+    tag: ['Positioning', 'Sales Enablement', 'Change Management'],
     company: 'PayFit',
     title: 'Onboarding Redesign',
     comingSoon: false,
@@ -122,7 +122,7 @@ const caseStudies = [
 
 const caseStudyLinks = [
   { label: 'PayFit Copilot', route: '/work/copilot', tag: 'GTM · AI · 3 Markets' },
-  { label: 'Onboarding & Lifecycle', route: '/work/onboarding', tag: 'Positioning · Sales Enablement · Pricing Redesign' },
+  { label: 'Onboarding & Lifecycle', route: '/work/onboarding', tag: 'Positioning · Sales Enablement · Change Management' },
   { label: 'Product Newsletter', route: '/work/newsletter', tag: 'Content Strategy · Customer Marketing' },
   { label: 'SNCF × BlaBlaCar', route: '/work/sncf', tag: 'Partnership · Product Integration' },
   // Add more as pages are built:

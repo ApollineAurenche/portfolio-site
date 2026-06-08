@@ -82,7 +82,7 @@ export default function OnboardingPage() {
             <span className="text-xs font-bold text-teal-600 tracking-widest uppercase">PayFit</span>
             <span className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">Positioning</span>
             <span className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">Sales Enablement</span>
-            <span className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">Pricing Redesign</span>
+            <span className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">Change Management</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-stone-900 leading-tight tracking-tight mb-4">
             Onboarding Redesign
