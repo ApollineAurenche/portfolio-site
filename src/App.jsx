@@ -543,31 +543,12 @@ function Experience() {
 
 const referrals = [
   {
-    name: 'Sophie Martin',
+    name: 'Marie Jamin',
     role: 'Head of Product',
-    company: 'PayFit',
-    relation: 'Direct manager · 3 years',
-    avatar: null,
+    company: 'BPI France',
+    relation: 'Marketing peer at BlaBlaCar',
     quote:
-      'Apolline has a rare ability to translate complex product realities into sharp, compelling narratives. She owns her projects end to end - from the initial insight to the post-launch measurement - and never loses sight of the business impact. Working with her raised the bar for our entire PMM team.',
-  },
-  {
-    name: 'Thomas Lefebvre',
-    role: 'VP Sales',
-    company: 'PayFit',
-    relation: 'Cross-functional partner · 2 years',
-    avatar: null,
-    quote:
-      "What sets Apolline apart is how quickly she earns trust across teams. She didn't just hand over a playbook - she worked side by side with the sales team until the positioning actually landed in deals. The Premium Services launch is a good example: the ramp was unusually fast because the enablement was genuinely good.",
-  },
-  {
-    name: 'Julie Roux',
-    role: 'Senior PMM',
-    company: 'BlaBlaCar',
-    relation: 'PMM peer · 2 years',
-    avatar: null,
-    quote:
-      'Apolline combines strategic thinking with real hands-on execution. On the SNCF partnership, she managed the commercial relationship, the product integration specs, and the marketing plan simultaneously - and kept everything coherent. She is also genuinely fun to work with.',
+      "I worked with Apolline at BlaBlaCar. She's the kind of profile that makes a real difference. Reliable, empathetic, deeply user-focused, and always bringing both a data mindset and a sharp macro vision. Her marketing background in product-driven environments gives her a rare edge; she moves comfortably across new scopes and complex SaaS contexts. Someone you can genuinely trust on ambitious topics!",
   },
 ]
 
@@ -582,8 +563,11 @@ function Referrals() {
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex items-end justify-between mb-12">
           <div>
-            <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Referrals</span>
-            <h2 className="text-3xl font-bold text-stone-900 mt-2">From the people I build with</h2>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Referrals</span>
+              <span className="text-xs text-stone-400 bg-stone-100 px-2.5 py-0.5 rounded-full">More coming soon</span>
+            </div>
+            <h2 className="text-3xl font-bold text-stone-900">From the people I build with</h2>
           </div>
           {/* Arrows + counter */}
           <div className="flex items-center gap-3">
@@ -796,6 +780,7 @@ function Home() {
       <Hero onContact={() => setContactOpen(true)} />
       <About />
       <Work />
+      <Referrals />
       <Experience />
       <Footer onContact={() => setContactOpen(true)} />
       {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
