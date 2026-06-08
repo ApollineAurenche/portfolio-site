@@ -60,6 +60,7 @@ const caseStudies = [
     subtitle: 'From 0 to 80% adoption across 3 markets',
     whyThisProject:
       'PayFit shipped its first AI agent in 2024, ahead of the market. I joined from day one - building positioning and messaging from scratch across 3 countries, then iterating as the product evolved. The core challenge: building trust around AI at a time when it was less mainstream and users were less familiar with it.',
+    artifactLabel: 'GTM launch plan',
     outcomes: [
       { metric: '80%', label: 'Adoption post-launch\n(3 markets)' },
       { metric: '23%', label: 'CS ticket deflection post-launch' },
@@ -76,6 +77,7 @@ const caseStudies = [
     subtitle: 'Time-to-value from 15 days to 2 hours',
     whyThisProject:
       'Three years of progressive changes (product, pricing, services, lifecycle) to reconcile around a single story that customers, Sales, and CS trust and tell the same way. One of the most cross-functional projects I\'ve owned, and demanding in terms of internal change management.',
+    artifactLabel: 'Sales enablement doc',
     outcomes: [
       { metric: '~2h', label: 'Time-to-value for Starter clients (was 15 days)' },
       { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
@@ -91,6 +93,7 @@ const caseStudies = [
     subtitle: '+20% open rate · +8% click-through rate',
     whyThisProject:
       'Most product newsletters are feature lists nobody reads. Working closely with the marketing team, we rebuilt this one from scratch - new editorial angle, new format, and a new face: mine, presenting product updates directly to customers through video every send. +20% open rate and +8% CTR later, customers were actually reading.',
+    artifactLabel: 'Editorial strategy framework',
     outcomes: [
       { metric: '+20%', label: 'Open rate after full redesign' },
       { metric: '+8%', label: 'Click-through rate improvement' },
@@ -106,6 +109,7 @@ const caseStudies = [
     subtitle: 'BlaBlaCar\'s #1 passenger acquisition channel',
     whyThisProject:
       'SNCF is France\'s #1 mobility operator. We scaled the partnership step by step until SNCF became BlaBlaCar\'s top passenger acquisition partner. One of the projects I\'m most proud of - I still see it live today, 6 years later, every time I book a trip.',
+    artifactLabel: 'Full integration roadmap - product phasing + marketing activation',
     outcomes: [
       { metric: '+15pts', label: 'Conversion rate (visitor → booking) in 5 months' },
       { metric: '#1', label: 'BlaBlaCar\'s top passenger acquisition partner by volume' },
@@ -366,7 +370,13 @@ function CaseStudyCard({ cs, index }) {
           {cs.whyThisProject && (
             <div className="pt-8 pb-6 border-b border-stone-100 mb-6">
               <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Why this project</h4>
-              <p className="text-stone-600 text-sm leading-relaxed italic">{cs.whyThisProject}</p>
+              <p className="text-stone-600 text-sm leading-relaxed italic mb-4">{cs.whyThisProject}</p>
+              {cs.artifactLabel && (
+                <div className="flex items-center gap-2 mt-3">
+                  <span className="text-xs font-bold tracking-widest text-stone-400 uppercase">Artifact</span>
+                  <span className="text-xs bg-teal-50 text-teal-700 border border-teal-100 px-2.5 py-1 rounded-full font-medium">{cs.artifactLabel}</span>
+                </div>
+              )}
             </div>
           )}
           {(cs.problem || cs.insight || cs.positioning || cs.artifact) && (
