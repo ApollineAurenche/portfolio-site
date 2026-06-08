@@ -277,9 +277,12 @@ export default function CopilotPage() {
           <div className="mb-10">
             <span className="text-xs font-bold tracking-widest text-teal-600 uppercase">Artifact</span>
             <h2 className="text-3xl font-bold text-stone-900 mt-2">GTM Launch Plan</h2>
-            <p className="text-stone-400 text-sm mt-2 max-w-xl">
-              3-phase rollout - validate before scaling, iterate in real time, localize for each market.
-            </p>
+          </div>
+
+          {/* Launch timeline subtitle */}
+          <div className="mb-6">
+            <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-1">Launch timeline</h3>
+            <p className="text-stone-400 text-sm">3-phase rollout - validate before scaling, iterate in real time, localize for each market.</p>
           </div>
 
           {/* Phase timeline - horizontal cards with arrows */}
@@ -310,13 +313,24 @@ export default function CopilotPage() {
             ))}
           </div>
 
+          {/* Platinum tiering callout */}
+          <div className="mb-8 flex items-start gap-4 bg-yellow-50 border border-yellow-200 rounded-2xl px-6 py-5">
+            <span className="text-xl flex-shrink-0">🥇</span>
+            <div>
+              <span className="text-xs font-bold tracking-widest text-yellow-700 uppercase">Platinum launch tier</span>
+              <p className="text-sm text-stone-600 leading-relaxed mt-1">
+                At PayFit, every feature launch is assigned a tier based on its strategic impact and business potential. Copilot qualified as <span className="font-semibold text-stone-800">Platinum</span> - the highest tier, reserved for <span className="font-semibold text-stone-800">major innovations</span> expected to attract new customers and expand the user base. That classification directly shaped the GTM plan below.
+              </p>
+            </div>
+          </div>
+
           {/* GTM Plan table */}
           <div className="bg-stone-50 rounded-2xl p-8">
             <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">
               Platinum Tiering - GTM Plan
             </h3>
             <p className="text-stone-500 text-sm leading-relaxed mb-6">
-              As our highest launch tier, Platinum meant a full-scale marketing effort - every channel activated, from pre-launch enablement to post-launch analysis, with 6+ teams involved across Brand, Content, Sales, Growth, PR, and Product.
+              This plan was aligned with all stakeholders during the GTM kick-off - with a full RACI across 6+ teams. What's shown here is the simplified view with the Responsible owner per deliverable.
             </p>
             <div className="grid md:grid-cols-4 gap-6">
               {gtmPlan.map((col) => (
