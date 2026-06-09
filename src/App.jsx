@@ -82,7 +82,6 @@ const caseStudies = [
       { metric: '~2h', label: 'Time-to-value for Starter clients (was 15 days)' },
       { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
       { metric: '+1.5pt', label: 'Customer satisfaction score' },
-      { metric: '+28%', label: 'Closing rate (new pitch deck vs old)' },
     ],
   },
   {
@@ -373,9 +372,12 @@ function CaseStudyCard({ cs, index }) {
               <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Why this project</h4>
               <p className="text-stone-600 text-sm leading-relaxed italic mb-4">{cs.whyThisProject}</p>
               {cs.artifactLabel && (
-                <div className="flex items-center gap-2 mt-3">
-                  <span className="text-xs font-bold tracking-widest text-stone-400 uppercase">Artifact</span>
-                  <span className="text-xs bg-teal-50 text-teal-700 border border-teal-100 px-2.5 py-1 rounded-full font-medium">{cs.artifactLabel}</span>
+                <div className="mt-3 space-y-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold tracking-widest text-stone-400 uppercase">Artifact</span>
+                    <span className="text-xs bg-teal-50 text-teal-700 border border-teal-100 px-2.5 py-1 rounded-full font-medium">{cs.artifactLabel}</span>
+                  </div>
+                  <p className="text-xs text-stone-300 italic">Illustrative reconstruction - not an internal document.</p>
                 </div>
               )}
             </div>

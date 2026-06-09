@@ -319,7 +319,7 @@ export default function CopilotPage() {
             <div>
               <span className="text-xs font-bold tracking-widest text-yellow-700 uppercase">Platinum launch tier</span>
               <p className="text-sm text-stone-600 leading-relaxed mt-1">
-                At PayFit, every feature launch is assigned a tier based on its strategic impact and business potential. Copilot qualified as <span className="font-semibold text-stone-800">Platinum</span> - the highest tier, reserved for <span className="font-semibold text-stone-800">major innovations</span> expected to attract new customers and expand the user base. That classification directly shaped the GTM plan below.
+                At PayFit, every feature launch is assigned a tier based on its strategic impact and business potential. Copilot was qualified as <span className="font-semibold text-stone-800">Platinum</span> - the highest tier. That classification directly shaped the GTM plan below.
               </p>
             </div>
           </div>
