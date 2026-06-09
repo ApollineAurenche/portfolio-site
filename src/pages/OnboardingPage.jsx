@@ -161,9 +161,9 @@ export default function OnboardingPage() {
           <p className="text-stone-500 text-base pl-6 max-w-xl mb-10">Setting up payroll software has never been this fast & simple.</p>
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { label: 'Simple from day one', detail: '90% of setup data auto-retrieved, step-by-step in-app guidance at every stage - designed so any admin can get started without training.' },
-              { label: 'Reliable', detail: 'Built-in compliance, automated payslip generation and declarations, real-time updates. Everything is finally under control.' },
-              { label: 'Support when it matters', detail: 'PayFit Copilot available 24/7, experts on hand for complex cases, training resources for every level. Payroll is one less thing to worry about.' },
+              { label: 'Simple from day one', detail: '90% of setup data auto-retrieved from reliable sources - no manual entry, no back-and-forth. No equivalent on the market.' },
+              { label: 'Reliable', detail: 'Built-in compliance, automated payslip generation and declarations, real-time updates.' },
+              { label: 'Support when it matters', detail: 'Copilot 24/7, payroll experts for complex cases, training resources for every level.' },
             ].map((v) => (
               <div key={v.label} className="bg-white rounded-xl p-6 border border-stone-100">
                 <div className="text-sm font-semibold text-stone-900 mb-2">{v.label}</div>
@@ -218,7 +218,7 @@ export default function OnboardingPage() {
                 <div>
                   <div className="text-xs font-bold text-teal-600 tracking-widest uppercase mb-1">PayFit Internal - Sales</div>
                   <h3 className="text-xl font-bold text-stone-900">Starter segment - quick reference card</h3>
-                  <p className="text-sm text-stone-400 mt-1">All key elements for a Starter demo call · Updated Q3 2024</p>
+                  <p className="text-sm text-stone-400 mt-1 max-w-xl">Your quick reference for presenting the new onboarding journey to Starters - to use alongside the two new commercial slides · Updated Q3 2024</p>
                 </div>
                 <span className="text-xs bg-teal-50 text-teal-700 px-3 py-1 rounded-full border border-teal-100 font-medium flex-shrink-0">Fictional content</span>
               </div>
@@ -270,6 +270,28 @@ export default function OnboardingPage() {
                     </div>
                   </div>
                 </div>
+                {/* Support elements + pricing */}
+                <div className="mt-2 mb-6 grid md:grid-cols-2 gap-3 items-stretch">
+                  <div className="bg-stone-50 rounded-xl border border-stone-200 p-4 flex flex-col">
+                    <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Support included</h4>
+                    <div className="space-y-2">
+                      {[
+                        { icon: '🤖', label: 'PayFit Copilot', detail: 'Instant answers 24/7, directly in-app' },
+                        { icon: '👩‍💼', label: 'Payroll experts', detail: 'On hand for complex cases' },
+                        { icon: '📚', label: 'Help center', detail: 'Guides, tutorials, and training resources for every level' },
+                      ].map((s) => (
+                        <div key={s.label} className="flex gap-2 text-xs">
+                          <span className="flex-shrink-0">{s.icon}</span>
+                          <span><span className="font-semibold text-stone-700">{s.label}</span> - <span className="text-stone-500">{s.detail}</span></span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="bg-stone-50 rounded-xl border border-stone-200 p-4 flex flex-col justify-start">
+                    <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Pricing - Starters</h4>
+                    <p className="text-xs text-stone-600 leading-relaxed">Onboarding and setup support is <span className="font-semibold text-stone-800">included at no extra cost</span> for Starter clients. No add-on to sell - just lead with the value.</p>
+                  </div>
+                </div>
               </div>
 
               <div className="p-8 grid md:grid-cols-2 gap-8">
@@ -277,9 +299,13 @@ export default function OnboardingPage() {
                 <div>
                   <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">The Promise</h4>
                   <div className="bg-teal-50 rounded-xl p-5 border border-teal-100 mb-4">
-                    <p className="text-base font-semibold text-stone-900 leading-snug">"Setting up payroll software has never been this simple - fully guided, fully automated, no expertise needed."</p>
+                    <p className="text-base font-semibold text-stone-900 leading-snug">"Get your first payroll done in 2 hours. Fully guided, fully automated, no expertise needed."</p>
                   </div>
-                  <p className="text-xs text-stone-500 leading-relaxed">Lead with the outcome, not the features. The 2-hour promise is specific, credible, and directly addresses the biggest friction point for new customers.</p>
+                  <p className="text-xs text-stone-500 leading-relaxed">Lead with the outcome, not the features. The 2-hour promise is specific and directly addresses the biggest friction point for new customers.</p>
+                  <div className="mt-4 bg-stone-900 rounded-xl p-4">
+                    <div className="text-xs font-bold tracking-widest text-teal-400 uppercase mb-2">Key differentiator</div>
+                    <p className="text-xs text-stone-300 leading-relaxed">90% of setup data is retrieved automatically from the most reliable sources - payslips, DSN, social organizations. No manual entry, no back-and-forth between client and CS. <span className="text-white font-medium">No other payroll software on the market does this.</span> Less risk of errors, faster implementation, and a first impression that sets the tone for the whole experience.</p>
+                  </div>
                 </div>
 
                 {/* Key messages by persona */}
@@ -287,12 +313,16 @@ export default function OnboardingPage() {
                   <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Key Messages by Persona</h4>
                   <div className="space-y-3">
                     {[
-                      { persona: 'HR Manager', message: 'Set up in hours, not weeks. 90% of your data is pre-filled automatically - you just validate.' },
-                      { persona: 'Finance Director', message: 'First payroll in 2 hours, fully compliant. No risk of errors from manual entry, no delays.' },
-                      { persona: 'Small Business Owner', message: 'No payroll background needed. PayFit guides you through every step - and Copilot is there if you get stuck.' },
+                      { persona: 'HR Manager', angle: 'focus: time saved', message: 'Set up in hours, not weeks. 90% of your data is pre-filled automatically - you just validate.' },
+                      { persona: 'Finance Director', angle: 'focus: compliance & reliability', message: 'First payroll in 2 hours, fully compliant. No risk of errors from manual entry, no delays.' },
+                      { persona: 'Small Business Owner', angle: 'focus: no expertise needed', message: 'No payroll background needed. PayFit guides you through every step - and Copilot is there if you get stuck.' },
                     ].map((p) => (
                       <div key={p.persona} className="bg-stone-50 rounded-lg p-4 border border-stone-100">
-                        <div className="text-xs font-bold text-teal-600 mb-1">{p.persona}</div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <div className="text-xs font-bold text-teal-600">{p.persona}</div>
+                          <span className="text-xs text-stone-300">·</span>
+                          <div className="text-xs text-stone-400 italic">{p.angle}</div>
+                        </div>
                         <p className="text-xs text-stone-600 leading-relaxed italic">"{p.message}"</p>
                       </div>
                     ))}
@@ -304,9 +334,9 @@ export default function OnboardingPage() {
                   <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Objection Handling</h4>
                   <div className="space-y-3">
                     {[
-                      { obj: '"2 hours seems too fast - what if I make a mistake?"', answer: 'The system validates as you go. Built-in compliance checks catch errors before you run payroll.' },
-                      { obj: '"What if I need help during setup?"', answer: 'Copilot answers instantly 24/7. For complex cases, our Premium Services team is available.' },
-                      { obj: '"We have specific rules - will it work for us?"', answer: 'PayFit auto-retrieves your data and adapts to your CCN. The setup is guided to your exact situation.' },
+                      { obj: '"I\'ve never managed payroll before - can I really do this on my own?"', answer: 'Absolutely. PayFit is designed for it. Step-by-step guidance, automatic data retrieval, built-in checks - you don\'t need to know payroll to get it right.' },
+                      { obj: '"What if I need help during setup?"', answer: 'Copilot answers instantly 24/7 directly in the app. And if you need a human, our payroll experts are one click away.' },
+                      { obj: '"What if I make an error and it affects my employees\' pay?"', answer: 'PayFit validates at every step before you run payroll. Errors are flagged and correctable before anything is processed.' },
                     ].map((item) => (
                       <div key={item.obj} className="border-l-2 border-stone-200 pl-4">
                         <div className="text-xs font-medium text-stone-700 mb-1">{item.obj}</div>
@@ -316,19 +346,19 @@ export default function OnboardingPage() {
                   </div>
                 </div>
 
-                {/* What changed */}
+                {/* Language guidelines */}
                 <div>
-                  <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">What Changed (for context)</h4>
-                  <div className="space-y-2">
+                  <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Language Guidelines</h4>
+                  <div className="space-y-3">
                     {[
-                      ['Product', 'Automated data retrieval, step-by-step guided flow, Copilot embedded throughout'],
-                      ['Pricing', 'Simplified tiers aligned with self-serve model, new discount structure for Sales'],
-                      ['Services', 'Tiered support: Copilot (all), Premium Services (complex cases), dedicated CSM (enterprise)'],
-                      ['Lifecycle', 'Behaviour-triggered emails replacing fixed-date sequences - 3 tracks by segment'],
-                    ].map(([area, detail]) => (
-                      <div key={area} className="flex gap-3 text-xs">
-                        <span className="font-semibold text-teal-600 flex-shrink-0 w-16">{area}</span>
-                        <span className="text-stone-500 leading-relaxed">{detail}</span>
+                      { dont: 'It\'s easy to use', say: 'PayFit guides you at every step - you don\'t need any payroll background' },
+                      { dont: 'It\'s automated', say: '90% of your setup data is retrieved automatically - you just validate' },
+                      { dont: 'We have great support', say: 'Copilot is available 24/7 in the app, and payroll experts are on hand for anything complex' },
+                      { dont: 'It\'s fast', say: 'From signup to first payroll in under 3 hours' },
+                    ].map((g) => (
+                      <div key={g.dont} className="text-xs space-y-0.5">
+                        <div className="flex gap-2"><span className="text-red-400 font-semibold flex-shrink-0">✗</span><span className="text-stone-400 line-through">{g.dont}</span></div>
+                        <div className="flex gap-2"><span className="text-teal-500 font-semibold flex-shrink-0">✓</span><span className="text-stone-600">{g.say}</span></div>
                       </div>
                     ))}
                   </div>
@@ -343,7 +373,10 @@ export default function OnboardingPage() {
       <section className="pb-4 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="bg-stone-50 border border-stone-200 rounded-2xl px-8 py-5 flex items-start gap-4">
-            <div className="text-2xl font-bold text-teal-600 flex-shrink-0">+28%</div>
+            <div className="flex-shrink-0">
+              <div className="text-2xl font-bold text-teal-600">+28%</div>
+              <div className="text-xs text-stone-400 font-medium mt-0.5">closing rate</div>
+            </div>
             <p className="text-sm text-stone-600 leading-relaxed">
               This figure is specifically tied to the enablement work - new pitch deck and assets. Measured by comparing closing rates on deals pitched with the new deck vs. the old one. The other metrics (TTV, activation, CSAT) reflect the broader transformation: product, services, pricing, and lifecycle combined.
             </p>
