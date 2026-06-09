@@ -287,6 +287,7 @@ export default function NewsletterPage() {
             <p className="text-stone-400 text-sm mt-2 max-w-xl">
               Every element was rethought - from format to tone to structure. Here's what changed, and what the new template looks like in practice.
             </p>
+
           </div>
 
           {/* Before / After table */}

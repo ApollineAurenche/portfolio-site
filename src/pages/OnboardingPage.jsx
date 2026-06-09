@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 const outcomes = [
-  { metric: '~2h', label: 'Time-to-value for Starter clients (was 15 days)' },
+  { metric: '<3h', label: 'Time-to-value for Starter clients (was 2 days)' },
   { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
   { metric: '+1.5pt', label: 'Customer satisfaction score' },
   { metric: '+28%', label: 'Closing rate on deals pitched with new deck vs old' },
@@ -11,7 +11,7 @@ const journeyBefore = [
   { step: '1', moment: 'Signup', detail: 'Manual access creation - delay before being able to access the app, no action possible before setup' },
   { step: '2', moment: 'Setup', detail: 'Large volume of info to collect and share from the client side' },
   { step: '3', moment: 'Account verification', detail: 'Manual verification and integration of all information by CS teams to configure the account - another delay' },
-  { step: '4', moment: 'First payroll', detail: '~15 days after signup, often with multiple back-and-forths' },
+  { step: '4', moment: 'First payroll', detail: '~2 days after signup for Starters, often with multiple back-and-forths' },
 ]
 const beforeOngoing = 'All actions and follow-ups are manual, error-prone and time-consuming. Limited client visibility on progress at each stage.'
 
@@ -19,7 +19,7 @@ const journeyAfter = [
   { step: '1', moment: 'Signup', detail: 'Automatic account creation - instant access + first key features available before setup (hiring simulation, HR document generation...)' },
   { step: '2', moment: 'Setup', detail: '90% of setup data auto-retrieved from reliable sources, 100% in-app step-by-step workflow, self-serve with built-in guardrails' },
   { step: '3', moment: 'Account verification', detail: 'Automatic - full visibility on control actions performed and corrections in progress or to be resolved' },
-  { step: '4', moment: 'First payroll', detail: '~2 hours after signup' },
+  { step: '4', moment: 'First payroll', detail: 'Under 3 hours after setup' },
 ]
 const afterOngoing = 'Actions and touchpoints automated - increased reliability, significant time savings for both clients and CS teams.'
 
@@ -126,7 +126,7 @@ export default function OnboardingPage() {
               </li>
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                One unified promise is more powerful than a list of improvements. "Get your first payroll done in 2 hours" cuts through everything.
+                One unified promise is more powerful than a list of improvements. "Get your first payroll done in under 3 hours" cuts through everything.
               </li>
               <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
                 <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
@@ -156,7 +156,7 @@ export default function OnboardingPage() {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Positioning</h2>
           <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6 max-w-2xl mb-2">
-            "Get your first payroll done in 2 hours."
+            "Get your first payroll done in under 3 hours."
           </blockquote>
           <p className="text-stone-500 text-base pl-6 max-w-xl mb-10">Setting up payroll software has never been this fast & simple.</p>
           <div className="grid md:grid-cols-3 gap-4">
@@ -230,7 +230,7 @@ export default function OnboardingPage() {
                   <div className="rounded-xl border border-stone-200 overflow-hidden">
                     <div className="px-4 py-2.5 bg-stone-50 border-b border-stone-200">
                       <span className="text-xs font-bold text-stone-400 uppercase tracking-widest">Before</span>
-                      <span className="text-xs text-stone-400 ml-2">~15 days · Manual · CS-dependent</span>
+                      <span className="text-xs text-stone-400 ml-2">Manual · CS-dependent</span>
                     </div>
                     <div className="p-4 space-y-2.5">
                       {journeyBefore.map((item, i) => (
@@ -251,7 +251,7 @@ export default function OnboardingPage() {
                   <div className="rounded-xl border border-teal-100 overflow-hidden">
                     <div className="px-4 py-2.5 bg-teal-50 border-b border-teal-100">
                       <span className="text-xs font-bold text-teal-600 uppercase tracking-widest">After</span>
-                      <span className="text-xs text-teal-500 ml-2 opacity-70">~2h · Automated · Self-guided</span>
+                      <span className="text-xs text-teal-500 ml-2 opacity-70">Automated · Self-guided</span>
                     </div>
                     <div className="p-4 space-y-2.5">
                       {journeyAfter.map((item, i) => (
@@ -299,7 +299,7 @@ export default function OnboardingPage() {
                 <div>
                   <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">The Promise</h4>
                   <div className="bg-teal-50 rounded-xl p-5 border border-teal-100 mb-4">
-                    <p className="text-base font-semibold text-stone-900 leading-snug">"Get your first payroll done in 2 hours. Fully guided, fully automated, no expertise needed."</p>
+                    <p className="text-base font-semibold text-stone-900 leading-snug">"Get your first payroll done in under 3 hours. Fully guided, fully automated, no expertise needed."</p>
                   </div>
                   <p className="text-xs text-stone-500 leading-relaxed">Lead with the outcome, not the features. The 2-hour promise is specific and directly addresses the biggest friction point for new customers.</p>
                   <div className="mt-4 bg-stone-900 rounded-xl p-4">
@@ -314,7 +314,7 @@ export default function OnboardingPage() {
                   <div className="space-y-3">
                     {[
                       { persona: 'HR Manager', angle: 'focus: time saved', message: 'Set up in hours, not weeks. 90% of your data is pre-filled automatically - you just validate.' },
-                      { persona: 'Finance Director', angle: 'focus: compliance & reliability', message: 'First payroll in 2 hours, fully compliant. No risk of errors from manual entry, no delays.' },
+                      { persona: 'Finance Director', angle: 'focus: compliance & reliability', message: 'First payroll in under 3 hours, fully compliant. No risk of errors from manual entry, no delays.' },
                       { persona: 'Small Business Owner', angle: 'focus: no expertise needed', message: 'No payroll background needed. PayFit guides you through every step - and Copilot is there if you get stuck.' },
                     ].map((p) => (
                       <div key={p.persona} className="bg-stone-50 rounded-lg p-4 border border-stone-100">

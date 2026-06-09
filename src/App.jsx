@@ -74,12 +74,12 @@ const caseStudies = [
     company: 'PayFit',
     title: 'Onboarding Redesign',
     comingSoon: false,
-    subtitle: 'Time-to-value from 15 days to 2 hours',
+    subtitle: 'Time-to-value from 2 days to under 3 hours',
     whyThisProject:
       'Three years of progressive changes (product, pricing, services, lifecycle) to reconcile around a single story that customers, Sales, and CS trust and tell the same way. One of the most cross-functional projects I\'ve owned, and demanding in terms of internal change management.',
     artifactLabel: 'Sales enablement doc',
     outcomes: [
-      { metric: '~2h', label: 'Time-to-value for Starter clients (was 15 days)' },
+      { metric: '<3h', label: 'Time-to-value for Starter clients (was 2 days)' },
       { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
       { metric: '+1.5pt', label: 'Customer satisfaction score' },
     ],
@@ -218,7 +218,7 @@ function Hero({ onContact }) {
                 I listen to customers, turn that into a shared language internally, and build the launches, narratives, and content that make adoption happen - across teams, markets, and business models.
               </p>
               <p className="text-sm text-teal-700 font-medium">
-                80% AI product adoption | +15pts conversion on a top partnership | time-to-value cut from 15 days to 2 hours for an onboarding path. Explore the projects below.
+                80% AI product adoption | +15pts conversion on a top partnership | time-to-value cut from 2 days to under 3 hours for an onboarding path. Explore the projects below.
               </p>
             </div>
           </div>
