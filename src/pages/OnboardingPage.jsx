@@ -155,14 +155,15 @@ export default function OnboardingPage() {
       <section className="py-16 px-6 bg-stone-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Positioning</h2>
-          <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6 max-w-2xl mb-10">
+          <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6 max-w-2xl mb-2">
             "Get your first payroll done in 2 hours."
           </blockquote>
+          <p className="text-stone-500 text-base pl-6 max-w-xl mb-10">Setting up payroll software has never been this fast & simple.</p>
           <div className="grid md:grid-cols-3 gap-4">
             {[
               { label: 'Simple from day one', detail: '90% of setup data auto-retrieved, step-by-step in-app guidance at every stage - designed so any admin can get started without training.' },
-              { label: 'Fast & reliable', detail: 'From signup to first payroll in 2 hours. Built-in compliance, automated payslip generation, real-time updates.' },
-              { label: 'Support when it matters', detail: 'Copilot for instant answers, premium expert services for complex cases - a tiered model that scales with the customer.' },
+              { label: 'Reliable', detail: 'Built-in compliance, automated payslip generation and declarations, real-time updates. Everything is finally under control.' },
+              { label: 'Support when it matters', detail: 'PayFit Copilot available 24/7, experts on hand for complex cases, training resources for every level. Payroll is one less thing to worry about.' },
             ].map((v) => (
               <div key={v.label} className="bg-white rounded-xl p-6 border border-stone-100">
                 <div className="text-sm font-semibold text-stone-900 mb-2">{v.label}</div>
@@ -276,7 +277,7 @@ export default function OnboardingPage() {
                 <div>
                   <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">The Promise</h4>
                   <div className="bg-teal-50 rounded-xl p-5 border border-teal-100 mb-4">
-                    <p className="text-base font-semibold text-stone-900 leading-snug">"Get your first payroll done in 2 hours - fully guided, fully automated, no payroll expertise needed."</p>
+                    <p className="text-base font-semibold text-stone-900 leading-snug">"Setting up payroll software has never been this simple - fully guided, fully automated, no expertise needed."</p>
                   </div>
                   <p className="text-xs text-stone-500 leading-relaxed">Lead with the outcome, not the features. The 2-hour promise is specific, credible, and directly addresses the biggest friction point for new customers.</p>
                 </div>
