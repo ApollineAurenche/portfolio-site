@@ -210,16 +210,24 @@ function Hero({ onContact }) {
               <span className="text-stone-900">I turn products into stories</span><br />
               <span className="text-teal-600">and stories into traction.</span>
             </h1>
-            <div className="max-w-xl space-y-3 mb-10">
-              <p className="text-lg text-stone-800 font-medium leading-relaxed">
-                7 years, 3 unicorns, 3 sectors - always the same obsession: connect the magic of a product with what people actually need.
-              </p>
-              <p className="text-sm text-stone-500 leading-relaxed">
-                I listen to customers, turn that into a shared language internally, and build the launches, narratives, and content that make adoption happen - across teams, markets, and business models.
-              </p>
-              <p className="text-sm text-teal-700 font-medium">
-                80% AI product adoption | +15pts conversion on a top partnership | time-to-value cut from 2 days to under 3 hours for an onboarding path. Explore the projects below.
-              </p>
+            <p className="text-lg text-stone-700 leading-relaxed mb-8 max-w-xl">
+              7 years, 3 unicorns, 3 sectors, same mission. I connect the magic of a product with what people actually need - through launches, narratives, and enablement that make adoption happen across teams and markets.
+            </p>
+            <div className="flex gap-8 mb-10">
+              <div>
+                <div className="text-3xl font-bold text-teal-600">80%</div>
+                <div className="text-xs text-stone-400 mt-1 leading-snug">AI product adoption<br />(Copilot launch)</div>
+              </div>
+              <div className="w-px bg-stone-200" />
+              <div>
+                <div className="text-3xl font-bold text-teal-600">+15pts</div>
+                <div className="text-xs text-stone-400 mt-1 leading-snug">conversion on<br />a key partnership</div>
+              </div>
+              <div className="w-px bg-stone-200" />
+              <div>
+                <div className="text-3xl font-bold text-teal-600">&lt;3h</div>
+                <div className="text-xs text-stone-400 mt-1 leading-snug">time-to-value<br />(was 2 days)</div>
+              </div>
             </div>
           </div>
 

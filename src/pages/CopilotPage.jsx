@@ -197,8 +197,9 @@ export default function CopilotPage() {
           <div className="mb-10">
             <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Positioning & Messaging</h2>
             <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6 max-w-2xl">
-              "Your AI personal assistant - always available, always aware of your specificities."
+              "Never be without an answer."
             </blockquote>
+            <p className="text-base text-stone-500 mt-4 pl-6 max-w-2xl">Get instant, personalized answers 24/7 with your personal AI assistant.</p>
           </div>
 
           {/* Value props */}
