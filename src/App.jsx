@@ -82,6 +82,7 @@ const caseStudies = [
       { metric: '~2h', label: 'Time-to-value for Starter clients (was 15 days)' },
       { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
       { metric: '+1.5pt', label: 'Customer satisfaction score' },
+      { metric: '+28%', label: 'Closing rate (new pitch deck vs old)' },
     ],
   },
   {

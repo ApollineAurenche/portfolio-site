@@ -4,7 +4,7 @@ const outcomes = [
   { metric: '~2h', label: 'Time-to-value for Starter clients (was 15 days)' },
   { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
   { metric: '+1.5pt', label: 'Customer satisfaction score' },
-  { metric: '+18%', label: 'Closing rate on deals pitched with new deck vs old' },
+  { metric: '+28%', label: 'Closing rate on deals pitched with new deck vs old' },
 ]
 
 const journeyBefore = [
@@ -335,6 +335,18 @@ export default function OnboardingPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enablement result callout */}
+      <section className="pb-4 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-stone-50 border border-stone-200 rounded-2xl px-8 py-5 flex items-start gap-4">
+            <div className="text-2xl font-bold text-teal-600 flex-shrink-0">+28%</div>
+            <p className="text-sm text-stone-600 leading-relaxed">
+              This figure is specifically tied to the enablement work - new pitch deck and assets. Measured by comparing closing rates on deals pitched with the new deck vs. the old one. The other metrics (TTV, activation, CSAT) reflect the broader transformation: product, services, pricing, and lifecycle combined.
+            </p>
           </div>
         </div>
       </section>
