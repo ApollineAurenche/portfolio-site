@@ -313,24 +313,14 @@ export default function CopilotPage() {
             ))}
           </div>
 
-          {/* Platinum tiering callout */}
-          <div className="mb-8 flex items-start gap-4 bg-yellow-50 border border-yellow-200 rounded-2xl px-6 py-5">
-            <span className="text-xl flex-shrink-0">🥇</span>
-            <div>
-              <span className="text-xs font-bold tracking-widest text-yellow-700 uppercase">Platinum launch tier</span>
-              <p className="text-sm text-stone-600 leading-relaxed mt-1">
-                At PayFit, every feature launch is assigned a tier based on its strategic impact and business potential. Copilot was qualified as <span className="font-semibold text-stone-800">Platinum</span> - the highest tier. That classification directly shaped the GTM plan below.
-              </p>
-            </div>
-          </div>
 
           {/* GTM Plan table */}
           <div className="bg-stone-50 rounded-2xl p-8">
             <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">
-              Platinum Tiering - GTM Plan
+              GTM Action Plan
             </h3>
             <p className="text-stone-500 text-sm leading-relaxed mb-6">
-              This plan was aligned with all stakeholders during the GTM kick-off - with a full RACI across 6+ teams. What's shown here is the simplified view with the Responsible owner per deliverable.
+              Full plan validated with all stakeholders during the GTM kick-off - with a full RACI across 6+ teams. What's shown here is the simplified view with the Responsible owner per deliverable.
             </p>
             <div className="grid md:grid-cols-4 gap-6">
               {gtmPlan.map((col) => (

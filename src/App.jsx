@@ -377,7 +377,7 @@ function CaseStudyCard({ cs, index }) {
                     <span className="text-xs font-bold tracking-widest text-stone-400 uppercase">Artifact</span>
                     <span className="text-xs bg-teal-50 text-teal-700 border border-teal-100 px-2.5 py-1 rounded-full font-medium">{cs.artifactLabel}</span>
                   </div>
-                  <p className="text-xs text-stone-300 italic">Illustrative reconstruction - not an internal document.</p>
+                  <p className="text-xs text-stone-300 italic">Fictional content for illustration purposes.</p>
                 </div>
               )}
             </div>
