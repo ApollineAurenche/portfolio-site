@@ -460,7 +460,7 @@ function Work() {
           <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Case studies</span>
           <h2 className="text-4xl font-bold text-stone-900 mt-3">Selected work</h2>
           <p className="text-stone-400 mt-3 max-w-xl">
-            Four projects across AI launch, lifecycle, customer communication, and partnerships - each showing a different dimension of full-stack PMM work.
+            Four projects across AI launch, onboarding redesign, customer communication, and partnerships - each showing a different dimension of full-stack PMM work.
           </p>
         </div>
 
