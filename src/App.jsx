@@ -125,7 +125,7 @@ const caseStudies = [
 
 const caseStudyLinks = [
   { label: 'PayFit Copilot', route: '/work/copilot', tag: 'GTM · AI · 3 Markets' },
-  { label: 'Onboarding Redesign', route: '/work/onboarding', tag: 'Positioning · Sales Enablement · Change Management' },
+  { label: 'Onboarding Redesign', route: '/work/onboarding', tag: 'Positioning · Change Management' },
   { label: 'Product Newsletter', route: '/work/newsletter', tag: 'Content Strategy · Customer Marketing' },
   { label: 'SNCF × BlaBlaCar', route: '/work/sncf', tag: 'Partnership · Product Integration' },
   // Add more as pages are built:
@@ -905,25 +905,10 @@ function IntroHero({ onContact }) {
             maxWidth: '1100px', margin: '0 auto',
             borderTop: `1px solid ${SLATE.light}`,
           }}>
-            <div style={{ display: 'flex', gap: '5rem', alignItems: 'center', flexWrap: 'wrap', width: '100%' }}>
-
-              {/* Photo */}
-              <div style={{ flexShrink: 0 }}>
-                <div style={{
-                  width: '280px', height: '280px',
-                  borderRadius: '50%', overflow: 'hidden',
-                  border: `3px solid ${SLATE.light}`,
-                }}>
-                  <img
-                    src="/apolline.jpeg"
-                    alt="Apolline Aurenche"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
-                  />
-                </div>
-              </div>
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
 
               {/* Info */}
-              <div style={{ flex: 1, minWidth: '280px' }}>
+              <div style={{ width: '100%', maxWidth: '720px' }}>
                 <span style={{
                   fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.2em',
                   color: SLATE.accent, textTransform: 'uppercase', display: 'block', marginBottom: '1.25rem',
@@ -933,7 +918,7 @@ function IntroHero({ onContact }) {
                 <h2 style={{ fontSize: 'clamp(1.75rem, 3.2vw, 2.75rem)', fontWeight: 800, color: SLATE.dark, lineHeight: 1.15, letterSpacing: '-0.02em', margin: '0 0 1.5rem' }}>
                   I turn products into <span style={{ color: SLATE.accent }}>stories</span>, and stories into <span style={{ color: SLATE.mid }}>traction</span>.
                 </h2>
-                <p style={{ fontSize: '1rem', color: SLATE.accent, lineHeight: 1.75, maxWidth: '480px', margin: '0 0 2.5rem' }}>
+                <p style={{ fontSize: '1rem', color: SLATE.accent, lineHeight: 1.75, maxWidth: '600px', margin: '0 0 2.5rem' }}>
                   I connect the magic of a product with what people actually need - through launches, narratives, and enablement that make adoption happen across teams and markets.
                 </p>
 

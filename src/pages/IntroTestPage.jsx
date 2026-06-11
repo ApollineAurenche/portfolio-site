@@ -60,30 +60,12 @@ export default function IntroTestPage() {
           animation: fadeIn 1s ease 1.4s both;
         }
         .about-grid {
-          display: grid;
-          grid-template-columns: 1.3fr 1fr;
-          align-items: center;
-        }
-        .about-photo {
-          grid-column: 1;
-          grid-row: 1;
-          align-self: start;
+          display: flex;
+          justify-content: center;
         }
         .about-info {
-          grid-column: 2;
-          grid-row: 1;
-          margin-left: -3.5rem;
-          z-index: 1;
-        }
-        @media (max-width: 800px) {
-          .about-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-          }
-          .about-info {
-            margin-left: 0;
-          }
+          width: 100%;
+          max-width: 720px;
         }
       `}</style>
 
@@ -280,19 +262,7 @@ export default function IntroTestPage() {
           }}>
             <div className="about-grid" style={{ position: 'relative', width: '100%' }}>
 
-              {/* Photo — video frame style, name overlay kept visible */}
-              <div className="about-photo" style={{
-                width: '100%', aspectRatio: '1100 / 688',
-                borderRadius: '20px', overflow: 'hidden',
-              }}>
-                <img
-                  src="/apolline-video.jpg"
-                  alt="Apolline Aurenche speaking on camera"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-              </div>
-
-              {/* Info — overlaps the photo on desktop to feel like one composition */}
+              {/* Info */}
               <div className="about-info" style={{
                 position: 'relative',
                 backgroundColor: SLATE.bg,
