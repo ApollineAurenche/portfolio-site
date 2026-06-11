@@ -90,7 +90,7 @@ const caseStudies = [
   {
     id: 'newsletter',
     route: '/work/newsletter',
-    tag: ['Content Strategy', 'Customer Marketing', 'Product Adoption'],
+    tag: ['Product Adoption', 'Content Strategy', 'Video'],
     company: 'PayFit',
     title: 'Product Newsletter Redesign',
     subtitle: '+20% open rate · +8% click-through rate',
@@ -264,7 +264,7 @@ function CaseStudyCard({ cs, index }) {
       <p className="text-stone-400 text-sm">{cs.company}</p>
 
       {/* Outcomes */}
-      <div className="flex flex-wrap gap-6 mt-auto pt-8">
+      <div className="flex flex-wrap gap-6 mt-8">
         {cs.outcomes.map((o) => (
           <div key={o.metric} className="text-left">
             <div className="text-2xl font-bold text-teal-600">{o.metric}</div>
@@ -311,9 +311,6 @@ function Work() {
         <div className="mb-16">
           <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Case studies</span>
           <h2 className="text-4xl font-bold text-stone-900 mt-3">Selected work</h2>
-          <p className="text-stone-400 mt-3 max-w-xl">
-            Four projects across AI launch, onboarding redesign, customer communication, and partnerships - each showing a different dimension of full-stack PMM work.
-          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6">
@@ -434,7 +431,7 @@ function Referrals() {
           <div className="flex items-center gap-3 mb-2">
             <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Referrals</span>
           </div>
-          <h2 className="text-3xl font-bold text-stone-900">From the people I build with</h2>
+          <h2 className="text-3xl font-bold text-stone-900">From the people I built with</h2>
         </div>
       </div>
 
@@ -477,7 +474,7 @@ function Footer({ onContact }) {
     <footer className="py-20 px-6 border-t border-stone-100">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         <div>
-          <h3 className="text-2xl font-bold text-stone-900">Let's work together.</h3>
+          <h3 className="text-2xl font-bold text-stone-900">Let's work together!</h3>
         </div>
         <div className="flex flex-col gap-3 text-sm">
           <button
@@ -497,7 +494,7 @@ function Footer({ onContact }) {
         </div>
       </div>
       <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-stone-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
-        <p className="text-sm text-stone-400">Designed and built by Apolline Aurenche using Claude, GitHub & Vercel.</p>
+        <p className="text-sm text-stone-400">Made with ❤️ by Apolline Aurenche</p>
         <p className="text-xs text-stone-300">© 2025 Apolline Aurenche</p>
       </div>
     </footer>
@@ -656,6 +653,12 @@ function IntroHero({ onContact }) {
         .hero-scroll { animation: fadeIn 1s ease 1.2s both; }
         .scroll-line {
           animation: fadeIn 1s ease 1.4s both;
+        }
+        @media (max-width: 768px) {
+          .hero-photo { display: none !important; }
+          .hero-line1, .hero-line2 { font-size: clamp(2.5rem, 13vw, 4rem) !important; }
+          .hero-metrics { gap: 2rem !important; }
+          .hero-scroll { display: none !important; }
         }
       `}</style>
 
@@ -816,8 +819,8 @@ function IntroHero({ onContact }) {
                 <a href="#about" style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
                   fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em',
-                  color: SLATE.mid, textTransform: 'uppercase',
-                  textDecoration: 'none', borderBottom: `1px solid ${SLATE.light}`,
+                  color: SLATE.accent, textTransform: 'uppercase',
+                  textDecoration: 'none', borderBottom: `1px solid ${SLATE.accent}`,
                   paddingBottom: '0.2rem',
                 }}>
                   More about me
