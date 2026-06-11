@@ -1,9 +1,12 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { BrowserRouter, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom'
 import CopilotPage from './pages/CopilotPage.jsx'
 import SNCFPage from './pages/SNCFPage.jsx'
 import NewsletterPage from './pages/NewsletterPage.jsx'
 import PreviewPage from './pages/PreviewPage.jsx'
+import AboutTestPage from './pages/AboutTestPage.jsx'
+import IntroTestPage from './pages/IntroTestPage.jsx'
+import WorkTestPage from './pages/WorkTestPage.jsx'
 import OnboardingPage from './pages/OnboardingPage.jsx'
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
@@ -59,7 +62,7 @@ const caseStudies = [
     title: 'Copilot Launch',
     subtitle: 'From 0 to 80% adoption across 3 markets',
     whyThisProject:
-      'PayFit shipped its first AI agent in 2024, ahead of the market. I joined from day one - building positioning and messaging from scratch across 3 countries, then iterating as the product evolved. The core challenge: building trust around AI at a time when it was less mainstream and users were less familiar with it.',
+      'PayFit shipped its first AI agent in 2024, ahead of the market. I built positioning and messaging from scratch and owned GTM for one of our most strategic launches across 3 countries.',
     artifactLabel: 'GTM launch plan',
     outcomes: [
       { metric: '80%', label: 'Adoption post-launch\n(3 markets)' },
@@ -76,7 +79,7 @@ const caseStudies = [
     comingSoon: false,
     subtitle: 'Time-to-value from 2 days to under 3 hours',
     whyThisProject:
-      'Three years of progressive changes (product, pricing, services, lifecycle) to reconcile around a single story that customers, Sales, and CS trust and tell the same way. One of the most cross-functional projects I\'ve owned, and demanding in terms of internal change management.',
+      'Three years of incremental changes to reconcile around one narrative everyone could trust and repeat. One of the most cross-functional projects I\'ve worked on.',
     artifactLabel: 'Sales enablement doc',
     outcomes: [
       { metric: '<3h', label: 'Time-to-value for Starter clients (was 2 days)' },
@@ -92,7 +95,7 @@ const caseStudies = [
     title: 'Product Newsletter Redesign',
     subtitle: '+20% open rate · +8% click-through rate',
     whyThisProject:
-      'Most product newsletters are feature lists nobody reads. Working closely with the marketing team, we rebuilt this one from scratch - new editorial angle, new format, and a new face: mine, presenting product updates directly to customers through video every send. +20% open rate and +8% CTR later, customers were actually reading.',
+      'Most product newsletters are feature lists nobody reads. We rebuilt this one from scratch - new format, new face: mine, presenting updates via video every send.',
     artifactLabel: 'Editorial strategy framework',
     outcomes: [
       { metric: '+20%', label: 'Open rate after full redesign' },
@@ -108,7 +111,7 @@ const caseStudies = [
     title: 'SNCF × BlaBlaCar Partnership',
     subtitle: 'BlaBlaCar\'s #1 passenger acquisition channel',
     whyThisProject:
-      'SNCF is France\'s #1 mobility operator. We scaled the partnership step by step until SNCF became BlaBlaCar\'s top passenger acquisition partner. One of the projects I\'m most proud of - I still see it live today, 6 years later, every time I book a trip.',
+      'SNCF is France\'s #1 mobility operator. We scaled this partnership until it became BlaBlaCar\'s top acquisition partner - one integration still live today, 6 years later.',
     artifactLabel: 'Full integration roadmap - product phasing + marketing activation',
     outcomes: [
       { metric: '+15pts', label: 'Conversion rate (visitor → booking) in 5 months' },
@@ -195,91 +198,6 @@ function Nav({ onContact }) {
   )
 }
 
-function Hero({ onContact }) {
-  return (
-    <section className="min-h-screen flex flex-col justify-center pt-16 px-6">
-      <div className="max-w-5xl mx-auto w-full">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-12 mb-6">
-
-          {/* Text */}
-          <div className="flex-1 max-w-2xl">
-            <span className="inline-block text-xs font-bold tracking-widest text-teal-600 uppercase mb-5">
-              Senior Product Marketing Manager
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold leading-snug tracking-tight mb-6">
-              <span className="text-stone-900">I turn products into stories</span><br />
-              <span className="text-teal-600">and stories into traction.</span>
-            </h1>
-            <p className="text-lg text-stone-700 leading-relaxed mb-8 max-w-xl">
-              7 years, 3 unicorns, 3 sectors, same mission. I connect the magic of a product with what people actually need - through launches, narratives, and enablement that make adoption happen across teams and markets.
-            </p>
-            <div className="flex gap-8 mb-10">
-              <div>
-                <div className="text-3xl font-bold text-teal-600">80%</div>
-                <div className="text-xs text-stone-400 mt-1 leading-snug">AI product adoption<br />(Copilot launch)</div>
-              </div>
-              <div className="w-px bg-stone-200" />
-              <div>
-                <div className="text-3xl font-bold text-teal-600">+15pts</div>
-                <div className="text-xs text-stone-400 mt-1 leading-snug">conversion on<br />a key partnership</div>
-              </div>
-              <div className="w-px bg-stone-200" />
-              <div>
-                <div className="text-3xl font-bold text-teal-600">&lt;3h</div>
-                <div className="text-xs text-stone-400 mt-1 leading-snug">time-to-value<br />(was 2 days)</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Photo */}
-          <div className="flex-shrink-0 flex justify-center md:justify-end">
-            <div className="relative">
-              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-stone-100">
-                <img
-                  src="/apolline.jpeg"
-                  alt="Apolline Aurenche"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              {/* Subtle teal accent ring */}
-              <div className="absolute -inset-1.5 rounded-full border-2 border-teal-200 -z-10" />
-            </div>
-          </div>
-
-        </div>
-
-        <div className="flex flex-wrap gap-3 mt-2 mb-8">
-          {[
-            'SF Bay Area',
-            'Remote worldwide',
-            'Available July 2026',
-            'FR (native) · EN (fluent)',
-          ].map((tag) => (
-            <span key={tag} className="px-4 py-2 bg-stone-100 text-stone-600 rounded-full text-sm">{tag}</span>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-6">
-          <a
-            href="#work"
-            className="bg-teal-600 text-white px-8 py-4 rounded-full font-medium hover:bg-teal-700 transition-colors"
-          >
-            See my work
-          </a>
-          <a
-            href="https://www.linkedin.com/in/apolline-aurenche"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-stone-500 hover:text-stone-900 transition-colors text-sm underline underline-offset-4"
-          >
-            LinkedIn ↗
-          </a>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function About() {
   return (
     <section id="about" className="py-20 px-6 bg-stone-50">
@@ -325,134 +243,60 @@ function About() {
 }
 
 function CaseStudyCard({ cs, index }) {
-  const [open, setOpen] = useState(false)
-
   return (
-    <div className="border border-stone-200 rounded-2xl overflow-hidden hover:border-teal-200 transition-all duration-300">
-      {/* Card header - always visible */}
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full text-left p-8 md:p-10"
-      >
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex-1">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs font-bold text-teal-600 tracking-widest">0{index + 1}</span>
-              {cs.tag.map((t) => (
-                <span key={t} className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">{t}</span>
-              ))}
-            </div>
-            <div className="flex items-center gap-3 mb-1">
-              <h3 className="text-2xl font-bold text-stone-900">{cs.title}</h3>
-              {cs.comingSoon && (
-                <span className="text-xs text-stone-400 bg-stone-100 px-2.5 py-1 rounded-full flex-shrink-0">Under construction</span>
-              )}
-            </div>
-            <p className="text-stone-400 text-sm">{cs.company}</p>
+    <div
+      className="group relative border border-stone-200 rounded-2xl overflow-hidden hover:border-teal-200 transition-all duration-300 p-8 md:p-9 flex flex-col"
+      style={{ minHeight: '320px' }}
+    >
+      {/* Card face - always visible */}
+      <div className="flex items-center gap-3 mb-4">
+        <span className="text-xs font-bold text-teal-600 tracking-widest">0{index + 1}</span>
+        {cs.tag.map((t) => (
+          <span key={t} className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">{t}</span>
+        ))}
+      </div>
+      <div className="flex items-center gap-3 mb-1">
+        <h3 className="text-2xl font-bold text-stone-900">{cs.title}</h3>
+        {cs.comingSoon && (
+          <span className="text-xs text-stone-400 bg-stone-100 px-2.5 py-1 rounded-full flex-shrink-0">Under construction</span>
+        )}
+      </div>
+      <p className="text-stone-400 text-sm">{cs.company}</p>
+
+      {/* Outcomes */}
+      <div className="flex flex-wrap gap-6 mt-auto pt-8">
+        {cs.outcomes.map((o) => (
+          <div key={o.metric} className="text-left">
+            <div className="text-2xl font-bold text-teal-600">{o.metric}</div>
+            <div className="text-xs text-stone-400 max-w-[140px] leading-tight whitespace-pre-line mt-1">{o.label}</div>
           </div>
-          <div className="flex-shrink-0 mt-1">
-            <div
-              className={`w-8 h-8 rounded-full border-2 border-stone-200 flex items-center justify-center transition-transform duration-300 ${open ? 'rotate-45' : ''}`}
+        ))}
+      </div>
+
+      {/* Hover overlay - "why this project" */}
+      {cs.whyThisProject && (
+        <div
+          className="absolute inset-0 flex flex-col justify-center p-8 md:p-9 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
+          style={{ backgroundColor: '#1c1917' }}
+        >
+          <span className="text-[11px] font-bold tracking-widest uppercase mb-3 text-teal-300">
+            Why this project
+          </span>
+          <p className="text-sm md:text-base leading-relaxed text-white">
+            {cs.whyThisProject}
+          </p>
+          {cs.route ? (
+            <Link
+              to={cs.route}
+              className="inline-flex items-center gap-2 text-sm font-medium text-teal-300 hover:text-teal-200 transition-colors mt-6 self-start"
             >
-              <svg className="w-4 h-4 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              View full case study
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </div>
-          </div>
-        </div>
-
-        {/* Outcomes - always visible */}
-        <div className="flex flex-wrap gap-4 mt-6">
-          {cs.outcomes.map((o) => (
-            <div key={o.metric} className="text-left">
-              <div className="text-2xl font-bold text-teal-600">{o.metric}</div>
-              <div className="text-xs text-stone-400 max-w-[140px] leading-tight whitespace-pre-line">{o.label}</div>
-            </div>
-          ))}
-        </div>
-      </button>
-
-      {/* Expanded detail */}
-      {open && (
-        <div className="px-8 md:px-10 pb-10 border-t border-stone-100">
-          {cs.whyThisProject && (
-            <div className="pt-8 pb-6 border-b border-stone-100 mb-6">
-              <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Why this project</h4>
-              <p className="text-stone-600 text-sm leading-relaxed italic mb-4">{cs.whyThisProject}</p>
-              {cs.artifactLabel && (
-                <div className="mt-3 space-y-1.5">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold tracking-widest text-stone-400 uppercase">Artifact</span>
-                    <span className="text-xs bg-teal-50 text-teal-700 border border-teal-100 px-2.5 py-1 rounded-full font-medium">{cs.artifactLabel}</span>
-                  </div>
-                  <p className="text-xs text-stone-300 italic">Fictional content for illustration purposes.</p>
-                </div>
-              )}
-            </div>
-          )}
-          {(cs.problem || cs.insight || cs.positioning || cs.artifact) && (
-            <div className="grid md:grid-cols-2 gap-8 pt-2">
-              <div className="space-y-6">
-                {cs.problem && (
-                  <div>
-                    <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Business Problem</h4>
-                    <p className="text-stone-600 text-sm leading-relaxed">{cs.problem}</p>
-                  </div>
-                )}
-                {cs.insight && (
-                  <div>
-                    <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Strategic Insight</h4>
-                    <p className="text-stone-600 text-sm leading-relaxed">{cs.insight}</p>
-                  </div>
-                )}
-                {cs.positioning && (
-                  <div>
-                    <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">Positioning</h4>
-                    <p className="text-stone-900 text-sm font-medium italic">{cs.positioning}</p>
-                  </div>
-                )}
-              </div>
-              {cs.artifact && (
-                <div className="bg-stone-50 rounded-xl p-6 flex flex-col justify-between">
-                  <div>
-                    <h4 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">
-                      Artifact · {cs.artifact}
-                    </h4>
-                    <p className="text-stone-600 text-sm leading-relaxed">{cs.artifactDetail}</p>
-                  </div>
-                  <div className="mt-6 pt-4 border-t border-stone-200">
-                    {cs.route ? (
-                      <Link
-                        to={cs.route}
-                        className="inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700 transition-colors"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        View full case study
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                    ) : (
-                      <span className="text-xs text-stone-400 italic">Case study to come</span>
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-          {!cs.problem && !cs.artifact && cs.route && (
-            <div className="pt-4">
-              <Link
-                to={cs.route}
-                className="inline-flex items-center gap-2 text-sm font-medium text-teal-600 hover:text-teal-700 transition-colors"
-                onClick={(e) => e.stopPropagation()}
-              >
-                View full case study
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
+            </Link>
+          ) : (
+            <span className="text-xs text-stone-400 italic mt-6">Case study to come</span>
           )}
         </div>
       )}
@@ -472,7 +316,7 @@ function Work() {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid sm:grid-cols-2 gap-6">
           {caseStudies.map((cs, i) => (
             <CaseStudyCard key={cs.id} cs={cs} index={i} />
           ))}
@@ -564,6 +408,15 @@ function Experience() {
 
 const referrals = [
   {
+    name: 'Thibault Oberlin',
+    role: 'Sr Director, Product Marketing',
+    company: 'PayFit',
+    relation: 'Former manager at PayFit · ex-Google PMM lead',
+    featured: true,
+    quote:
+      "I had the pleasure of working with Apolline at PayFit for 3 years, and she is one of the strongest Product Marketing Managers I have worked with. What sets her apart is her ability to own the full product lifecycle, from business case and discovery through beta testing and go-to-market design and execution. She brings both strategic thinking and hands-on rigor at every stage. At PayFit, she led some of our most impactful launches, like the self-onboarding flow and PayFit Copilot, our AI assistant. Both projects required strong cross-functional leadership, and she exceeded expectations.",
+  },
+  {
     name: 'Marie Jamin',
     role: 'Head of Product',
     company: 'BPI France',
@@ -580,7 +433,6 @@ function Referrals() {
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-2">
             <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Referrals</span>
-            <span className="text-xs text-stone-400 bg-stone-100 px-2.5 py-0.5 rounded-full">More coming soon</span>
           </div>
           <h2 className="text-3xl font-bold text-stone-900">From the people I build with</h2>
         </div>
@@ -589,20 +441,27 @@ function Referrals() {
       {/* Cards */}
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid gap-6">
-          {referrals.map((r, i) => (
+          {referrals.map((r) => (
             <div
               key={r.name}
-              className="rounded-2xl p-8 flex flex-col gap-6 border bg-stone-50 border-stone-200 max-w-2xl"
+              className="relative rounded-3xl p-8 md:p-12 bg-gradient-to-br from-teal-50 to-white border border-teal-100 overflow-hidden"
             >
-              <p className="text-stone-700 text-base leading-relaxed">"{r.quote}"</p>
-              <div className="flex items-center gap-3 pt-5 border-t border-stone-200">
-                <div className="w-10 h-10 rounded-full bg-teal-50 border border-teal-100 flex items-center justify-center flex-shrink-0">
-                  <span className="text-teal-600 text-sm font-semibold">{r.name.charAt(0)}</span>
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-stone-900">{r.name}</div>
-                  <div className="text-xs text-stone-400">{r.role} · {r.company}</div>
-                  <div className="text-xs text-stone-300 mt-0.5">{r.relation}</div>
+              <span className="absolute -top-6 left-6 text-[7rem] md:text-[9rem] font-black text-teal-100 leading-none select-none" aria-hidden="true">
+                "
+              </span>
+              <div className="relative md:flex md:items-start md:gap-10">
+                <p className="text-stone-800 text-sm md:text-base leading-relaxed font-medium md:flex-1">
+                  "{r.quote}"
+                </p>
+                <div className="flex items-center gap-3 mt-8 md:mt-1 md:flex-col md:items-start md:gap-2 md:w-56 md:flex-shrink-0 pt-6 md:pt-0 border-t md:border-t-0 md:border-l md:pl-8 border-teal-100">
+                  <div className="w-12 h-12 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-base font-semibold">{r.name.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-stone-900">{r.name}</div>
+                    <div className="text-xs text-stone-500 mt-0.5">{r.role} · {r.company}</div>
+                    <div className="text-xs text-teal-600 mt-0.5">{r.relation}</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -741,14 +600,324 @@ function ContactModal({ onClose }) {
   )
 }
 
+// ─── INTRO HERO ──────────────────────────────────────────────────────────────
+
+const SLATE = {
+  bg:     '#FAFCFD',
+  light:  '#D9E4EA',
+  mid:    '#9CB8C7',
+  accent: '#567A8C',
+  dark:   '#2B3A44',
+}
+
+function IntroHero({ onContact }) {
+  const [phase, setPhase] = useState('intro') // 'intro' | 'leaving' | 'hero'
+
+  useEffect(() => {
+    const t1 = setTimeout(() => setPhase('leaving'), 1800)
+    const t2 = setTimeout(() => setPhase('hero'), 2400)
+    return () => { clearTimeout(t1); clearTimeout(t2) }
+  }, [])
+
+  return (
+    <>
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(24px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        @keyframes slideUp {
+          from { transform: translateY(0); opacity: 1; }
+          to   { transform: translateY(-100%); opacity: 0; }
+        }
+        @keyframes revealName {
+          0%   { clip-path: inset(0 100% 0 0); }
+          100% { clip-path: inset(0 0% 0 0); }
+        }
+        .intro-name {
+          animation: revealName 1s cubic-bezier(0.77,0,0.175,1) 0.3s both;
+        }
+        .intro-sub {
+          animation: fadeIn 0.6s ease 1s both;
+        }
+        .intro-leave {
+          animation: slideUp 0.6s cubic-bezier(0.77,0,0.175,1) both;
+        }
+        .hero-line1 { animation: fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.1s both; }
+        .hero-line2 { animation: fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.25s both; }
+        .hero-tag   { animation: fadeInUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.4s both; }
+        .hero-desc  { animation: fadeInUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
+        .hero-metrics { animation: fadeInUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.7s both; }
+        .hero-photo { animation: fadeIn 1s ease 0.5s both; }
+        .hero-scroll { animation: fadeIn 1s ease 1.2s both; }
+        .scroll-line {
+          animation: fadeIn 1s ease 1.4s both;
+        }
+      `}</style>
+
+      {/* ── INTRO OVERLAY ── */}
+      {phase !== 'hero' && (
+        <div
+          className={phase === 'leaving' ? 'intro-leave' : ''}
+          style={{
+            position: 'fixed', inset: 0, zIndex: 100,
+            backgroundColor: SLATE.dark,
+            display: 'flex', flexDirection: 'column',
+            alignItems: 'center', justifyContent: 'center',
+          }}
+        >
+          <div style={{ overflow: 'hidden' }}>
+            <h1
+              className="intro-name"
+              style={{
+                fontSize: 'clamp(2.5rem, 8vw, 7rem)',
+                fontWeight: 800,
+                color: '#FFFFFF',
+                letterSpacing: '-0.03em',
+                lineHeight: 1,
+              }}
+            >
+              Apolline Aurenche
+            </h1>
+          </div>
+          <p
+            className="intro-sub"
+            style={{ color: SLATE.mid, fontSize: '0.875rem', letterSpacing: '0.15em', marginTop: '1rem', textTransform: 'uppercase' }}
+          >
+            Senior Product Marketing Manager
+          </p>
+        </div>
+      )}
+
+      {/* ── HERO ── */}
+      {phase === 'hero' && (
+        <>
+          {/* Minimal nav */}
+          <nav style={{
+            position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
+            padding: '1.25rem 2rem',
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            backgroundColor: 'rgba(250,252,253,0.85)',
+            backdropFilter: 'blur(8px)',
+            borderBottom: `1px solid ${SLATE.light}`,
+          }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', color: SLATE.dark, textTransform: 'uppercase' }}>
+              Apolline Aurenche
+            </span>
+            <div style={{ display: 'flex', gap: '2rem', fontSize: '0.8rem', color: SLATE.accent, alignItems: 'center' }}>
+              <a href="#work" style={{ color: SLATE.accent, textDecoration: 'none' }}>Work</a>
+              <a href="#about" style={{ color: SLATE.accent, textDecoration: 'none' }}>About</a>
+              <button onClick={onContact} style={{ color: SLATE.dark, fontWeight: 600, fontSize: '0.8rem', background: 'none', border: 'none', cursor: 'pointer' }}>
+                Get in touch
+              </button>
+            </div>
+          </nav>
+
+          {/* Hero — first screen */}
+          <section style={{
+            minHeight: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            padding: '0 2rem',
+            paddingTop: '5rem',
+            maxWidth: '1100px',
+            margin: '0 auto',
+            position: 'relative',
+          }}>
+
+            {/* Tag */}
+            <div className="hero-tag" style={{ marginBottom: '2rem' }}>
+              <span style={{
+                fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.2em',
+                color: SLATE.accent, textTransform: 'uppercase',
+                border: `1px solid ${SLATE.light}`, padding: '0.4rem 1rem', borderRadius: '999px',
+              }}>
+                Senior Product Marketing Manager
+              </span>
+            </div>
+
+            {/* Background photo — large, behind headline */}
+            <div className="hero-photo" style={{
+              position: 'absolute',
+              top: '50%', right: 'clamp(-2rem, 2vw, 4rem)',
+              transform: 'translateY(-50%)',
+              width: 'clamp(14rem, 28vw, 26rem)',
+              height: 'clamp(14rem, 28vw, 26rem)',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              zIndex: 0,
+              opacity: 0.9,
+            }}>
+              <img
+                src="/apolline.jpeg"
+                alt="Apolline Aurenche"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+              />
+            </div>
+
+            {/* Main headline — very large */}
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <h1 style={{ margin: 0, lineHeight: 0.95, letterSpacing: '-0.04em' }}>
+                <span className="hero-line1" style={{
+                  display: 'block',
+                  fontSize: 'clamp(3.5rem, 9vw, 9rem)',
+                  fontWeight: 800,
+                  color: SLATE.dark,
+                }}>
+                  I turn products
+                </span>
+                <span className="hero-line2" style={{
+                  display: 'block',
+                  fontSize: 'clamp(3.5rem, 9vw, 9rem)',
+                  fontWeight: 800,
+                  color: SLATE.accent,
+                }}>
+                  into traction.
+                </span>
+              </h1>
+            </div>
+
+            {/* Metrics + CTAs */}
+            <div className="hero-metrics" style={{
+              display: 'flex', alignItems: 'center', gap: '3rem',
+              marginTop: '3.5rem', flexWrap: 'wrap',
+              position: 'relative', zIndex: 1,
+            }}>
+              <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
+                {[
+                  { metric: '80%', label: 'AI product adoption' },
+                  { metric: '+15pts', label: 'conversion on a key partnership' },
+                  { metric: '<3h', label: 'time-to-value (was 2 days)' },
+                ].map(m => (
+                  <div key={m.metric}>
+                    <div style={{ fontSize: '2.25rem', fontWeight: 800, color: SLATE.dark, lineHeight: 1 }}>{m.metric}</div>
+                    <div style={{ fontSize: '0.7rem', color: SLATE.mid, marginTop: '0.35rem', maxWidth: '120px', lineHeight: 1.4 }}>{m.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                <a href="#work" style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+                  fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em',
+                  color: SLATE.accent, textTransform: 'uppercase',
+                  textDecoration: 'none', borderBottom: `1px solid ${SLATE.accent}`,
+                  paddingBottom: '0.2rem',
+                }}>
+                  See my work
+                  <span aria-hidden="true">→</span>
+                </a>
+
+                <a href="#about" style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+                  fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em',
+                  color: SLATE.mid, textTransform: 'uppercase',
+                  textDecoration: 'none', borderBottom: `1px solid ${SLATE.light}`,
+                  paddingBottom: '0.2rem',
+                }}>
+                  More about me
+                  <span aria-hidden="true">↓</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Scroll indicator */}
+            <div className="hero-scroll" style={{
+              position: 'absolute', bottom: '2.5rem', left: '0',
+              display: 'flex', alignItems: 'center', gap: '0.75rem',
+            }}>
+              <div style={{
+                width: '1px', height: '48px',
+                background: `linear-gradient(to bottom, transparent, ${SLATE.accent})`,
+              }} />
+              <span style={{ fontSize: '0.65rem', letterSpacing: '0.2em', color: SLATE.mid, textTransform: 'uppercase' }}>
+                Scroll
+              </span>
+            </div>
+
+          </section>
+
+          {/* ── WHO I AM section ── */}
+          <section style={{
+            minHeight: '100vh',
+            display: 'flex', alignItems: 'center',
+            padding: '6rem 2rem',
+            maxWidth: '1100px', margin: '0 auto',
+            borderTop: `1px solid ${SLATE.light}`,
+          }}>
+            <div style={{ display: 'flex', gap: '5rem', alignItems: 'center', flexWrap: 'wrap', width: '100%' }}>
+
+              {/* Photo */}
+              <div style={{ flexShrink: 0 }}>
+                <div style={{
+                  width: '280px', height: '280px',
+                  borderRadius: '50%', overflow: 'hidden',
+                  border: `3px solid ${SLATE.light}`,
+                }}>
+                  <img
+                    src="/apolline.jpeg"
+                    alt="Apolline Aurenche"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+                  />
+                </div>
+              </div>
+
+              {/* Info */}
+              <div style={{ flex: 1, minWidth: '280px' }}>
+                <span style={{
+                  fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.2em',
+                  color: SLATE.accent, textTransform: 'uppercase', display: 'block', marginBottom: '1.25rem',
+                }}>
+                  Who I am
+                </span>
+                <h2 style={{ fontSize: 'clamp(1.75rem, 3.2vw, 2.75rem)', fontWeight: 800, color: SLATE.dark, lineHeight: 1.15, letterSpacing: '-0.02em', margin: '0 0 1.5rem' }}>
+                  I turn products into <span style={{ color: SLATE.accent }}>stories</span>, and stories into <span style={{ color: SLATE.mid }}>traction</span>.
+                </h2>
+                <p style={{ fontSize: '1rem', color: SLATE.accent, lineHeight: 1.75, maxWidth: '480px', margin: '0 0 2.5rem' }}>
+                  I connect the magic of a product with what people actually need - through launches, narratives, and enablement that make adoption happen across teams and markets.
+                </p>
+
+                {/* Info grid */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem 2.5rem' }}>
+                  {[
+                    { label: 'Location', value: 'SF Bay Area' },
+                    { label: 'Remote', value: 'Worldwide' },
+                    { label: 'Experience', value: '7 years · 3 unicorns\nMobility · Healthcare · Fintech' },
+                    { label: 'Languages', value: 'French (native)\nEnglish (fluent)' },
+                    { label: 'Availability', value: 'Currently available for work' },
+                  ].map(({ label, value }) => (
+                    <div key={label}>
+                      <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em', color: SLATE.mid, textTransform: 'uppercase', marginBottom: '0.2rem' }}>
+                        {label}
+                      </div>
+                      <div style={{ fontSize: '0.9rem', fontWeight: 500, color: SLATE.dark, whiteSpace: 'pre-line' }}>
+                        {value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </>
+      )}
+    </>
+  )
+}
+
 // ─── HOME ────────────────────────────────────────────────────────────────────
 
 function Home() {
   const [contactOpen, setContactOpen] = useState(false)
   return (
     <div className="bg-white text-stone-900 min-h-screen">
-      <Nav onContact={() => setContactOpen(true)} />
-      <Hero onContact={() => setContactOpen(true)} />
+      <IntroHero onContact={() => setContactOpen(true)} />
       <About />
       <Work />
       <Referrals />
@@ -778,6 +947,9 @@ export default function App() {
         <Route path="/work/newsletter" element={<NewsletterPage />} />
         <Route path="/work/onboarding" element={<OnboardingPage />} />
         <Route path="/preview" element={<PreviewPage />} />
+        <Route path="/about-test" element={<AboutTestPage />} />
+        <Route path="/intro-test" element={<IntroTestPage />} />
+        <Route path="/work-test" element={<WorkTestPage />} />
       </Routes>
     </BrowserRouter>
   )
