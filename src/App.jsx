@@ -465,7 +465,7 @@ function Footer({ onContact }) {
         </div>
       </div>
       <div className="max-w-5xl mx-auto mt-16 pt-6 border-t border-stone-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
-        <p className="text-sm text-stone-400">Made with ❤️ by Apolline Aurenche</p>
+        <p className="text-sm text-stone-400">Made by Apolline Aurenche</p>
         <p className="text-xs text-stone-300">© 2025 Apolline Aurenche</p>
       </div>
     </footer>
@@ -638,10 +638,17 @@ function IntroHero({ onContact }) {
           animation: fadeIn 1s ease 1.4s both;
         }
         @media (max-width: 768px) {
-          .hero-photo { display: none !important; }
           .hero-line1, .hero-line2 { font-size: clamp(2.5rem, 13vw, 4rem) !important; }
           .hero-metrics { gap: 2rem !important; }
           .hero-scroll { display: none !important; }
+        }
+        .about-link-info {
+          margin-left: -3.5rem;
+          padding-left: 5.5rem !important;
+        }
+        @media (max-width: 800px) {
+          .about-link-grid { flex-direction: column; gap: 1.5rem; }
+          .about-link-info { margin-left: 0; padding-left: 2.5rem !important; }
         }
       `}</style>
 
@@ -767,24 +774,6 @@ function IntroHero({ onContact }) {
               </span>
             </div>
 
-            {/* Background photo — large, behind headline */}
-            <div className="hero-photo" style={{
-              position: 'absolute',
-              top: '50%', right: 'clamp(-2rem, 2vw, 4rem)',
-              transform: 'translateY(-50%)',
-              width: 'clamp(14rem, 28vw, 26rem)',
-              height: 'clamp(14rem, 28vw, 26rem)',
-              borderRadius: '50%',
-              overflow: 'hidden',
-              zIndex: 0,
-              opacity: 0.9,
-            }}>
-              <img
-                src="/apolline.jpeg"
-                alt="Apolline Aurenche"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
-              />
-            </div>
 
             {/* Main headline — very large */}
             <div style={{ position: 'relative', zIndex: 1 }}>
@@ -876,10 +865,31 @@ function IntroHero({ onContact }) {
             maxWidth: '1100px', margin: '0 auto',
             borderTop: `1px solid ${SLATE.light}`,
           }}>
-            <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+            <div className="about-link-grid" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', width: '100%' }}>
+
+              {/* Photo */}
+              <div className="about-link-photo" style={{ flexShrink: 0, zIndex: 2, position: 'relative' }}>
+                <div style={{
+                  width: '320px', height: '320px',
+                  borderRadius: '50%', overflow: 'hidden',
+                  border: `4px solid ${SLATE.bg}`,
+                  boxShadow: '0 20px 50px rgba(43,58,68,0.12)',
+                }}>
+                  <img
+                    src="/apolline.jpeg"
+                    alt="Apolline Aurenche"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+                  />
+                </div>
+              </div>
 
               {/* Info */}
-              <div style={{ width: '100%', maxWidth: '720px' }}>
+              <div className="about-link-info" style={{
+                flex: 1, minWidth: '320px', maxWidth: '600px',
+                backgroundColor: '#FFFFFF', border: `1px solid ${SLATE.light}`,
+                borderRadius: '20px', padding: '2.5rem',
+                position: 'relative', zIndex: 1,
+              }}>
                 <span style={{
                   fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.2em',
                   color: SLATE.accent, textTransform: 'uppercase', display: 'block', marginBottom: '1.25rem',
