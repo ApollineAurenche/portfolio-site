@@ -73,7 +73,7 @@ const caseStudies = [
   {
     id: 'onboarding',
     route: '/work/onboarding',
-    tag: ['Positioning', 'Sales Enablement', 'Change Management'],
+    tag: ['Positioning', 'Change Management'],
     company: 'PayFit',
     title: 'Onboarding Redesign',
     comingSoon: false,
@@ -609,11 +609,23 @@ const SLATE = {
 
 function IntroHero({ onContact }) {
   const [phase, setPhase] = useState('intro') // 'intro' | 'leaving' | 'hero'
+  const [workDropdownOpen, setWorkDropdownOpen] = useState(false)
+  const workDropdownRef = useRef(null)
 
   useEffect(() => {
     const t1 = setTimeout(() => setPhase('leaving'), 1800)
     const t2 = setTimeout(() => setPhase('hero'), 2400)
     return () => { clearTimeout(t1); clearTimeout(t2) }
+  }, [])
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (workDropdownRef.current && !workDropdownRef.current.contains(e.target)) {
+        setWorkDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
   return (
@@ -712,7 +724,47 @@ function IntroHero({ onContact }) {
               Apolline Aurenche
             </span>
             <div style={{ display: 'flex', gap: '2rem', fontSize: '0.8rem', color: SLATE.accent, alignItems: 'center' }}>
-              <a href="#work" style={{ color: SLATE.accent, textDecoration: 'none' }}>Work</a>
+              <div style={{ position: 'relative' }} ref={workDropdownRef}>
+                <button
+                  onClick={() => setWorkDropdownOpen((o) => !o)}
+                  style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: SLATE.accent, background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.8rem', padding: 0, fontFamily: 'inherit' }}
+                >
+                  Work
+                  <svg
+                    style={{ width: '0.7rem', height: '0.7rem', transition: 'transform 0.2s', transform: workDropdownOpen ? 'rotate(180deg)' : 'none' }}
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {workDropdownOpen && (
+                  <div style={{
+                    position: 'absolute', top: '100%', left: 0, marginTop: '0.6rem', width: '16rem',
+                    backgroundColor: '#FFFFFF', borderRadius: '0.75rem', border: `1px solid ${SLATE.light}`,
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.08)', overflow: 'hidden',
+                  }}>
+                    <a
+                      href="#work"
+                      onClick={() => setWorkDropdownOpen(false)}
+                      style={{ display: 'flex', flexDirection: 'column', padding: '0.75rem 1rem', borderBottom: `1px solid ${SLATE.light}`, textDecoration: 'none' }}
+                    >
+                      <span style={{ color: SLATE.dark, fontWeight: 600, fontSize: '0.85rem' }}>All work</span>
+                    </a>
+                    {caseStudyLinks.map((cs) => (
+                      <Link
+                        key={cs.route}
+                        to={cs.route}
+                        onClick={() => setWorkDropdownOpen(false)}
+                        style={{ display: 'flex', flexDirection: 'column', padding: '0.75rem 1rem', borderBottom: `1px solid ${SLATE.light}`, textDecoration: 'none' }}
+                      >
+                        <span style={{ color: SLATE.dark, fontWeight: 600, fontSize: '0.85rem' }}>{cs.label}</span>
+                        <span style={{ color: SLATE.mid, fontSize: '0.7rem', marginTop: '0.15rem' }}>{cs.tag}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
               <a href="#about" style={{ color: SLATE.accent, textDecoration: 'none' }}>About</a>
               <button onClick={onContact} style={{ color: SLATE.dark, fontWeight: 600, fontSize: '0.8rem', background: 'none', border: 'none', cursor: 'pointer' }}>
                 Get in touch
