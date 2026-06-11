@@ -14,42 +14,27 @@ import OnboardingPage from './pages/OnboardingPage.jsx'
 const skills = [
   {
     number: '01',
-    title: 'Translate complexity',
+    title: 'Turning complexity into clear narratives',
     description: 'I find the insight that unlocks simplicity and create internal alignment around that. Complex product - customer problem - clear narrative - measurable traction.',
     how: ['Customer research', 'Competitive intel', 'Journey mapping', 'Outcome-driven narratives', 'Message testing'],
   },
   {
     number: '02',
-    title: 'Build from scratch',
-    description: 'I thrive in 0-to-1 situations. I move fast, test early to sharpen strategy with market feedback, and adapt priorities in real time rather than waiting for perfect conditions.',
+    title: 'Launching 0-to-1 products',
+    description: 'I thrive in 0-to-1 situations - testing early to sharpen strategy with market feedback, and adapting priorities in real time rather than waiting for perfect conditions.',
     how: ['Segmentation', 'Willingness-to-pay research', 'Value-based pricing', 'A/B testing', 'Beta launch'],
   },
   {
     number: '03',
-    title: 'Scale what works',
+    title: 'Scaling what works across teams',
     description: 'Once something clicks, I zoom out - turning one-off wins into repeatable systems that others can pick up, adapt, and run with across teams and markets.',
     how: ['Playbooks & templates', 'Post-mortem & assessment', 'Feedback loops', 'Team enablement', 'Adoption tracking'],
   },
   {
     number: '04',
-    title: 'Own it end-to-end',
-    description: 'From the first customer interview to post-launch performance loops - I understand how each phase feeds the next and partner across product, sales, CS, legal, and marketing.',
+    title: 'Owning GTM end-to-end',
+    description: 'I can work across your full product cycle - from research to post-launch - partnering with product, sales, CS, legal, and marketing. I move fast, with real autonomy and high ownership.',
     how: ['Research', 'Strategy', 'Enablement', 'Launch', 'Post-launch'],
-  },
-]
-
-const drives = [
-  {
-    label: 'Being the connective tissue',
-    detail: 'I enjoy bridge work - creating shared language, alignment, and momentum across teams (CS, sales, marketing, legal, product) that would otherwise work in parallel.',
-  },
-  {
-    label: 'Operating as strategist & executor',
-    detail: 'Thinking through a P&L one day, editing a product video the next, I need both. And I enjoy testing new tools or approaches - I\'m most productive when I\'m learning by doing.',
-  },
-  {
-    label: 'Ownership in fast-moving environments',
-    detail: 'Agile teams, short feedback loops, real autonomy, visibility - that\'s where I move fastest and do my best work.',
   },
 ]
 
@@ -206,9 +191,9 @@ function About() {
         {/* How I work */}
         <div className="mb-12">
           <span className="text-xs font-bold tracking-widest text-teal-600 uppercase">What I bring</span>
-          <h2 className="text-3xl font-bold text-stone-900 mt-3">How I work</h2>
+          <h2 className="text-3xl font-bold text-stone-900 mt-3">I can help you with</h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {skills.map((d) => (
             <div key={d.number} className="bg-white rounded-2xl p-6 border border-stone-100 hover:border-teal-200 hover:shadow-md transition-all duration-300 flex flex-col">
               <span className="text-xs font-bold text-teal-600 tracking-widest mb-3">{d.number}</span>
@@ -219,20 +204,6 @@ function About() {
                   <span key={h} className="text-xs text-stone-500 bg-stone-100 px-2 py-0.5 rounded-full">{h}</span>
                 ))}
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* What drives me */}
-        <div className="mb-10">
-          <span className="text-xs font-bold tracking-widest text-teal-600 uppercase">What drives me</span>
-          <h2 className="text-3xl font-bold text-stone-900 mt-3">What I'm looking for</h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {drives.map((d) => (
-            <div key={d.label} className="border-l-4 border-teal-500 pl-6">
-              <h3 className="text-base font-semibold text-stone-900 mb-2">{d.label}</h3>
-              <p className="text-sm text-stone-500 leading-relaxed">{d.detail}</p>
             </div>
           ))}
         </div>
