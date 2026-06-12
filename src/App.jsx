@@ -638,7 +638,7 @@ function IntroHero({ onContact }) {
           animation: fadeIn 1s ease 1.4s both;
         }
         @media (max-width: 768px) {
-          .hero-line1, .hero-line2 { font-size: clamp(2.5rem, 13vw, 4rem) !important; }
+          .hero-line1, .hero-line2 { font-size: clamp(2.5rem, 13vw, 4rem) !important; line-height: 1.15 !important; }
           .hero-metrics { gap: 2rem !important; }
           .hero-scroll { display: none !important; }
         }
