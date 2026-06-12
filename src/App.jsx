@@ -770,7 +770,7 @@ function IntroHero({ onContact }) {
                 color: SLATE.accent, textTransform: 'uppercase',
                 border: `1px solid ${SLATE.light}`, padding: '0.4rem 1rem', borderRadius: '999px',
               }}>
-                Senior Product Marketing Manager
+                Sr Product Marketing Manager
               </span>
             </div>
 

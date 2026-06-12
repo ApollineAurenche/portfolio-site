@@ -1,4 +1,64 @@
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+
+// Reading progress bar - fills as the user scrolls through the page
+function ReadingProgress() {
+  const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    function onScroll() {
+      const h = document.documentElement
+      const scrollTop = h.scrollTop || document.body.scrollTop
+      const scrollHeight = (h.scrollHeight || document.body.scrollHeight) - h.clientHeight
+      setProgress(scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return (
+    <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-transparent">
+      <div
+        className="h-full bg-teal-500 transition-[width] duration-150 ease-out"
+        style={{ width: `${progress}%` }}
+      />
+    </div>
+  )
+}
+
+// Wraps a section so it fades + slides up into view on scroll
+function Reveal({ children, className = '' }) {
+  const ref = useRef(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.15 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <div
+      ref={ref}
+      className={`${className} transition-all duration-700 ease-out ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}
+    >
+      {children}
+    </div>
+  )
+}
 
 const outcomes = [
   { metric: '80%', label: 'Adoption post-launch across 3 markets within 3 months' },
@@ -98,6 +158,7 @@ const gtmPlan = [
 export default function CopilotPage() {
   return (
     <div className="bg-white min-h-screen">
+      <ReadingProgress />
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-stone-100">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -141,9 +202,57 @@ export default function CopilotPage() {
         </div>
       </section>
 
+      {/* Project Overview card */}
+      <section className="pt-20 px-6">
+        <Reveal className="max-w-5xl mx-auto">
+          <div className="border border-stone-200 rounded-2xl p-8 md:p-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x divide-stone-100">
+
+            {/* Business Problem */}
+            <div className="lg:pr-8">
+              <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Business Problem</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">
+                Getting support meant leaving the app, filling a form, and waiting - CS was Mon-Fri only and couldn't handle volume at scale.
+              </p>
+            </div>
+
+            {/* Strategic Insights */}
+            <div className="lg:px-8">
+              <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Strategic Insights</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">
+                Admins want fast, trustworthy answers. Being first with a payroll-specific AI - not generic ChatGPT - was a real differentiation window and a key purchase driver.
+              </p>
+            </div>
+
+            {/* My Role */}
+            <div className="lg:px-8">
+              <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">My Role</h3>
+              <div className="flex flex-wrap gap-1.5">
+                {['Research & insights', 'Positioning & messaging', 'Sales & CS enablement', 'Cross-functional coordination', 'Launch & localization'].map((r) => (
+                  <span key={r} className="text-xs text-stone-500 bg-stone-100 px-2.5 py-1 rounded-full">{r}</span>
+                ))}
+              </div>
+            </div>
+
+            {/* Key metrics */}
+            <div className="lg:pl-8">
+              <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Key Metrics</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {outcomes.map((o) => (
+                  <div key={o.metric}>
+                    <div className="text-2xl font-bold text-teal-600">{o.metric}</div>
+                    <div className="text-xs text-stone-400 leading-snug mt-1">{o.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </Reveal>
+      </section>
+
       {/* Context */}
       <section className="pt-20 pb-12 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
+        <Reveal className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
           <div>
             <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Business Problem</h2>
             <ul className="space-y-3">
@@ -174,12 +283,12 @@ export default function CopilotPage() {
               </li>
             </ul>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* My Role */}
       <section className="pt-8 pb-16 px-6">
-        <div className="max-w-5xl mx-auto">
+        <Reveal className="max-w-5xl mx-auto">
           <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">My Role</h2>
           <ul className="space-y-2 text-sm text-stone-600">
             <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Research & insights - user interviews, customer surveys, and persona work to ground the strategy in real needs</li>
@@ -188,12 +297,12 @@ export default function CopilotPage() {
             <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Cross-functional coordination - partnered with Product, Engineering, Legal, and Design to pressure-test messaging and align on launch storytelling</li>
             <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Launch & localization - adapted messaging for each market, coordinated go-live across 3 countries, and ran post-launch optimization loops</li>
           </ul>
-        </div>
+        </Reveal>
       </section>
 
       {/* Positioning */}
       <section className="py-16 px-6 bg-stone-50">
-        <div className="max-w-5xl mx-auto">
+        <Reveal className="max-w-5xl mx-auto">
           <div className="mb-10">
             <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Positioning & Messaging</h2>
             <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6 max-w-2xl">
@@ -253,12 +362,12 @@ export default function CopilotPage() {
               </ul>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Customer quote */}
       <section className="py-12 px-6">
-        <div className="max-w-5xl mx-auto">
+        <Reveal className="max-w-5xl mx-auto">
           <div className="max-w-lg bg-stone-50 rounded-2xl p-8 relative">
             <span className="text-5xl text-teal-200 font-serif leading-none absolute top-4 left-6 select-none">"</span>
             <p className="text-stone-700 text-base leading-relaxed italic pt-4">
@@ -269,12 +378,12 @@ export default function CopilotPage() {
               <span className="text-sm text-stone-400 ml-2">Cloud-Fi</span>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Artifact - GTM Launch Plan */}
       <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
+        <Reveal className="max-w-5xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-bold tracking-widest text-teal-600 uppercase">Artifact</span>
             <h2 className="text-3xl font-bold text-stone-900 mt-2">GTM Launch Plan</h2>
@@ -345,19 +454,19 @@ export default function CopilotPage() {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Key Insight */}
       <section className="py-12 px-6">
-        <div className="max-w-5xl mx-auto">
+        <Reveal className="max-w-5xl mx-auto">
           <div className="border-l-4 border-teal-500 bg-teal-50 rounded-r-2xl px-8 py-6 flex flex-col md:flex-row md:items-start gap-4">
             <span className="text-xs font-bold tracking-widest text-teal-600 uppercase whitespace-nowrap pt-0.5 min-w-[100px]">Key Insight</span>
             <p className="text-stone-700 text-sm leading-relaxed">
               Messaging is never a one-time deliverable. The narrative evolved alongside the product - each new capability, each round of user surveys, each piece of field feedback shaped the next iteration. We didn't guess what resonated: we asked, collected verbatims, gathered figures, and documented use cases to keep messaging concrete and impactful well beyond launch.
             </p>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Footer nav */}
