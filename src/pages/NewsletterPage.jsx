@@ -160,7 +160,7 @@ function NewsletterTemplate() {
             <div className="bg-stone-50 rounded-xl p-4 border border-stone-100">
               <div className="text-sm mb-1.5">🏢</div>
               <div className="text-xs font-semibold text-stone-800 mb-1">Adding a holding or new establishment</div>
-              <p className="text-xs text-stone-500 leading-relaxed">Now fully self-serve: from your admin space, click your company name (bottom left) → Switch account → Add a holding or establishment.</p>
+              <p className="text-xs text-stone-500 leading-relaxed">You can now do this in total autonomy, in just a few clicks, from your space: click your company name (bottom left) → Switch account → Add a holding.</p>
             </div>
           </div>
         </div>
