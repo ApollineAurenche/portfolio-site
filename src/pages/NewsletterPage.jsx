@@ -123,7 +123,7 @@ function NewsletterTemplate() {
               },
               {
                 emoji: '🤖',
-                title: 'Meet your personal assistant',
+                title: 'Meet PayFit Copilot',
                 problem: 'Getting a quick answer on payroll, HR, or how to use PayFit usually meant waiting on support.',
                 solution: "Available right inside your PayFit space, your new assistant answers instantly - in addition to our payroll experts, still available on weekdays from 9am to 5pm for any question.",
                 cta: 'Discover it in my space',
