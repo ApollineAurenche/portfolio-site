@@ -54,7 +54,7 @@ function NewsletterTemplate() {
         </div>
         <div className="flex items-start gap-2">
           <span className="text-xs text-stone-400 font-medium shrink-0">Subject:</span>
-          <span className="text-xs font-semibold text-stone-800">PayFit updates · Time-off in 1 click, new HR dashboard, automated exports</span>
+          <span className="text-xs font-semibold text-stone-800">PayFit updates · New integrations, new APIs, and meet PayFit Copilot</span>
         </div>
       </div>
 
@@ -63,28 +63,28 @@ function NewsletterTemplate() {
         {/* Header */}
         <div className="flex items-center justify-between mb-5">
           <span className="font-bold text-stone-900 text-base tracking-tight">PayFit</span>
-          <span className="text-xs text-stone-400">June 2024</span>
+          <span className="text-xs text-stone-400">September 2024</span>
         </div>
 
         {/* Banner - 3 feature previews */}
         <div className="grid grid-cols-3 gap-2 mb-6 rounded-xl overflow-hidden">
           <div className="bg-teal-50 border border-teal-100 rounded-lg p-3 text-center">
-            <div className="text-lg mb-1">🗓️</div>
-            <div className="text-xs font-semibold text-teal-800 leading-snug">Time-off in 1 click</div>
+            <div className="text-lg mb-1">🔗</div>
+            <div className="text-xs font-semibold text-teal-800 leading-snug">3 new integrations</div>
           </div>
           <div className="bg-violet-50 border border-violet-100 rounded-lg p-3 text-center">
-            <div className="text-lg mb-1">📊</div>
-            <div className="text-xs font-semibold text-violet-800 leading-snug">New HR dashboard</div>
+            <div className="text-lg mb-1">⚙️</div>
+            <div className="text-xs font-semibold text-violet-800 leading-snug">2 new APIs</div>
           </div>
           <div className="bg-amber-50 border border-amber-100 rounded-lg p-3 text-center">
-            <div className="text-lg mb-1">⚡</div>
-            <div className="text-xs font-semibold text-amber-800 leading-snug">Automated exports</div>
+            <div className="text-lg mb-1">🤖</div>
+            <div className="text-xs font-semibold text-amber-800 leading-snug">Meet PayFit Copilot</div>
           </div>
         </div>
 
         {/* Hook */}
         <p className="text-sm text-stone-600 leading-relaxed mb-5 pb-5 border-b border-stone-100">
-          This month, we focused on what eats up your time every day. Three updates to help you manage time-off faster, get clearer visibility on your teams, and automate the repetitive end-of-month tasks.
+          Hello, and welcome back! We hope you had a great summer. This back-to-school edition brings a few updates we think you'll love - new integrations to cut down on double data entry, two new APIs for our Advanced plan, and a new assistant available right inside PayFit.
         </p>
 
         {/* Video */}
@@ -108,25 +108,25 @@ function NewsletterTemplate() {
           <div className="space-y-4">
             {[
               {
-                emoji: '🗓️',
-                title: 'Time-off in 1 click',
-                problem: 'Submitting time-off took too many steps - employees were dropping off halfway through.',
-                solution: 'A new 1-click flow directly from the schedule, with real-time manager approval.',
-                cta: 'Try it now',
+                emoji: '🔗',
+                title: 'New integrations: Rezilient, Coup de Pouce, Moka.Care',
+                problem: 'Adding a new employee meant re-entering their profile in every partner tool, with the risk of mismatched data.',
+                solution: 'Once set up on the Integrations page, new hires and departures sync automatically with these partners - and with Coup de Pouce, meal vouchers top up automatically after payroll is closed.',
+                cta: 'Set up my integrations',
               },
               {
-                emoji: '📊',
-                title: 'New HR dashboard',
-                problem: 'Getting a clear overview of your team meant exporting data manually every time.',
-                solution: 'A centralized dashboard with headcount, absences, and alerts - all in real time.',
-                cta: 'See my dashboard',
+                emoji: '⚙️',
+                title: 'Two new APIs (Advanced plan)',
+                problem: 'Retrieving time-off data or SEPA payment files meant manual exports every month.',
+                solution: 'Read access to time-off & absences, plus SEPA file retrieval to pay employees directly from your bank. Both activate from the Integrations page, under the API Access tab.',
+                cta: 'Generate my API key',
               },
               {
-                emoji: '⚡',
-                title: 'Automated exports',
-                problem: 'Manual end-of-month exports were taking hours of repetitive work.',
-                solution: 'Set up your exports once - they run automatically on the date you choose.',
-                cta: 'Set up my exports',
+                emoji: '🤖',
+                title: 'Meet PayFit Copilot',
+                problem: 'Getting a quick answer on payroll, HR, or how to use PayFit usually meant waiting on support.',
+                solution: 'Our new assistant answers instantly, right from the search bar or the help bubble in your admin space - support team still here if you need them.',
+                cta: 'Try Copilot',
               },
             ].map((item) => (
               <div key={item.title} className="border border-stone-100 rounded-xl p-4">
@@ -153,14 +153,14 @@ function NewsletterTemplate() {
           <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Don't miss</div>
           <div className="grid grid-cols-2 gap-3">
             <div className="bg-stone-50 rounded-xl p-4 border border-stone-100">
-              <div className="text-sm mb-1.5">💡</div>
-              <div className="text-xs font-semibold text-stone-800 mb-1">Tip of the month</div>
-              <p className="text-xs text-stone-500 leading-relaxed">Did you know you can duplicate a contract in 2 clicks? Handy for recurring fixed-term contracts.</p>
+              <div className="text-sm mb-1.5">⚖️</div>
+              <div className="text-xs font-semibold text-stone-800 mb-1">Paid leave & sick leave update</div>
+              <p className="text-xs text-stone-500 leading-relaxed">Since April 2024, employees on ordinary sick leave keep accruing paid leave at 80%. Payroll impacts and regularizations are already reflected on employee records.</p>
             </div>
             <div className="bg-stone-50 rounded-xl p-4 border border-stone-100">
-              <div className="text-sm mb-1.5">🎤</div>
-              <div className="text-xs font-semibold text-stone-800 mb-1">Webinar - June 18</div>
-              <p className="text-xs text-stone-500 leading-relaxed">Master the new working time modulation rules. Free registration.</p>
+              <div className="text-sm mb-1.5">🏢</div>
+              <div className="text-xs font-semibold text-stone-800 mb-1">Adding a holding or new establishment</div>
+              <p className="text-xs text-stone-500 leading-relaxed">Now fully self-serve: from your admin space, click your company name (bottom left) → Switch account → Add a holding or establishment.</p>
             </div>
           </div>
         </div>
