@@ -145,11 +145,11 @@ export default function OnboardingPage() {
             <div className="mt-8 pt-8 border-t border-stone-100">
               <h2 className="text-xs font-bold tracking-widest text-teal-600 uppercase mb-3">My Role</h2>
               <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-stone-600">
-                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Research - continuous market & user research (competitive benchmarks, customer interviews, satisfaction metrics, field feedback loops) and E2E customer journey mapping to ground every decision in real data</li>
-                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Positioning & narrative - built one unified story around the transformed experience, replacing fragmented feature-by-feature communication with a single outcome-led promise</li>
-                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Pricing redesign - restructured the pricing model and sales discount rules to align with the new self-serve experience and generate incremental revenue</li>
-                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Lifecycle - designed automated workflows, new email sequences, in-app guidance, and proactive messaging based on behavioral triggers and segment (3 tracks)</li>
-                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Sales enablement - co-built with sales champions to validate the content and drive internal adoption: new pitch decks by segment, training sessions, 360 Learning gamified course, internal Notion hub, and an ongoing feedback loop via a dedicated Slack channel</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Research - continuous market & user research and end-to-end customer journey mapping to ground decisions in real data</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Positioning & narrative - built one unified, outcome-led story to replace fragmented feature-by-feature communication</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Pricing redesign - restructured pricing model and sales discount rules to align with the new self-serve experience</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Lifecycle - designed automated workflows, email sequences, and in-app guidance based on behavioral triggers (3 segment tracks)</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Sales enablement - co-built pitch decks, training, and a Notion hub with sales champions to drive adoption</li>
               </ul>
             </div>
 
