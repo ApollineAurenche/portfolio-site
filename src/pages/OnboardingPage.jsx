@@ -4,7 +4,6 @@ import CaseStudyNav from '../components/CaseStudyNav.jsx'
 const outcomes = [
   { metric: '<3h', label: 'Time-to-value for Starter clients (was 2 days)' },
   { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
-  { metric: '+1.5pt', label: 'Customer satisfaction score' },
   { metric: '+28%', label: 'Closing rate on deals pitched with new deck vs old' },
 ]
 
@@ -73,7 +72,7 @@ export default function OnboardingPage() {
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-stone-900 leading-tight tracking-tight mb-4 max-w-xl">
+              <h1 className="text-5xl md:text-6xl font-bold text-stone-900 leading-tight tracking-tight mb-4 whitespace-nowrap">
                 Onboarding Redesign
               </h1>
               <p className="text-xl text-stone-500 font-light max-w-2xl leading-relaxed">
