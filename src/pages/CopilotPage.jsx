@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import CaseStudyNav from '../components/CaseStudyNav.jsx'
 
 // Reading progress bar - fills as the user scrolls through the page
 function ReadingProgress() {
@@ -171,21 +172,7 @@ export default function CopilotPage() {
   return (
     <div className="bg-white min-h-screen">
       <ReadingProgress />
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-stone-100">
-        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="text-base font-bold text-stone-900 tracking-tight">Apolline Aurenche - Portfolio</span>
-          <Link
-            to="/#work"
-            className="flex items-center gap-2 text-sm text-stone-500 hover:text-stone-900 transition-colors"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            All case studies
-          </Link>
-        </div>
-      </nav>
+      <CaseStudyNav />
 
       {/* Hero */}
       <section className="pt-20 md:pt-32 pb-12 md:pb-20 px-6 border-b border-stone-100">
