@@ -46,13 +46,6 @@ export default function CaseStudyNav() {
 
             {dropdownOpen && (
               <div className="absolute top-full right-0 mt-2 w-64 bg-white rounded-xl border border-stone-100 shadow-lg overflow-hidden">
-                <Link
-                  to="/#work"
-                  className="flex flex-col px-4 py-3 hover:bg-stone-50 transition-colors border-b border-stone-50"
-                  onClick={() => setDropdownOpen(false)}
-                >
-                  <span className="text-stone-900 font-medium text-sm">All case studies</span>
-                </Link>
                 {caseStudyLinks.map((cs) => (
                   <Link
                     key={cs.route}
