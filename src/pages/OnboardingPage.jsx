@@ -101,7 +101,7 @@ export default function OnboardingPage() {
       </section>
 
       {/* Project Overview card */}
-      <section className="pt-20 px-6">
+      <section className="pt-20 pb-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="border border-stone-200 rounded-2xl p-8 md:p-10">
 
