@@ -70,7 +70,7 @@ function NewsletterTemplate() {
         <div className="grid grid-cols-3 gap-2 mb-6 rounded-xl overflow-hidden">
           <div className="bg-teal-50 border border-teal-100 rounded-lg p-3 text-center">
             <div className="text-lg mb-1">🔗</div>
-            <div className="text-xs font-semibold text-teal-800 leading-snug">3 new integrations</div>
+            <div className="text-xs font-semibold text-teal-800 leading-snug">3 new partner integrations</div>
           </div>
           <div className="bg-violet-50 border border-violet-100 rounded-lg p-3 text-center">
             <div className="text-lg mb-1">⚙️</div>
@@ -78,13 +78,13 @@ function NewsletterTemplate() {
           </div>
           <div className="bg-amber-50 border border-amber-100 rounded-lg p-3 text-center">
             <div className="text-lg mb-1">🤖</div>
-            <div className="text-xs font-semibold text-amber-800 leading-snug">Meet PayFit Copilot</div>
+            <div className="text-xs font-semibold text-amber-800 leading-snug">Meet your personal assistant</div>
           </div>
         </div>
 
         {/* Hook */}
         <p className="text-sm text-stone-600 leading-relaxed mb-5 pb-5 border-b border-stone-100">
-          Hello, and welcome back! We hope you had a great summer. This back-to-school edition brings a few updates we think you'll love - new integrations to cut down on double data entry, two new APIs for our Advanced plan, and a new assistant available right inside PayFit.
+          Hello, and welcome back! We hope you had a great summer. This back-to-school edition brings a few updates we think you'll love - all designed to help you save even more time managing your day-to-day.
         </p>
 
         {/* Video */}
@@ -116,17 +116,17 @@ function NewsletterTemplate() {
               },
               {
                 emoji: '⚙️',
-                title: 'Two new APIs (Advanced plan)',
+                title: 'Two new APIs',
                 problem: 'Retrieving time-off data or SEPA payment files meant manual exports every month.',
                 solution: 'Read access to time-off & absences, plus SEPA file retrieval to pay employees directly from your bank. Both activate from the Integrations page, under the API Access tab.',
                 cta: 'Generate my API key',
               },
               {
                 emoji: '🤖',
-                title: 'Meet PayFit Copilot',
+                title: 'Meet your personal assistant',
                 problem: 'Getting a quick answer on payroll, HR, or how to use PayFit usually meant waiting on support.',
-                solution: 'Our new assistant answers instantly, right from the search bar or the help bubble in your admin space - support team still here if you need them.',
-                cta: 'Try Copilot',
+                solution: "Available right inside your PayFit space, your new assistant answers instantly - in addition to our payroll experts, still available on weekdays from 9am to 5pm for any question.",
+                cta: 'Discover it in my space',
               },
             ].map((item) => (
               <div key={item.title} className="border border-stone-100 rounded-xl p-4">
