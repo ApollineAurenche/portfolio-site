@@ -58,21 +58,34 @@ export default function SNCFPage() {
             <span className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">Product Integration</span>
             <span className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">B2C</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-stone-900 leading-tight tracking-tight mb-4">
-            SNCF × BlaBlaCar
-          </h1>
-          <p className="text-xl text-stone-500 font-light max-w-2xl leading-relaxed">
-            Scaling SNCF partnership - from a basic integration to BlaBlaCar's top passenger acquisition partner.
-          </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold text-stone-900 leading-tight tracking-tight mb-4 max-w-xl">
+                SNCF × BlaBlaCar
+              </h1>
+              <p className="text-xl text-stone-500 font-light max-w-2xl leading-relaxed">
+                Scaling SNCF partnership - from a basic integration to BlaBlaCar's top passenger acquisition partner.
+              </p>
 
-          {/* Outcome pills */}
-          <div className="flex flex-wrap gap-6 mt-10">
-            {outcomes.map((o) => (
-              <div key={o.metric}>
-                <div className="text-3xl font-bold text-teal-600">{o.metric}</div>
-                <div className="text-xs text-stone-400 max-w-[160px] leading-snug mt-1">{o.label}</div>
+              {/* Outcome pills */}
+              <div className="flex flex-wrap gap-6 mt-10">
+                {outcomes.map((o) => (
+                  <div key={o.metric}>
+                    <div className="text-3xl font-bold text-teal-600">{o.metric}</div>
+                    <div className="text-xs text-stone-400 max-w-[160px] leading-snug mt-1">{o.label}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Hero image */}
+            <div className="w-full md:w-[26rem] flex-shrink-0 rounded-2xl overflow-hidden shadow-sm border border-stone-200">
+              <img
+                src="/images/sncf.jpg"
+                alt="SNCF Connect search results showing the BlaBlaCar 'Bus or carpool' tab"
+                className="w-full h-auto block"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -118,10 +131,10 @@ export default function SNCFPage() {
             <div className="mt-8 pt-8 border-t border-stone-100">
               <h2 className="text-xs font-bold tracking-widest text-teal-600 uppercase mb-3">My Role</h2>
               <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-stone-600">
-                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Budget management and performance tracking</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Marketing plan ownership - defining priority moments, routes and content (banners, landing pages, redirections), then tracking implementation and performance with SNCF</li>
                 <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Partnership governance - preparation and follow-up of negotiations with the Business Development team</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Budget management and performance tracking</li>
                 <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Product roadmap co-definition with internal and SNCF product teams</li>
-                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Marketing plan ownership - defining moments to cover, routes to prioritize and content to push (banners, landing pages, redirections), then tracking implementation and performance with SNCF</li>
               </ul>
             </div>
 
