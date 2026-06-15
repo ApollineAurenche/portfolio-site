@@ -890,17 +890,15 @@ function IntroHero({ onContact }) {
                 borderRadius: '20px', padding: '2.5rem',
                 position: 'relative', zIndex: 1,
               }}>
-                <span style={{
-                  fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.2em',
-                  color: SLATE.accent, textTransform: 'uppercase', display: 'block', marginBottom: '1.25rem',
-                }}>
-                  Who I am
-                </span>
                 <h2 style={{ fontSize: 'clamp(1.75rem, 3.2vw, 2.75rem)', fontWeight: 800, color: SLATE.dark, lineHeight: 1.15, letterSpacing: '-0.02em', margin: '0 0 1.5rem' }}>
-                  I turn products into <span style={{ color: SLATE.accent }}>stories</span>, and stories into <span style={{ color: SLATE.mid }}>traction</span>.
+                  Hi there! I'm Apolline (ah-poh-LEEN) 👋
                 </h2>
                 <p style={{ fontSize: '1rem', color: SLATE.accent, lineHeight: 1.75, maxWidth: '600px', margin: '0 0 2.5rem' }}>
-                  I connect the magic of a product with what people actually need - through launches, narratives, and enablement that make adoption happen across teams and markets.
+                  Senior Product Marketing & GTM Manager with 7 years of experience bringing B2B and B2C products to life at high-growth companies.
+                  <br /><br />
+                  I started in marketing, moved into CRM, then transitioned into product marketing. That journey gave me a full-funnel perspective: I think about GTM through the lens of customer behavior, willingness to pay, and long-term adoption.
+                  <br /><br />
+                  On a more personal note: I'm originally from Dijon, Burgundy 🍷, spent 7 years in Paris, and just made the move to San Francisco.
                 </p>
 
                 {/* Info grid */}
