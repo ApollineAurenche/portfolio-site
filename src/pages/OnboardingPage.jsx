@@ -71,19 +71,32 @@ export default function OnboardingPage() {
             <span className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">Sales Enablement</span>
             <span className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">Change Management</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-stone-900 leading-tight tracking-tight mb-4">
-            Onboarding Redesign
-          </h1>
-          <p className="text-xl text-stone-500 font-light max-w-2xl leading-relaxed">
-            Unifying multiple onboarding changes - product, services, and pricing - into one coherent, differentiating story.
-          </p>
-          <div className="flex flex-wrap gap-6 mt-10">
-            {outcomes.map((o) => (
-              <div key={o.metric}>
-                <div className="text-3xl font-bold text-teal-600">{o.metric}</div>
-                <div className="text-xs text-stone-400 max-w-[160px] leading-snug mt-1">{o.label}</div>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold text-stone-900 leading-tight tracking-tight mb-4 max-w-xl">
+                Onboarding Redesign
+              </h1>
+              <p className="text-xl text-stone-500 font-light max-w-2xl leading-relaxed">
+                Unifying multiple onboarding changes - product, services, and pricing - into one coherent, differentiating story.
+              </p>
+              <div className="flex flex-wrap gap-6 mt-10">
+                {outcomes.map((o) => (
+                  <div key={o.metric}>
+                    <div className="text-3xl font-bold text-teal-600">{o.metric}</div>
+                    <div className="text-xs text-stone-400 max-w-[160px] leading-snug mt-1">{o.label}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Hero image */}
+            <div className="w-full md:w-[26rem] flex-shrink-0 rounded-2xl overflow-hidden shadow-sm border border-stone-200">
+              <img
+                src="/images/onboarding.jpg"
+                alt="PayFit onboarding flow - guided profile creation steps"
+                className="w-full h-auto block"
+              />
+            </div>
           </div>
         </div>
       </section>
