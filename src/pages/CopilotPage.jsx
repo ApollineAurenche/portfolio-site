@@ -203,12 +203,14 @@ export default function CopilotPage() {
             </div>
 
             <div className="w-full md:w-[26rem] flex-shrink-0 -mb-6">
-              <img
-                src="/images/copilot.avif"
-                alt="PayFit Copilot AI assistant"
-                className="w-full h-auto object-contain"
-                style={{ maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)' }}
-              />
+              <a href="https://payfit.com/payfit-copilot/" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/copilot.avif"
+                  alt="PayFit Copilot AI assistant"
+                  className="w-full h-auto object-contain"
+                  style={{ maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)' }}
+                />
+              </a>
             </div>
           </div>
         </div>
