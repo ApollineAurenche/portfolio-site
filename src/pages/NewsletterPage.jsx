@@ -318,9 +318,20 @@ export default function NewsletterPage() {
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-6">
               <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase">Newsletter Template</h3>
-              <span className="text-xs text-stone-400 bg-stone-100 px-2 py-0.5 rounded-full">Fictional content for illustration</span>
+              <span className="text-xs text-stone-400 bg-stone-100 px-2 py-0.5 rounded-full">Based on the September 2024 edition</span>
             </div>
             <NewsletterTemplate />
+            <p className="text-xs text-stone-400 mt-3">
+              Watch the original video:{' '}
+              <a
+                href="https://youtu.be/DNudFgrgjR8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-600 hover:underline"
+              >
+                youtu.be/DNudFgrgjR8
+              </a>
+            </p>
           </div>
         </div>
       </section>
