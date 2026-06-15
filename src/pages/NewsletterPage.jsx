@@ -196,90 +196,92 @@ export default function NewsletterPage() {
             <span className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">Customer Marketing</span>
             <span className="text-xs text-stone-400 bg-stone-100 px-3 py-1 rounded-full">Product Adoption</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-stone-900 leading-tight tracking-tight mb-4">
-            Product Newsletter Redesign
-          </h1>
-          <p className="text-xl text-stone-500 font-light max-w-2xl leading-relaxed">
-            Turning a low-engagement newsletter into a real product adoption lever - and becoming the face of PayFit's product communication.
-          </p>
-          <div className="flex flex-wrap gap-6 mt-10">
-            {outcomes.map((o) => (
-              <div key={o.metric}>
-                <div className="text-3xl font-bold text-teal-600">{o.metric}</div>
-                <div className="text-xs text-stone-400 max-w-[160px] leading-snug mt-1">{o.label}</div>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold text-stone-900 leading-tight tracking-tight mb-4 max-w-xl">
+                Product Newsletter Redesign
+              </h1>
+              <p className="text-xl text-stone-500 font-light max-w-2xl leading-relaxed">
+                Turning a low-engagement newsletter into a real product adoption lever - and becoming the face of PayFit's product communication.
+              </p>
+              <div className="flex flex-wrap gap-6 mt-10">
+                {outcomes.map((o) => (
+                  <div key={o.metric}>
+                    <div className="text-3xl font-bold text-teal-600">{o.metric}</div>
+                    <div className="text-xs text-stone-400 max-w-[160px] leading-snug mt-1">{o.label}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div className="w-full md:w-[26rem] flex-shrink-0 aspect-video rounded-2xl overflow-hidden shadow-sm bg-stone-100">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/DNudFgrgjR8"
+                title="[Top 3 produit] Septembre"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Context */}
-      <section className="pt-20 pb-12 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Business Problem</h2>
-            <ul className="space-y-3">
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                The newsletter wasn't working as a product adoption lever - low engagement, no clear editorial direction.
-              </li>
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Yet it remained one of the most direct, low-cost channels to reach customers - too valuable to leave underperforming.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Strategic Insights</h2>
-            <ul className="space-y-3">
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Customers want to know what the product does for them, concretely.
-              </li>
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Video format with a human face creates a different kind of engagement - more personal, more trusted, more memorable.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* My Role */}
-      <section className="pt-8 pb-16 px-6">
+      {/* Project Overview card */}
+      <section className="pt-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">My Role</h2>
-          <ul className="space-y-2 text-sm text-stone-600">
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Editorial strategy - defined the editorial angle, content selection criteria, and send cadence</li>
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Cross-functional bridge - collected key topics from the PM team and filtered them through a PMM lens before handing off to content marketing</li>
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Content production - recorded the video segments, built product demos from our test account</li>
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Became the face of PayFit's product communication - presenting new features directly to 15k+ customers every send</li>
-          </ul>
-        </div>
-      </section>
+          <div className="border border-stone-200 rounded-2xl p-8 md:p-10">
 
-      {/* Positioning */}
-      <section className="py-16 px-6 bg-stone-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-10">
-            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Editorial Angle</h2>
-            <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6 max-w-2xl">
-              "The product update that really updates how you work."
-            </blockquote>
-          </div>
-          <div className="grid md:grid-cols-4 gap-4">
-            {editorialPrinciples.map((p) => (
-              <div key={p.label} className="bg-white rounded-xl p-6 border border-stone-100">
-                <div className="text-sm font-semibold text-stone-900 mb-2">{p.label}</div>
-                <p className="text-sm text-stone-500 leading-relaxed">{p.detail}</p>
+            <div className="grid sm:grid-cols-2 gap-8 sm:gap-0 sm:divide-x divide-stone-100">
+              {/* Business Problem */}
+              <div className="sm:pr-8">
+                <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Business Problem</h2>
+                <ul className="space-y-2">
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    The newsletter wasn't working as a product adoption lever - low engagement, no clear editorial direction.
+                  </li>
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    Yet it remained one of the most direct, low-cost channels to reach customers - too valuable to leave underperforming.
+                  </li>
+                </ul>
               </div>
-            ))}
+
+              {/* Strategic Insights */}
+              <div className="sm:pl-8">
+                <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Strategic Insights</h2>
+                <ul className="space-y-2">
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    Customers want to know what the product does for them, concretely.
+                  </li>
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    Video format with a human face creates a different kind of engagement - more personal, more trusted, more memorable.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* My Role */}
+            <div className="mt-8 pt-8 border-t border-stone-100">
+              <h2 className="text-xs font-bold tracking-widest text-teal-600 uppercase mb-3">My Role</h2>
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-stone-600">
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Editorial strategy - defined the editorial angle, content selection criteria, and send cadence</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Cross-functional bridge - collected key topics from the PM team and filtered them through a PMM lens before handing off to content marketing</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Content production - recorded the video segments, built product demos from our test account</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Became the face of PayFit's product communication - presenting new features directly to 15k+ customers every send</li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* Artifact */}
-      <section className="py-20 px-6">
+      <section className="pt-20 pb-16 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-bold tracking-widest text-teal-600 uppercase">Artifact</span>
@@ -288,6 +290,22 @@ export default function NewsletterPage() {
               Every element was rethought - from format to tone to structure. Here's what changed, and what the new template looks like in practice.
             </p>
 
+          </div>
+
+          {/* Editorial Angle */}
+          <div className="mb-16">
+            <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Editorial Angle</h3>
+            <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6 max-w-2xl mb-8">
+              "The product update that really updates how you work."
+            </blockquote>
+            <div className="grid md:grid-cols-4 gap-4">
+              {editorialPrinciples.map((p) => (
+                <div key={p.label} className="bg-stone-50 rounded-xl p-6 border border-stone-100">
+                  <div className="text-sm font-semibold text-stone-900 mb-2">{p.label}</div>
+                  <p className="text-sm text-stone-500 leading-relaxed">{p.detail}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Before / After table */}
@@ -317,45 +335,16 @@ export default function NewsletterPage() {
             </div>
             <NewsletterTemplate />
           </div>
-
-          {/* Video samples */}
-          <div>
-            <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-6">Video Samples</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="aspect-video rounded-2xl overflow-hidden bg-stone-100">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/DNudFgrgjR8"
-                  title="Newsletter sample 1"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-              <div className="aspect-video rounded-2xl overflow-hidden bg-stone-100">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/TjySMtO7UOk"
-                  title="Newsletter sample 2"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Key Insight */}
-      <section className="py-12 px-6">
+      {/* Conclusion - Key Insight + proof */}
+      <section className="py-8 md:py-10 px-6 bg-stone-900">
         <div className="max-w-5xl mx-auto">
-          <div className="border-l-4 border-teal-500 bg-teal-50 rounded-r-2xl px-8 py-6 flex flex-col md:flex-row md:items-start gap-4">
-            <span className="text-xs font-bold tracking-widest text-teal-600 uppercase whitespace-nowrap pt-0.5 min-w-[100px]">Key Insight</span>
-            <p className="text-stone-700 text-sm leading-relaxed">
-              Having the PMM own the voice of the product newsletter makes strategic sense: we hold the global view of the product, its users, and the market. It ensures every send communicates the exact value of the solution - features translated into clear benefits for each persona - while staying aligned with growth objectives. Execution without that strategic lens risks becoming noise.
-            </p>
-          </div>
+          <span className="text-xs font-bold tracking-widest text-teal-400 uppercase">Key Insight</span>
+          <p className="text-stone-100 text-base leading-relaxed mt-3">
+            Having the PMM own the voice of the product newsletter makes strategic sense: we hold the global view of the product, its users, and the market. It ensures every send communicates the exact value of the solution - features translated into clear benefits for each persona - while staying aligned with growth objectives. Execution without that strategic lens risks becoming noise.
+          </p>
         </div>
       </section>
 

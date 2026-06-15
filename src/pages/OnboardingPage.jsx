@@ -101,53 +101,60 @@ export default function OnboardingPage() {
         </div>
       </section>
 
-      {/* Context */}
-      <section className="pt-20 pb-12 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Business Problem</h2>
-            <ul className="space-y-3">
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Onboarding was high-touch and slow - customers needed significant hand-holding from CS teams to get started, creating a bottleneck that limited growth and delivered a poor first impression.
-              </li>
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Simultaneous product, pricing, and service changes had each been communicated separately - creating noise instead of a coherent story customers and internal teams could follow.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Strategic Insights</h2>
-            <ul className="space-y-3">
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Admins don't want hand-holding - they want to run their first payroll fast and independently. Speed and reliability are the job.
-              </li>
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                One unified promise is more powerful than a list of improvements. "Get your first payroll done in under 3 hours" cuts through everything.
-              </li>
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Sales and CS are the last mile of any transformation. Enablement isn't optional - it determines whether the new experience is understood and sold correctly.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* My Role */}
-      <section className="pt-8 pb-16 px-6">
+      {/* Project Overview card */}
+      <section className="pt-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">My Role</h2>
-          <ul className="space-y-2 text-sm text-stone-600">
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Research - continuous market & user research (competitive benchmarks, customer interviews, satisfaction metrics, field feedback loops) and E2E customer journey mapping to ground every decision in real data</li>
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Positioning & narrative - built one unified story around the transformed experience, replacing fragmented feature-by-feature communication with a single outcome-led promise</li>
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Pricing redesign - restructured the pricing model and sales discount rules to align with the new self-serve experience and generate incremental revenue</li>
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Lifecycle - designed automated workflows, new email sequences, in-app guidance, and proactive messaging based on behavioral triggers and segment (3 tracks)</li>
-            <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Sales enablement - co-built with sales champions to validate the content and drive internal adoption: new pitch decks by segment, training sessions, 360 Learning gamified course, internal Notion hub, and an ongoing feedback loop via a dedicated Slack channel</li>
-          </ul>
+          <div className="border border-stone-200 rounded-2xl p-8 md:p-10">
+
+            <div className="grid sm:grid-cols-2 gap-8 sm:gap-0 sm:divide-x divide-stone-100">
+              {/* Business Problem */}
+              <div className="sm:pr-8">
+                <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Business Problem</h2>
+                <ul className="space-y-2">
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    Onboarding was high-touch and slow - customers needed significant hand-holding from CS teams to get started, creating a bottleneck that limited growth and delivered a poor first impression.
+                  </li>
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    Simultaneous product, pricing, and service changes had each been communicated separately - creating noise instead of a coherent story customers and internal teams could follow.
+                  </li>
+                </ul>
+              </div>
+
+              {/* Strategic Insights */}
+              <div className="sm:pl-8">
+                <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Strategic Insights</h2>
+                <ul className="space-y-2">
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    Admins don't want hand-holding - they want to run their first payroll fast and independently. Speed and reliability are the job.
+                  </li>
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    One unified promise is more powerful than a list of improvements. "Get your first payroll done in under 3 hours" cuts through everything.
+                  </li>
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    Sales and CS are the last mile of any transformation. Enablement isn't optional - it determines whether the new experience is understood and sold correctly.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* My Role */}
+            <div className="mt-8 pt-8 border-t border-stone-100">
+              <h2 className="text-xs font-bold tracking-widest text-teal-600 uppercase mb-3">My Role</h2>
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-stone-600">
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Research - continuous market & user research (competitive benchmarks, customer interviews, satisfaction metrics, field feedback loops) and E2E customer journey mapping to ground every decision in real data</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Positioning & narrative - built one unified story around the transformed experience, replacing fragmented feature-by-feature communication with a single outcome-led promise</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Pricing redesign - restructured the pricing model and sales discount rules to align with the new self-serve experience and generate incremental revenue</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Lifecycle - designed automated workflows, new email sequences, in-app guidance, and proactive messaging based on behavioral triggers and segment (3 tracks)</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Sales enablement - co-built with sales champions to validate the content and drive internal adoption: new pitch decks by segment, training sessions, 360 Learning gamified course, internal Notion hub, and an ongoing feedback loop via a dedicated Slack channel</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -369,30 +376,13 @@ export default function OnboardingPage() {
         </div>
       </section>
 
-      {/* Enablement result callout */}
-      <section className="pb-4 px-6">
+      {/* Conclusion - Key Insight + proof */}
+      <section className="py-8 md:py-10 px-6 bg-stone-900">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-stone-50 border border-stone-200 rounded-2xl px-8 py-5 flex items-start gap-4">
-            <div className="flex-shrink-0">
-              <div className="text-2xl font-bold text-teal-600">+28%</div>
-              <div className="text-xs text-stone-400 font-medium mt-0.5">closing rate</div>
-            </div>
-            <p className="text-sm text-stone-600 leading-relaxed">
-              This figure is specifically tied to the enablement work - new pitch deck and assets. Measured by comparing closing rates on deals pitched with the new deck vs. the old one. The other metrics (TTV, activation, CSAT) reflect the broader transformation: product, services, pricing, and lifecycle combined.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Key Insight */}
-      <section className="py-12 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="border-l-4 border-teal-500 bg-teal-50 rounded-r-2xl px-8 py-6 flex flex-col md:flex-row md:items-start gap-4">
-            <span className="text-xs font-bold tracking-widest text-teal-600 uppercase whitespace-nowrap pt-0.5 min-w-[100px]">Key Insight</span>
-            <p className="text-stone-700 text-sm leading-relaxed">
-              Enablement is change management - and change management is a long game. Co-building with sales champions and managers from the start made the content credible and drove adoption. And you can't ship enablement and move on. Keeping the Slack channel alive, showing up at team meetings, resharing what's working - that's what actually gets everyone on board over time and makes the new story stick.
-            </p>
-          </div>
+          <span className="text-xs font-bold tracking-widest text-teal-400 uppercase">Key Insight</span>
+          <p className="text-stone-100 text-base leading-relaxed mt-3">
+            Enablement is change management - and change management is a long game. Co-building with sales champions and managers from the start made the content credible and drove adoption. And you can't ship enablement and move on. Keeping the Slack channel alive, showing up at team meetings, resharing what's working - that's what actually gets everyone on board over time and makes the new story stick. The result: deals pitched with the new deck closed at a <span className="font-bold text-teal-400">+28% higher rate</span> than with the old one.
+          </p>
         </div>
       </section>
 

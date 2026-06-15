@@ -77,57 +77,65 @@ export default function SNCFPage() {
         </div>
       </section>
 
-      {/* Context */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Business Problem</h2>
-            <ul className="space-y-3">
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Grow the passenger base and reduce CAC by scaling a high-potential existing integration - turning SNCF into our top passenger acquisition partner.
-              </li>
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Validate a multimodality thesis: could bus, train and carpool be complementary rather than competing?
-              </li>
-            </ul>
-          </div>
+      {/* Project Overview card */}
+      <section className="pt-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="border border-stone-200 rounded-2xl p-8 md:p-10">
 
-          <div>
-            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Strategic Insights</h2>
-            <ul className="space-y-3">
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                SNCF users are already high-intent travelers - strategic opportunity to intercept them at the right moment with a relevant carpool or bus offer.
-              </li>
-              <li className="flex gap-3 text-stone-600 text-sm leading-relaxed">
-                <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
-                Carpool and bus also cover routes and last-mile gaps the train doesn't serve.
-              </li>
-            </ul>
+            <div className="grid sm:grid-cols-2 gap-8 sm:gap-0 sm:divide-x divide-stone-100">
+              {/* Business Problem */}
+              <div className="sm:pr-8">
+                <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Business Problem</h2>
+                <ul className="space-y-2">
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    Grow the passenger base and reduce CAC by scaling a high-potential existing integration - turning SNCF into our top passenger acquisition partner.
+                  </li>
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    Validate a multimodality thesis: could bus, train and carpool be complementary rather than competing?
+                  </li>
+                </ul>
+              </div>
+
+              {/* Strategic Insights */}
+              <div className="sm:pl-8">
+                <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-3">Strategic Insights</h2>
+                <ul className="space-y-2">
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    SNCF users are already high-intent travelers - strategic opportunity to intercept them at the right moment with a relevant carpool or bus offer.
+                  </li>
+                  <li className="flex gap-2 text-sm text-stone-600 leading-relaxed">
+                    <span className="text-teal-500 mt-0.5 flex-shrink-0">→</span>
+                    Carpool and bus also cover routes and last-mile gaps the train doesn't serve.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* My Role */}
+            <div className="mt-8 pt-8 border-t border-stone-100">
+              <h2 className="text-xs font-bold tracking-widest text-teal-600 uppercase mb-3">My Role</h2>
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-stone-600">
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Budget management and performance tracking</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Partnership governance - preparation and follow-up of negotiations with the Business Development team</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Product roadmap co-definition with internal and SNCF product teams</li>
+                <li className="flex gap-2"><span className="text-teal-500 flex-shrink-0">·</span> Marketing plan ownership - defining moments to cover, routes to prioritize and content to push (banners, landing pages, redirections), then tracking implementation and performance with SNCF</li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* My Role + Positioning */}
-      <section className="py-16 px-6 bg-stone-50">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">My Role</h2>
-            <ul className="space-y-2 text-sm text-stone-600">
-              <li className="flex gap-2"><span className="text-teal-500">·</span> Budget management and performance tracking</li>
-              <li className="flex gap-2"><span className="text-teal-500">·</span> Partnership governance - preparation and follow-up of negotiations with the Business Development team</li>
-              <li className="flex gap-2"><span className="text-teal-500">·</span> Product roadmap co-definition with internal and SNCF product teams</li>
-              <li className="flex gap-2"><span className="text-teal-500">·</span> Marketing plan ownership - defining moments to cover, routes to prioritize and content to push (banners, landing pages, redirections), then tracking implementation and performance with SNCF</li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Positioning</h2>
-            <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6">
-              "The right journey, the right moment, the right mode of transport."
-            </blockquote>
-          </div>
+      {/* Positioning */}
+      <section className="pt-12 pb-2 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Positioning</h2>
+          <blockquote className="text-2xl font-semibold text-stone-900 leading-snug border-l-4 border-teal-500 pl-6 max-w-2xl">
+            "The right journey, the right moment, the right mode of transport."
+          </blockquote>
         </div>
       </section>
 
@@ -271,15 +279,13 @@ export default function SNCFPage() {
         </div>
       </section>
 
-      {/* Key Insight */}
-      <section className="py-12 px-6">
+      {/* Conclusion - Key Insight + proof */}
+      <section className="py-8 md:py-10 px-6 bg-stone-900">
         <div className="max-w-5xl mx-auto">
-          <div className="border-l-4 border-teal-500 bg-teal-50 rounded-r-2xl px-8 py-6 flex flex-col md:flex-row md:items-start gap-4">
-            <span className="text-xs font-bold tracking-widest text-teal-600 uppercase whitespace-nowrap pt-0.5 min-w-[100px]">Key Insight</span>
-            <p className="text-stone-700 text-sm leading-relaxed">
-              The effort you put into growing a partnership post-launch matters as much as building it - joint marketing, shared roadmap, continuous optimization. And the data proves it here: Phase 1 performance unlocked Phase 2. It turned a basic placement into BlaBlaCar's top passenger acquisition partner, and SNCF from a distributor into a genuine ally.
-            </p>
-          </div>
+          <span className="text-xs font-bold tracking-widest text-teal-400 uppercase">Key Insight</span>
+          <p className="text-stone-100 text-base leading-relaxed mt-3">
+            The effort you put into growing a partnership post-launch matters as much as building it - joint marketing, shared roadmap, continuous optimization. And the data proves it here: Phase 1 performance unlocked Phase 2, turning a basic placement into <span className="font-bold text-teal-400">BlaBlaCar's #1 passenger acquisition partner</span> - and SNCF from a distributor into a genuine ally.
+          </p>
         </div>
       </section>
 
