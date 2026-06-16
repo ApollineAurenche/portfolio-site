@@ -315,28 +315,26 @@ export default function NewsletterPage() {
           </div>
 
           {/* Newsletter template mockup */}
-          <div className="mb-16">
-            <div className="flex items-center justify-between gap-3 mb-6">
-              <div className="flex items-center gap-3">
-                <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase">Newsletter Template</h3>
-                <span className="text-xs text-stone-400 bg-stone-100 px-2 py-0.5 rounded-full">Based on the September 2024 edition</span>
-              </div>
-              <a
-                href="https://youtu.be/DNudFgrgjR8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-teal-600 hover:underline flex-shrink-0"
-              >
-                Watch the original video →
-              </a>
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-1">
+              <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase">Newsletter Template</h3>
+              <span className="text-xs text-stone-400 bg-stone-100 px-2 py-0.5 rounded-full">Based on the September 2024 edition</span>
             </div>
+            <a
+              href="https://youtu.be/DNudFgrgjR8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-teal-600 hover:underline inline-block mb-5"
+            >
+              Watch the original video →
+            </a>
             <NewsletterTemplate />
           </div>
         </div>
       </section>
 
       {/* API usage stat */}
-      <section className="pb-12 px-6">
+      <section className="pb-12 px-6 -mt-4">
         <div className="max-w-5xl mx-auto">
           <div className="flex justify-center">
             <div className="inline-flex items-center gap-4 bg-stone-50 border border-stone-100 rounded-2xl px-6 py-4" style={{ maxWidth: '42rem', width: '100%' }}>
