@@ -334,7 +334,7 @@ export default function NewsletterPage() {
       </section>
 
       {/* API usage stat */}
-      <section className="pb-12 px-6 -mt-4">
+      <section className="pb-12 px-6 -mt-10">
         <div className="max-w-5xl mx-auto">
           <div className="flex justify-center">
             <div className="inline-flex items-center gap-4 bg-stone-50 border border-stone-100 rounded-2xl px-6 py-4" style={{ maxWidth: '42rem', width: '100%' }}>
