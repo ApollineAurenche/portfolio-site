@@ -338,9 +338,11 @@ export default function NewsletterPage() {
       {/* API usage stat */}
       <section className="pb-12 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-4 bg-stone-50 border border-stone-100 rounded-2xl px-6 py-4">
-            <div className="text-3xl font-bold text-teal-600">×2</div>
-            <div className="text-sm text-stone-500">API usage the month of the newsletter send</div>
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-4 bg-stone-50 border border-stone-100 rounded-2xl px-6 py-4" style={{ maxWidth: '42rem', width: '100%' }}>
+              <div className="text-3xl font-bold text-teal-600">×2</div>
+              <div className="text-sm text-stone-500">API usage the month of the newsletter send</div>
+            </div>
           </div>
         </div>
       </section>
