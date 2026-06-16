@@ -891,10 +891,10 @@ function IntroHero({ onContact }) {
                 position: 'relative', zIndex: 1,
               }}>
                 <h2 style={{ fontSize: 'clamp(1.75rem, 3.2vw, 2.75rem)', fontWeight: 800, color: SLATE.dark, lineHeight: 1.15, letterSpacing: '-0.02em', margin: '0 0 1.5rem' }}>
-                  Hi there! I'm Apolline (ah-poh-LEEN) 👋
+                  I'm Apolline <span style={{ fontSize: '0.5em', fontWeight: 400, color: SLATE.mid, letterSpacing: 0 }}>(ah-poh-LEEN)</span> 👋
                 </h2>
                 <p style={{ fontSize: '1rem', color: SLATE.accent, lineHeight: 1.75, maxWidth: '600px', margin: '0 0 2.5rem' }}>
-                  Senior Product Marketing & GTM Manager with 7 years of experience bringing B2B and B2C products to life at high-growth companies.
+                  Senior Product Marketing & GTM Manager with 7 years of experience bringing B2B and B2C products to life at high-growth companies — from BlaBlaCar and Doctolib to PayFit.
                   <br /><br />
                   I started in marketing, moved into CRM, then transitioned into product marketing. That journey gave me a full-funnel perspective: I think about GTM through the lens of customer behavior, willingness to pay, and long-term adoption.
                   <br /><br />
