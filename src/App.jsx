@@ -67,7 +67,7 @@ const caseStudies = [
       'Three years of incremental changes to reconcile around one narrative everyone could trust and repeat. One of the most cross-functional projects I\'ve worked on.',
     artifactLabel: 'Sales enablement doc',
     outcomes: [
-      { metric: '<3h', label: 'Time-to-value for Starter clients (was 2 days)' },
+      { metric: '+20%', label: 'Sales closing rate' },
       { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
       { metric: '+1.5pt', label: 'Customer satisfaction score' },
     ],
@@ -807,7 +807,7 @@ function IntroHero({ onContact }) {
                 {[
                   { metric: '80%', label: 'AI product adoption' },
                   { metric: '+15pts', label: 'conversion on a key partnership' },
-                  { metric: '<3h', label: 'time-to-value (was 2 days)' },
+                  { metric: '+20%', label: 'sales closing rate' },
                 ].map(m => (
                   <div key={m.metric}>
                     <div style={{ fontSize: '2.25rem', fontWeight: 800, color: SLATE.dark, lineHeight: 1 }}>{m.metric}</div>
