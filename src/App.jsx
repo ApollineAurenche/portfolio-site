@@ -69,7 +69,7 @@ const caseStudies = [
     outcomes: [
       { metric: '+20%', label: 'Sales closing rate' },
       { metric: '+15%', label: 'Activation rate (signup to first payroll)' },
-      { metric: '+1.5pt', label: 'Customer satisfaction score' },
+      { metric: '<3h', label: 'Time-to-value for Starter clients (was 2 days)' },
     ],
   },
   {
