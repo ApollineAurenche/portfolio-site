@@ -897,8 +897,6 @@ function IntroHero({ onContact }) {
                   Senior Product Marketing & GTM Manager with 7 years of experience bringing B2B and B2C products to life at high-growth companies — from BlaBlaCar and Doctolib to PayFit.
                   <br /><br />
                   I started in marketing, moved into CRM, then transitioned into product marketing. That journey gave me a full-funnel perspective: I think about GTM through the lens of customer behavior, willingness to pay, and long-term adoption.
-                  <br /><br />
-                  On a more personal note: I'm originally from Dijon, Burgundy 🍷, spent 7 years in Paris, and just made the move to San Francisco.
                 </p>
 
                 {/* Info grid */}
