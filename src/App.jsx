@@ -894,9 +894,9 @@ function IntroHero({ onContact }) {
                   I'm Apolline <span style={{ fontSize: '0.5em', fontWeight: 400, color: SLATE.mid, letterSpacing: 0 }}>(ah-poh-LEEN)</span> 👋
                 </h2>
                 <p style={{ fontSize: '1rem', color: SLATE.accent, lineHeight: 1.75, maxWidth: '600px', margin: '0 0 2.5rem' }}>
-                  Senior Product Marketing & GTM Manager with 7 years of experience bringing B2B and B2C products to life at high-growth companies — from BlaBlaCar and Doctolib to PayFit.
+                  <span style={{ color: SLATE.dark, fontWeight: 600 }}>Senior Product Marketing & GTM Manager</span> with <span style={{ color: SLATE.dark, fontWeight: 600 }}>7 years of experience</span> bringing B2B and B2C products to life at high-growth companies — from <span style={{ color: SLATE.dark, fontWeight: 600 }}>BlaBlaCar and Doctolib to PayFit</span>.
                   <br /><br />
-                  I started in marketing, moved into CRM, then transitioned into product marketing. That journey gave me a full-funnel perspective: I think about GTM through the lens of customer behavior, willingness to pay, and long-term adoption.
+                  I started in marketing, moved into CRM, then transitioned into product marketing. That journey gave me a <span style={{ color: SLATE.dark, fontWeight: 600 }}>full-funnel perspective</span>: I think about GTM through the lens of <span style={{ color: SLATE.dark, fontWeight: 600 }}>customer behavior, willingness to pay, and long-term adoption</span>.
                 </p>
 
                 {/* Info grid */}
