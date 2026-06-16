@@ -316,22 +316,21 @@ export default function NewsletterPage() {
 
           {/* Newsletter template mockup */}
           <div className="mb-16">
-            <div className="flex items-center gap-3 mb-6">
-              <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase">Newsletter Template</h3>
-              <span className="text-xs text-stone-400 bg-stone-100 px-2 py-0.5 rounded-full">Based on the September 2024 edition</span>
-            </div>
-            <NewsletterTemplate />
-            <p className="text-xs text-stone-400 mt-3">
-              Watch the original video:{' '}
+            <div className="flex items-center justify-between gap-3 mb-6">
+              <div className="flex items-center gap-3">
+                <h3 className="text-xs font-bold tracking-widest text-stone-400 uppercase">Newsletter Template</h3>
+                <span className="text-xs text-stone-400 bg-stone-100 px-2 py-0.5 rounded-full">Based on the September 2024 edition</span>
+              </div>
               <a
                 href="https://youtu.be/DNudFgrgjR8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-teal-600 hover:underline"
+                className="text-xs text-teal-600 hover:underline flex-shrink-0"
               >
-                youtu.be/DNudFgrgjR8
+                Watch the original video →
               </a>
-            </p>
+            </div>
+            <NewsletterTemplate />
           </div>
         </div>
       </section>
@@ -339,14 +338,9 @@ export default function NewsletterPage() {
       {/* API usage stat */}
       <section className="pb-12 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-stone-50 border border-stone-100 rounded-2xl px-8 py-6 flex items-center gap-8">
-            <div className="flex-shrink-0">
-              <div className="text-4xl font-bold text-teal-600">×2</div>
-              <div className="text-xs text-stone-400 mt-1 leading-snug max-w-[140px]">API usage the month of the newsletter send</div>
-            </div>
-            <p className="text-sm text-stone-500 leading-relaxed border-l border-stone-200 pl-8">
-              Beyond opens and clicks — the September edition drove a <span className="font-medium text-stone-700">doubling of API calls</span> (7.2k in September), showing that the right content at the right moment directly translates into product usage.
-            </p>
+          <div className="inline-flex items-center gap-4 bg-stone-50 border border-stone-100 rounded-2xl px-6 py-4">
+            <div className="text-3xl font-bold text-teal-600">×2</div>
+            <div className="text-sm text-stone-500">API usage the month of the newsletter send</div>
           </div>
         </div>
       </section>
