@@ -828,7 +828,7 @@ function IntroHero({ onContact }) {
                   <span aria-hidden="true">→</span>
                 </a>
 
-                <a href="#about" style={{
+                <a href="#who-i-am" style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
                   fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em',
                   color: SLATE.accent, textTransform: 'uppercase',
@@ -884,7 +884,7 @@ function IntroHero({ onContact }) {
               </div>
 
               {/* Info */}
-              <div className="about-link-info" style={{
+              <div id="who-i-am" className="about-link-info" style={{
                 flex: 1, minWidth: '320px', maxWidth: '600px',
                 backgroundColor: '#FFFFFF', border: `1px solid ${SLATE.light}`,
                 borderRadius: '20px', padding: '2.5rem',
