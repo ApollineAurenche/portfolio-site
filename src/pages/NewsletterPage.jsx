@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import CaseStudyNav from '../components/CaseStudyNav.jsx'
 
 const outcomes = [
-  { metric: '+20%', label: 'Open rate after full redesign' },
-  { metric: '+8%', label: 'Click-through rate improvement' },
+  { metric: '+92%', label: 'Click-through rate vs former newsletter' },
   { metric: '15k+', label: 'Customers reached every send' },
+  { metric: '60%', label: 'Openers who read vs skimmed' },
 ]
 
 const beforeAfter = [
@@ -331,6 +331,21 @@ export default function NewsletterPage() {
               >
                 youtu.be/DNudFgrgjR8
               </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* API usage stat */}
+      <section className="pb-12 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-stone-50 border border-stone-100 rounded-2xl px-8 py-6 flex items-center gap-8">
+            <div className="flex-shrink-0">
+              <div className="text-4xl font-bold text-teal-600">×2</div>
+              <div className="text-xs text-stone-400 mt-1 leading-snug max-w-[140px]">API usage the month of the newsletter send</div>
+            </div>
+            <p className="text-sm text-stone-500 leading-relaxed border-l border-stone-200 pl-8">
+              Beyond opens and clicks — the September edition drove a <span className="font-medium text-stone-700">doubling of API calls</span> (7.2k in September), showing that the right content at the right moment directly translates into product usage.
             </p>
           </div>
         </div>

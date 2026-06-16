@@ -83,9 +83,9 @@ const caseStudies = [
       'Most product newsletters are feature lists nobody reads. We rebuilt this one from scratch - new format, new face: mine, presenting updates via video every send.',
     artifactLabel: 'Editorial strategy framework',
     outcomes: [
-      { metric: '+20%', label: 'Open rate after full redesign' },
-      { metric: '+8%', label: 'Click-through rate improvement' },
+      { metric: '+92%', label: 'Click-through rate vs former newsletter' },
       { metric: '15k+', label: 'Customers reached every send' },
+      { metric: '60%', label: 'Openers who read vs skimmed' },
     ],
   },
   {
