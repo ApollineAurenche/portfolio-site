@@ -185,7 +185,7 @@ function Nav({ onContact }) {
 
 function About() {
   return (
-    <section id="about" className="py-20 px-6 bg-stone-50">
+    <section id="about" className="pt-10 pb-20 px-6 bg-stone-50">
       <div className="max-w-5xl mx-auto">
 
         {/* How I work */}
@@ -301,7 +301,7 @@ function Experience() {
       description: 'European HR & Payroll SaaS · Series E unicorn · 20k+ SMB customers',
       badge: 'B2B',
       title: 'Senior Global Product Marketing Manager',
-      period: '2022 – 2025',
+      period: '2022 – 2026',
       location: 'Paris',
     },
     {
