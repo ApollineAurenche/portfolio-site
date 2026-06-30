@@ -356,7 +356,7 @@ function Experience() {
 
         <div className="mt-10">
           <h2 className="text-4xl font-bold text-stone-900 mb-6">Education</h2>
-          <div className="flex flex-col md:flex-row md:items-start justify-between py-5 border-t border-stone-200">
+          <div className="flex flex-col md:flex-row md:items-start justify-between py-6 border-t border-stone-200">
             <div className="flex-1">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <span className="font-bold text-lg text-stone-900">Neoma Business School</span>
@@ -368,7 +368,7 @@ function Experience() {
               <span>Reims</span>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row md:items-start justify-between py-5 border-t border-stone-200">
+          <div className="flex flex-col md:flex-row md:items-start justify-between py-6 border-t border-stone-200">
             <div className="flex-1">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <span className="font-bold text-lg text-stone-900">French Preparatory Classes (CPGE)</span>
