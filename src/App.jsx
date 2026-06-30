@@ -368,6 +368,18 @@ function Experience() {
               <span>Reims</span>
             </div>
           </div>
+          <div className="flex flex-col md:flex-row md:items-start justify-between py-5 border-t border-stone-200">
+            <div className="flex-1">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <span className="font-bold text-lg text-stone-900">French Preparatory Classes (CPGE)</span>
+                <span className="text-sm font-medium text-stone-500">Scientific pathway</span>
+              </div>
+            </div>
+            <div className="flex gap-4 mt-1 md:mt-0 md:ml-8 text-sm text-stone-400 flex-shrink-0">
+              <span>2013 – 2015</span>
+              <span>Dijon</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
