@@ -464,14 +464,14 @@ function Referrals() {
       <div
         ref={scrollRef}
         onScroll={onScroll}
-        className="flex gap-6 overflow-x-auto pb-4 px-6 snap-x snap-mandatory scroll-smooth"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', paddingLeft: 'max(1.5rem, calc((100vw - 64rem) / 2))' }}
+        className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', paddingLeft: 'max(1.5rem, calc((100vw - 64rem) / 2))', paddingRight: 'max(1.5rem, calc((100vw - 64rem) / 2))' }}
       >
         {referrals.map((r) => (
           <div
             key={r.name}
             className="relative rounded-3xl p-8 md:p-10 bg-gradient-to-br from-teal-50 to-white border border-teal-100 overflow-hidden snap-start flex-shrink-0"
-            style={{ width: 'min(640px, 85vw)' }}
+            style={{ width: 'min(900px, calc(100vw - max(3rem, calc((100vw - 64rem))) - 4rem))' }}
           >
             <span className="absolute -top-6 left-6 text-[7rem] font-black text-teal-100 leading-none select-none" aria-hidden="true">"</span>
             <p className="relative text-stone-800 text-sm md:text-base leading-relaxed font-medium mb-8">
