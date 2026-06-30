@@ -385,14 +385,6 @@ const referrals = [
       "I had the pleasure of working with Apolline at PayFit for 3 years, and she is one of the strongest Product Marketing Managers I have worked with. What sets her apart is her ability to own the full product lifecycle, from business case and discovery through beta testing and go-to-market design and execution. She brings both strategic thinking and hands-on rigor at every stage. At PayFit, she led some of our most impactful launches, like the self-onboarding flow and PayFit Copilot, our AI assistant. Both projects required strong cross-functional leadership, and she exceeded expectations.",
   },
   {
-    name: 'Marie Jamin',
-    role: 'Head of Product',
-    company: 'BPI France',
-    relation: 'Marketing peer at BlaBlaCar',
-    quote:
-      "I worked with Apolline at BlaBlaCar. She's the kind of profile that makes a real difference. Reliable, empathetic, deeply user-focused, and always bringing both a data mindset and a sharp macro vision. Her marketing background in product-driven environments gives her a rare edge; she moves comfortably across new scopes and complex SaaS contexts. Someone you can genuinely trust on ambitious topics!",
-  },
-  {
     name: 'Gwendoline Sonzogni-Jourdan',
     role: 'Product Design Director',
     company: 'PayFit',
@@ -400,49 +392,103 @@ const referrals = [
     quote:
       "I worked with Apolline on several projects at PayFit, including a full redesign of our onboarding experience. What made her stand out was her relentless proactivity: she'd always find a way to move things forward, whether that meant connecting the right people, unblocking a stalled topic, or tracking down users to interview on short notice. She's also someone who never hides behind a job description — when a project matters, she focuses on making it succeed, whatever that requires. That makes her particularly valuable in cross-functional work where scopes aren't always neatly defined.",
   },
+  {
+    name: 'Marie Jamin',
+    role: 'Head of Product',
+    company: 'BPI France',
+    relation: 'Marketing peer at BlaBlaCar',
+    quote:
+      "I worked with Apolline at BlaBlaCar. She's the kind of profile that makes a real difference. Reliable, empathetic, deeply user-focused, and always bringing both a data mindset and a sharp macro vision. Her marketing background in product-driven environments gives her a rare edge; she moves comfortably across new scopes and complex SaaS contexts. Someone you can genuinely trust on ambitious topics!",
+  },
 ]
 
 function Referrals() {
+  const scrollRef = useRef(null)
+  const [active, setActive] = useState(0)
+
+  const scrollTo = (i) => {
+    const container = scrollRef.current
+    if (!container) return
+    const card = container.children[i]
+    if (!card) return
+    container.scrollTo({ left: card.offsetLeft - container.offsetLeft, behavior: 'smooth' })
+    setActive(i)
+  }
+
+  const onScroll = () => {
+    const container = scrollRef.current
+    if (!container) return
+    const center = container.scrollLeft + container.offsetWidth / 2
+    let closest = 0
+    Array.from(container.children).forEach((card, i) => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2
+      if (Math.abs(cardCenter - center) < Math.abs(container.children[closest].offsetLeft + container.children[closest].offsetWidth / 2 - center)) {
+        closest = i
+      }
+    })
+    setActive(closest)
+  }
+
   return (
-    <section className="py-20 bg-white border-t border-stone-100">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Referrals</span>
-          </div>
+    <section className="py-20 bg-white border-t border-stone-100 overflow-hidden">
+      <div className="max-w-5xl mx-auto px-6 mb-10">
+        <span className="text-xs font-medium tracking-widest text-teal-600 uppercase">Referrals</span>
+        <div className="flex items-end justify-between mt-2">
           <h2 className="text-3xl font-bold text-stone-900">From the people I built with</h2>
+          <div className="flex gap-2">
+            <button
+              onClick={() => scrollTo(Math.max(0, active - 1))}
+              className="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:text-stone-900 hover:border-stone-400 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button
+              onClick={() => scrollTo(Math.min(referrals.length - 1, active + 1))}
+              className="w-9 h-9 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:text-stone-900 hover:border-stone-400 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+        </div>
+        <div className="flex gap-2 mt-4">
+          {referrals.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => scrollTo(i)}
+              className={`h-1 rounded-full transition-all duration-300 ${i === active ? 'w-8 bg-teal-500' : 'w-4 bg-stone-200'}`}
+            />
+          ))}
         </div>
       </div>
 
-      {/* Cards */}
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="grid gap-6">
-          {referrals.map((r) => (
-            <div
-              key={r.name}
-              className="relative rounded-3xl p-8 md:p-12 bg-gradient-to-br from-teal-50 to-white border border-teal-100 overflow-hidden"
-            >
-              <span className="absolute -top-6 left-6 text-[7rem] md:text-[9rem] font-black text-teal-100 leading-none select-none" aria-hidden="true">
-                "
-              </span>
-              <div className="relative md:flex md:items-start md:gap-10">
-                <p className="text-stone-800 text-sm md:text-base leading-relaxed font-medium md:flex-1">
-                  "{r.quote}"
-                </p>
-                <div className="flex items-center gap-3 mt-8 md:mt-1 md:flex-col md:items-start md:gap-2 md:w-56 md:flex-shrink-0 pt-6 md:pt-0 border-t md:border-t-0 md:border-l md:pl-8 border-teal-100">
-                  <div className="w-12 h-12 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-base font-semibold">{r.name.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-stone-900">{r.name}</div>
-                    <div className="text-xs text-stone-500 mt-0.5">{r.role} · {r.company}</div>
-                    <div className="text-xs text-teal-600 mt-0.5">{r.relation}</div>
-                  </div>
-                </div>
+      <div
+        ref={scrollRef}
+        onScroll={onScroll}
+        className="flex gap-6 overflow-x-auto pb-4 px-6 snap-x snap-mandatory scroll-smooth"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', paddingLeft: 'max(1.5rem, calc((100vw - 64rem) / 2))' }}
+      >
+        {referrals.map((r) => (
+          <div
+            key={r.name}
+            className="relative rounded-3xl p-8 md:p-10 bg-gradient-to-br from-teal-50 to-white border border-teal-100 overflow-hidden snap-start flex-shrink-0"
+            style={{ width: 'min(640px, 85vw)' }}
+          >
+            <span className="absolute -top-6 left-6 text-[7rem] font-black text-teal-100 leading-none select-none" aria-hidden="true">"</span>
+            <p className="relative text-stone-800 text-sm md:text-base leading-relaxed font-medium mb-8">
+              "{r.quote}"
+            </p>
+            <div className="flex items-center gap-3 pt-6 border-t border-teal-100">
+              <div className="w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0">
+                <span className="text-white text-sm font-semibold">{r.name.charAt(0)}</span>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-stone-900">{r.name}</div>
+                <div className="text-xs text-stone-500 mt-0.5">{r.role} · {r.company}</div>
+                <div className="text-xs text-teal-600 mt-0.5">{r.relation}</div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   )
