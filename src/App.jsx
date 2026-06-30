@@ -388,7 +388,7 @@ const referrals = [
     name: 'Gwendoline Sonzogni-Jourdan',
     role: 'Product Design Director',
     company: 'PayFit',
-    relation: 'Cross-functional collaborator at PayFit · different teams',
+    relation: 'Cross-functional collaborator at PayFit',
     quote:
       "I worked with Apolline on several projects at PayFit, including a full redesign of our onboarding experience. What made her stand out was her relentless proactivity: she'd always find a way to move things forward, whether that meant connecting the right people, unblocking a stalled topic, or tracking down users to interview on short notice. She's also someone who never hides behind a job description — when a project matters, she focuses on making it succeed, whatever that requires. That makes her particularly valuable in cross-functional work where scopes aren't always neatly defined.",
   },
@@ -465,7 +465,7 @@ function Referrals() {
         ref={scrollRef}
         onScroll={onScroll}
         className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', paddingLeft: 'max(1.5rem, calc((100vw - 64rem) / 2 + 1.5rem))', paddingRight: 'max(1.5rem, calc((100vw - 64rem) / 2))' }}
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', paddingLeft: 'max(1.5rem, calc((100vw - 64rem) / 2 + 1.5rem))', paddingRight: 'max(1.5rem, calc((100vw - 64rem) / 2))', scrollPaddingLeft: 'max(1.5rem, calc((100vw - 64rem) / 2 + 1.5rem))' }}
       >
         {referrals.map((r) => (
           <div
