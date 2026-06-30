@@ -392,6 +392,14 @@ const referrals = [
     quote:
       "I worked with Apolline at BlaBlaCar. She's the kind of profile that makes a real difference. Reliable, empathetic, deeply user-focused, and always bringing both a data mindset and a sharp macro vision. Her marketing background in product-driven environments gives her a rare edge; she moves comfortably across new scopes and complex SaaS contexts. Someone you can genuinely trust on ambitious topics!",
   },
+  {
+    name: 'Gwendoline Sonzogni-Jourdan',
+    role: 'Product Design Director',
+    company: 'PayFit',
+    relation: 'Senior cross-functional partner at PayFit',
+    quote:
+      "I worked with Apolline on several projects at PayFit, including a full redesign of our onboarding experience. What made her stand out was her relentless proactivity: she'd always find a way to move things forward, whether that meant connecting the right people, unblocking a stalled topic, or tracking down users to interview on short notice. She's also someone who never hides behind a job description — when a project matters, she focuses on making it succeed, whatever that requires. That makes her particularly valuable in cross-functional work where scopes aren't always neatly defined.",
+  },
 ]
 
 function Referrals() {
